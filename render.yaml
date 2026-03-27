@@ -8,3 +8,15 @@ services:
     envVars:
       - key: MONGODB_URI
         sync: false
+      - key: SESSION_SECRET
+        sync: false
+      - key: ADMIN_USERNAME
+        sync: false
+      - key: ADMIN_PASSWORD
+        sync: false
+      - key: SITE_NAME
+        sync: false
+      - key: SITE_URL
+        sync: false
+      - key: DEFAULT_OG_IMAGE
+        sync: false
