@@ -1,0 +1,62 @@
+<%- include('../partials/tailwind-head') %>
+<%- include('../partials/tailwind-nav') %>
+
+<main class="mx-auto mt-8 max-w-7xl px-4">
+  <section class="mb-6 rounded-3xl border border-outline/40 bg-surface p-6 shadow-soft">
+    <div class="flex flex-wrap items-center justify-between gap-4">
+      <div>
+        <p class="text-xs font-bold uppercase tracking-[0.16em] text-on-surface-variant">Content Module</p>
+        <h1 class="mt-1 font-headline text-5xl"><%= typeMeta.label %></h1>
+        <p class="mt-2 text-sm text-on-surface-variant"><%= typeMeta.description %></p>
+      </div>
+      <div class="flex items-center gap-3">
+        <a href="<%= typeMeta.routeBase %>/new" class="rounded-full bg-primary px-5 py-3 text-sm font-bold text-white">Add Item</a>
+        <a href="/admin" class="rounded-full bg-surface-soft px-5 py-3 text-sm font-bold text-on-surface">Back to Admin</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="overflow-hidden rounded-3xl border border-outline/40 bg-surface shadow-soft">
+    <table class="w-full text-left text-sm">
+      <thead class="bg-surface-soft">
+        <tr>
+          <th class="px-5 py-4">Title</th>
+          <th class="px-5 py-4">Tag</th>
+          <th class="px-5 py-4">Date</th>
+          <th class="px-5 py-4">Order</th>
+          <th class="px-5 py-4">Published</th>
+          <th class="px-5 py-4">Actions</th>
+        </tr>
+      </thead>
+      <tbody class="divide-y divide-outline/40">
+        <% if (!items.length) { %>
+        <tr>
+          <td colspan="6" class="px-5 py-10 text-center text-on-surface-variant">No items yet for this module.</td>
+        </tr>
+        <% } %>
+        <% items.forEach(function(item) { %>
+        <tr>
+          <td class="px-5 py-4">
+            <p class="font-semibold"><%= item.title %></p>
+            <% if (item.subtitle) { %><p class="text-xs text-on-surface-variant"><%= item.subtitle %></p><% } %>
+          </td>
+          <td class="px-5 py-4"><%= item.tag || '-' %></td>
+          <td class="px-5 py-4"><%= item.eventDate ? new Date(item.eventDate).toISOString().slice(0, 10) : '-' %></td>
+          <td class="px-5 py-4"><%= item.displayOrder || 0 %></td>
+          <td class="px-5 py-4"><%= item.isPublished ? 'Yes' : 'No' %></td>
+          <td class="px-5 py-4">
+            <div class="flex gap-2">
+              <a class="rounded-lg bg-surface-soft px-3 py-2 font-semibold" href="<%= typeMeta.routeBase %>/<%= item._id %>/edit">Edit</a>
+              <form method="post" action="<%= typeMeta.routeBase %>/<%= item._id %>/delete" onsubmit="return confirm('Delete this item?')">
+                <button type="submit" class="rounded-lg bg-red-600 px-3 py-2 font-semibold text-white">Delete</button>
+              </form>
+            </div>
+          </td>
+        </tr>
+        <% }) %>
+      </tbody>
+    </table>
+  </section>
+</main>
+
+<%- include('../partials/tailwind-footer') %>

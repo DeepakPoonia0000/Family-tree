@@ -1,0 +1,133 @@
+<%- include('../partials/tailwind-head') %>
+<%- include('../partials/tailwind-nav') %>
+
+<main class="pt-28 pb-32 px-4 max-w-6xl mx-auto">
+  <div class="mb-12 flex items-center">
+    <a class="flex items-center gap-2 group text-on-surface-variant hover:text-primary transition-all" href="/">
+      <span class="material-symbols-outlined transition-transform group-hover:-translate-x-1">arrow_back</span>
+      <span class="font-label font-semibold text-sm tracking-wide uppercase">Return to Family Tree</span>
+    </a>
+  </div>
+
+  <section class="relative mb-24">
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-end">
+      <div class="md:col-span-5 relative group">
+        <div class="aspect-[4/5] rounded-tl-xl rounded-tr-[4rem] rounded-bl-[4rem] rounded-br-xl overflow-hidden shadow-2xl rotate-[-2deg] bg-surface-container-high transition-transform duration-500 group-hover:rotate-0">
+          <img src="<%= member.photoUrl || '/img/default-avatar.svg' %>" alt="Portrait of <%= member.fullName %>" class="w-full h-full object-cover grayscale-[20%] hover:grayscale-0 transition-all duration-700" />
+        </div>
+        <div class="absolute -bottom-6 -right-6 w-32 h-32 bg-primary-container/40 rounded-full blur-3xl -z-10"></div>
+      </div>
+
+      <div class="md:col-span-7 pb-4">
+        <div class="flex flex-wrap gap-3 mb-6">
+          <span class="px-4 py-1 bg-primary-container text-on-primary-container rounded-full text-xs font-bold uppercase tracking-widest"><%= member.relationship || 'Family Member' %></span>
+          <span class="px-4 py-1 bg-surface-container-highest text-on-surface-variant rounded-full text-xs font-bold uppercase tracking-widest"><%= member.generation ? `${member.generation}th Generation` : 'Generation not set' %></span>
+        </div>
+        <h1 class="headline-lg text-6xl md:text-8xl text-on-surface mb-4"><%= member.fullName %></h1>
+        <div class="flex flex-wrap items-center gap-6 text-on-surface-variant">
+          <div>
+            <span class="text-[10px] uppercase font-bold tracking-tighter opacity-60">Born</span>
+            <span class="block font-headline italic text-2xl"><%= member.birthDate ? new Date(member.birthDate).toLocaleDateString(undefined, { dateStyle: 'long' }) : 'Unknown' %></span>
+          </div>
+          <% if (member.birthPlace) { %>
+          <div class="w-px h-10 bg-outline-variant/30"></div>
+          <div>
+            <span class="text-[10px] uppercase font-bold tracking-tighter opacity-60">Birthplace</span>
+            <span class="block font-headline italic text-2xl"><%= member.birthPlace %></span>
+          </div>
+          <% } %>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-24">
+    <div class="md:col-span-2 bg-surface-container-low p-10 md:p-14 rounded-xl relative overflow-hidden">
+      <div class="absolute top-0 right-0 w-48 h-48 bg-tertiary-container/20 rounded-full -mr-24 -mt-24 blur-3xl"></div>
+      <h2 class="font-headline text-4xl mb-8">The Life Story</h2>
+      <div class="font-body text-lg leading-relaxed text-on-surface-variant space-y-6">
+        <p><%= member.bio || 'No biography added yet.' %></p>
+      </div>
+    </div>
+
+    <div class="space-y-8">
+      <div class="bg-primary p-8 rounded-lg text-on-primary">
+        <span class="material-symbols-outlined text-3xl mb-4" data-weight="fill">favorite</span>
+        <h3 class="font-headline text-2xl mb-2">Favorite Memory</h3>
+        <p class="font-body text-sm opacity-90 leading-snug italic"><%= member.favoriteMemory || 'No favorite memory has been added yet.' %></p>
+      </div>
+
+      <div class="bg-surface-container-high p-8 rounded-lg">
+        <h3 class="font-label font-bold text-xs uppercase tracking-widest mb-4 text-on-surface-variant">Affiliations</h3>
+        <% if (member.affiliations && member.affiliations.length) { %>
+          <ul class="space-y-3 font-body text-sm text-on-surface">
+            <% member.affiliations.forEach(function(affiliation) { %>
+              <li class="flex items-center gap-2">
+                <span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+                <%= affiliation %>
+              </li>
+            <% }) %>
+          </ul>
+        <% } else { %>
+          <p class="text-sm text-on-surface-variant">No affiliations added yet.</p>
+        <% } %>
+      </div>
+    </div>
+  </section>
+
+  <section class="mb-24">
+    <h2 class="font-headline text-4xl text-center mb-16 italic">Significant Milestones</h2>
+    <div class="relative max-w-4xl mx-auto">
+      <div class="absolute left-1/2 top-0 bottom-0 w-px bg-outline-variant/40 hidden md:block"></div>
+      <div class="space-y-16">
+        <% if (member.milestones && member.milestones.length) { %>
+          <% member.milestones.forEach(function(milestone, index) { %>
+            <div class="flex flex-col md:flex-row items-center gap-8 md:gap-0 <%= index % 2 === 0 ? '' : 'md:flex-row-reverse' %>">
+              <div class="md:w-1/2 <%= index % 2 === 0 ? 'md:pr-12 md:text-right' : 'md:pl-12' %>">
+                <% if (milestone.year) { %>
+                  <span class="font-headline text-3xl <%= index % 2 === 0 ? 'text-primary' : 'text-tertiary' %>"><%= milestone.year %></span>
+                <% } %>
+                <h4 class="font-label font-bold text-on-surface mt-4"><%= milestone.title || 'Milestone' %></h4>
+                <p class="text-sm text-on-surface-variant mt-2"><%= milestone.description || 'No description available.' %></p>
+              </div>
+              <div class="z-10 w-4 h-4 rounded-full <%= index % 2 === 0 ? 'bg-primary' : 'bg-tertiary' %> border-4 border-surface shadow-md"></div>
+              <div class="md:w-1/2 <%= index % 2 === 0 ? 'md:pl-12' : 'md:pr-12 md:text-right' %>"></div>
+            </div>
+          <% }) %>
+        <% } else { %>
+          <div class="rounded-3xl border border-dashed border-outline/30 bg-surface-container-low p-12 text-center text-on-surface-variant">
+            No milestones were added yet. Add the member's significant life events in admin.
+          </div>
+        <% } %>
+      </div>
+    </div>
+  </section>
+
+  <section class="mb-24">
+    <div class="flex justify-between items-end mb-12">
+      <div>
+        <h2 class="font-headline text-4xl mb-2">Personal Gallery</h2>
+        <p class="font-body text-on-surface-variant">Glimpses into a life well-lived.</p>
+      </div>
+      <% if (member.galleryImageUrls && member.galleryImageUrls.length) { %>
+        <a class="bg-surface-container-high hover:bg-surface-container-highest px-6 py-2 rounded-full font-label font-bold text-xs uppercase tracking-wider transition-all" href="#gallery">View all</a>
+      <% } %>
+    </div>
+
+    <% if (member.galleryImageUrls && member.galleryImageUrls.length) { %>
+      <div id="gallery" class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 auto-rows-[200px]">
+        <% member.galleryImageUrls.slice(0, 5).forEach(function(imageUrl, index) { %>
+          <div class="rounded-xl overflow-hidden shadow-lg group <%= index === 0 ? 'col-span-2 row-span-2' : '' %>">
+            <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="<%= imageUrl %>" alt="Gallery image <%= index + 1 %>" />
+          </div>
+        <% }) %>
+      </div>
+    <% } else { %>
+      <div class="rounded-3xl border border-dashed border-outline/30 bg-surface-container-low p-12 text-center text-on-surface-variant">
+        No gallery images have been added yet. Add photo URLs in admin to populate this section.
+      </div>
+    <% } %>
+  </section>
+</main>
+
+<%- include('../partials/tailwind-footer') %>

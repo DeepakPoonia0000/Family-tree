@@ -1,0 +1,70 @@
+<%- include('../partials/tailwind-head') %>
+<%- include('../partials/tailwind-nav') %>
+
+<main class="mx-auto mt-8 max-w-7xl px-4">
+  <section class="mb-6 rounded-3xl border border-outline/40 bg-surface p-6 shadow-soft">
+    <div class="flex flex-wrap items-center justify-between gap-4">
+      <div>
+        <p class="text-xs font-bold uppercase tracking-[0.16em] text-on-surface-variant">Admin Panel</p>
+        <h1 class="mt-1 font-headline text-5xl">Manage Family Platform</h1>
+      </div>
+      <div class="flex items-center gap-3">
+        <a href="/admin/members/new" class="rounded-full bg-primary px-5 py-3 text-sm font-bold text-white">Add Member</a>
+        <form method="post" action="/admin/logout">
+          <button type="submit" class="rounded-full bg-surface-soft px-5 py-3 text-sm font-bold text-on-surface">Logout</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <section class="mb-6">
+    <h2 class="mb-3 font-headline text-4xl">Content Modules</h2>
+    <div class="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+      <% contentModules.forEach(function(module) { %>
+      <article class="rounded-2xl border border-outline/40 bg-surface p-5 shadow-soft">
+        <p class="text-xs font-bold uppercase tracking-[0.14em] text-on-surface-variant"><%= module.count %> items</p>
+        <h3 class="mt-1 font-headline text-3xl"><%= module.label %></h3>
+        <p class="mt-2 text-sm text-on-surface-variant"><%= module.description %></p>
+        <a href="<%= module.routeBase %>" class="mt-4 inline-block text-sm font-bold text-primary">Manage Module</a>
+      </article>
+      <% }) %>
+    </div>
+  </section>
+
+  <section class="overflow-hidden rounded-3xl border border-outline/40 bg-surface shadow-soft">
+    <div class="border-b border-outline/40 bg-surface-soft px-5 py-4">
+      <h2 class="font-headline text-3xl">Family Members</h2>
+    </div>
+    <table class="w-full text-left text-sm">
+      <thead class="bg-surface-soft/70">
+        <tr>
+          <th class="px-5 py-4">Name</th>
+          <th class="px-5 py-4">Generation</th>
+          <th class="px-5 py-4">Relationship</th>
+          <th class="px-5 py-4">Featured</th>
+          <th class="px-5 py-4">Actions</th>
+        </tr>
+      </thead>
+      <tbody class="divide-y divide-outline/40">
+        <% members.forEach(function(member) { %>
+        <tr>
+          <td class="px-5 py-4"><a class="font-semibold text-primary" href="/members/<%= member.slug %>"><%= member.fullName %></a></td>
+          <td class="px-5 py-4"><%= member.generation %></td>
+          <td class="px-5 py-4"><%= member.relationship %></td>
+          <td class="px-5 py-4"><%= member.isFeatured ? 'Yes' : 'No' %></td>
+          <td class="px-5 py-4">
+            <div class="flex gap-2">
+              <a class="rounded-lg bg-surface-soft px-3 py-2 font-semibold" href="/admin/members/<%= member._id %>/edit">Edit</a>
+              <form method="post" action="/admin/members/<%= member._id %>/delete" onsubmit="return confirm('Delete this member?')">
+                <button class="rounded-lg bg-red-600 px-3 py-2 font-semibold text-white" type="submit">Delete</button>
+              </form>
+            </div>
+          </td>
+        </tr>
+        <% }) %>
+      </tbody>
+    </table>
+  </section>
+</main>
+
+<%- include('../partials/tailwind-footer') %>

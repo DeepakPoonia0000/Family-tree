@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&amp;family=Plus+Jakarta+Sans:wght@200..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-container": "#f6f3ed",
+              "on-background": "#383833",
+              "surface-bright": "#fffcf7",
+              "surface-container-high": "#f0eee6",
+              "on-tertiary": "#ffffff",
+              "outline-variant": "#bbb9b2",
+              "on-secondary-fixed": "#254258",
+              "on-secondary-container": "#38556c",
+              "on-error-container": "#6e1400",
+              "tertiary-container": "#fbecd8",
+              "surface-container-low": "#fcf9f3",
+              "tertiary-dim": "#615748",
+              "surface-dim": "#e4e3da",
+              "on-primary-container": "#43573b",
+              "on-secondary": "#ffffff",
+              "secondary-fixed-dim": "#bad8f4",
+              "secondary": "#4b677f",
+              "on-primary-fixed": "#31442a",
+              "surface-container-lowest": "#ffffff",
+              "primary-fixed-dim": "#c4dbb7",
+              "on-surface": "#383833",
+              "on-tertiary-fixed": "#4e4537",
+              "secondary-container": "#cbe6ff",
+              "tertiary": "#6e6354",
+              "primary": "#566a4d",
+              "background": "#fffcf7",
+              "on-tertiary-container": "#615748",
+              "on-primary": "#ffffff",
+              "on-surface-variant": "#65655e",
+              "primary-dim": "#4a5e41",
+              "surface-variant": "#eae8e0",
+              "inverse-primary": "#e6fed8",
+              "error-container": "#fd795a",
+              "outline": "#81817a",
+              "primary-fixed": "#d2eac5",
+              "tertiary-fixed": "#fbecd8",
+              "error-dim": "#791903",
+              "surface-container-highest": "#eae8e0",
+              "tertiary-fixed-dim": "#edddca",
+              "on-tertiary-fixed-variant": "#6c6152",
+              "secondary-fixed": "#cbe6ff",
+              "secondary-dim": "#3f5b73",
+              "surface": "#fffcf7",
+              "primary-container": "#d2eac5",
+              "on-secondary-fixed-variant": "#425e76",
+              "inverse-surface": "#0e0e0c",
+              "inverse-on-surface": "#9e9d98",
+              "on-primary-fixed-variant": "#4d6144",
+              "surface-tint": "#566a4d",
+              "on-error": "#ffffff",
+              "error": "#ae4025"
+            },
+            fontFamily: {
+              "headline": ["Newsreader"],
+              "body": ["Plus Jakarta Sans"],
+              "label": ["Plus Jakarta Sans"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      .asymmetric-card-1 { border-radius: 3rem 1rem 3rem 1rem; }
+      .asymmetric-card-2 { border-radius: 1rem 3rem 1rem 3rem; }
+      .glass-nav { background: rgba(255, 252, 247, 0.7); backdrop-filter: blur(12px); }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body selection:bg-primary-container selection:text-on-primary-container">
+<!-- Top Navigation Bar -->
+<nav class="fixed top-4 left-1/2 -translate-x-1/2 w-[95%] max-w-7xl rounded-full glass-nav z-50 flex justify-between items-center px-8 py-3 shadow-[0_12px_40px_rgba(56,56,51,0.06)]">
+<div class="text-2xl font-headline italic text-emerald-900 dark:text-emerald-100">The Digital Hearth</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-stone-600 dark:text-stone-400 font-medium hover:scale-105 hover:text-emerald-700 transition-all" href="#">Dashboard</a>
+<a class="text-emerald-900 dark:text-emerald-200 font-bold border-b-2 border-emerald-700/30 hover:scale-105 transition-all" href="#">Gallery</a>
+<a class="text-stone-600 dark:text-stone-400 font-medium hover:scale-105 hover:text-emerald-700 transition-all" href="#">News</a>
+<a class="text-stone-600 dark:text-stone-400 font-medium hover:scale-105 hover:text-emerald-700 transition-all" href="#">Calendar</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 text-stone-600 hover:text-emerald-700 transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="p-2 text-stone-600 hover:text-emerald-700 transition-colors">
+<span class="material-symbols-outlined">account_circle</span>
+</button>
+</div>
+</nav>
+<main class="pt-32 px-6 max-w-7xl mx-auto min-h-screen">
+<!-- Header Section -->
+<header class="mb-20 text-center">
+<h1 class="font-headline text-5xl md:text-7xl text-on-surface mb-6 leading-tight">Achievements Gallery</h1>
+<p class="text-on-surface-variant text-lg md:text-xl max-w-2xl mx-auto">
+                Celebrating the milestones, big and small, that weave the fabric of our family story.
+            </p>
+</header>
+<!-- Filters & Search -->
+<section class="mb-16 flex flex-col md:flex-row gap-6 items-center justify-between">
+<div class="relative w-full md:w-96">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline">search</span>
+<input class="w-full pl-12 pr-6 py-4 bg-surface-container-highest border-none rounded-md focus:ring-2 focus:ring-secondary-fixed-dim/40 transition-shadow placeholder:text-outline" placeholder="Search by name or milestone..." type="text"/>
+</div>
+<div class="flex flex-wrap gap-3 justify-center">
+<button class="px-6 py-2 rounded-full bg-primary text-on-primary font-medium hover:scale-105 transition-transform">All Family</button>
+<button class="px-6 py-2 rounded-full bg-surface-container-high text-on-surface-variant font-medium hover:scale-105 transition-transform">Mom</button>
+<button class="px-6 py-2 rounded-full bg-surface-container-high text-on-surface-variant font-medium hover:scale-105 transition-transform">Dad</button>
+<button class="px-6 py-2 rounded-full bg-surface-container-high text-on-surface-variant font-medium hover:scale-105 transition-transform">Julian</button>
+<button class="px-6 py-2 rounded-full bg-surface-container-high text-on-surface-variant font-medium hover:scale-105 transition-transform">Sophie</button>
+</div>
+</section>
+<!-- Achievements Bento Grid -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
+<!-- Featured Card (Large) -->
+<div class="md:col-span-8 group relative overflow-hidden asymmetric-card-1 bg-surface-container-low shadow-[0_12px_40px_rgba(56,56,51,0.06)]">
+<div class="aspect-[16/9] overflow-hidden">
+<img alt="family celebration" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="joyful young girl holding a gold trophy with her parents cheering in a sun-drenched school auditorium with warm cinematic lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB2xujg3IWBc3p6Gp0L-jUJ790DsJRyJqZq1zZWGx8pm3ONSVOPND2gF9ZFAsz9Fo8TcUBaSw47h3kF9Mjm7j-LRP-zBq4X_8WbOzDkIgXwnwbdAgNRvjWcMEcawOi6R1HGlP14x4cn2dLQ0OoD4PDqeU5Yh1njRBfTOIn3bPaeFmNgOlYIRLx1zar-vik0JIqLkvFqYjd0T-GdkKNfYdXfbw7kkK49Jm0tJDLqX1cyCFwQC3ihlGodrYKxbq_tThUfrYxrjB4dOFA"/>
+</div>
+<div class="p-8 md:p-12">
+<div class="flex items-center gap-3 mb-4">
+<span class="px-3 py-1 bg-primary-container text-on-primary-container text-xs font-bold rounded-full tracking-wider uppercase">New Record</span>
+<span class="text-outline text-sm">October 24, 2024</span>
+</div>
+<h2 class="font-headline text-4xl md:text-5xl text-on-surface mb-4">Sophie Won the Regional Spelling Bee!</h2>
+<p class="text-on-surface-variant text-lg mb-6 leading-relaxed">After weeks of practicing every night at the dinner table, Sophie took home the first-place trophy today. We couldn't be prouder of her dedication!</p>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-secondary-container flex items-center justify-center font-bold text-on-secondary-container">S</div>
+<span class="font-medium text-on-surface">Sophie Miller</span>
+</div>
+</div>
+</div>
+<!-- Side Card (Tall) -->
+<div class="md:col-span-4 group h-full flex flex-col asymmetric-card-2 bg-surface-container-high overflow-hidden shadow-[0_12px_40px_rgba(56,56,51,0.06)]">
+<div class="flex-grow aspect-[3/4] overflow-hidden">
+<img alt="office desk" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="modern bright corner office with a view of city skyline during sunset, warm atmosphere with a laptop and a celebration bouquet" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBiZKTayfqKJu8MTXTMHmVtABQw7F36epQyxtxNXc1ovmoQXyiopO4Vgn2GjMv85HA-MtSqHzV_QBG5cpr1IFlCpNUohE7eBpurZjfbp0oNcy2RwSC5vEkEsXKxcMEIc2Su8UcxfKtN382O06rVab-VP1u3Ovc6OjB4EwtDEyTRCX3ucA-4teT_mrGI5Mf5SvSaatZIbn1zCTSRS_y98snbeI8wpbDYiJpG_xvdamajIYo00GQgmxMJ2G1C_APOdeyQDRBzDiHpuYc"/>
+</div>
+<div class="p-8">
+<span class="text-outline text-sm block mb-2">October 15, 2024</span>
+<h3 class="font-headline text-3xl text-on-surface mb-3">Dad's New Promotion!</h3>
+<p class="text-on-surface-variant text-sm mb-6">Senior Project Lead at the firm. Hard work truly pays off.</p>
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center font-bold text-on-primary-container">D</div>
+<span class="font-medium text-on-surface">David Miller</span>
+</div>
+</div>
+</div>
+<!-- Standard Card 1 -->
+<div class="md:col-span-4 group asymmetric-card-2 bg-surface-container-low overflow-hidden shadow-[0_12px_40px_rgba(56,56,51,0.06)]">
+<div class="aspect-square overflow-hidden">
+<img alt="marathon runner" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="close-up of a marathon finisher medal hanging around a woman's neck with soft morning park lighting in background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDmAaY8GGEg_9oJneXwbvBLG81sMP8WXKnA6FBjZVVpG9zaxRB2nbjnfBlIQmKHS4RH0kHudI8fzm2dNKDZvTKMQCqqpyJvSv7VqhZYWpae6B51mZmeSHrqt4BqZmZ0_P-o3YDUZaTt3_py1tVGsniyPBKfNmzxdvXS53dy1IRrtilaPhdjynW6p5cE40RJPpmoQcUyJmwYm0QOV0UeO01MHDFsboBtdUSr57AnQv5jAy2-pjjtYShvo_lwp59CXu_4Hbbw-f7qAi0"/>
+</div>
+<div class="p-6">
+<span class="text-outline text-sm block mb-2">Sept 12, 2024</span>
+<h3 class="font-headline text-2xl text-on-surface mb-2">Mom Finished her First Half-Marathon</h3>
+<div class="flex items-center gap-3 mt-4">
+<div class="w-8 h-8 rounded-full bg-tertiary-container flex items-center justify-center font-bold text-on-tertiary-container">E</div>
+<span class="text-sm font-medium">Elena Miller</span>
+</div>
+</div>
+</div>
+<!-- Standard Card 2 -->
+<div class="md:col-span-4 group asymmetric-card-1 bg-surface-container-highest overflow-hidden shadow-[0_12px_40px_rgba(56,56,51,0.06)]">
+<div class="aspect-square overflow-hidden">
+<img alt="musical stage" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="shadowy silhouette of a teenager playing acoustic guitar on a softly lit stage with warm glowing background lights" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDHoQ0ygqgO0H98G2K9upw6OdP2dWGvSBV-LNYWIpScKz3wBgGHcrfKQ0oEQI3RHJxBc_J7MIjwbaEAT2NOkjvDePMbAw_TaP56p9-FXBKUrXpDfiVP_OHJViWPS_9kC_vA_zXaVqRGfmZ1L-JGHV22dwFRbN0ANfYxVlQRDTkOvExcni2DBofDJNOZI_Zt6dT1ANdfC7YFjBUpe7aWAP_11HO5bxKPPv1sTpMpRGLOy2ILJyIg71yA6iKcYgNv9lCYEZXVEsVRA40"/>
+</div>
+<div class="p-6">
+<span class="text-outline text-sm block mb-2">August 30, 2024</span>
+<h3 class="font-headline text-2xl text-on-surface mb-2">Julian's First Public Solo Performance</h3>
+<div class="flex items-center gap-3 mt-4">
+<div class="w-8 h-8 rounded-full bg-secondary-container flex items-center justify-center font-bold text-on-secondary-container">J</div>
+<span class="text-sm font-medium">Julian Miller</span>
+</div>
+</div>
+</div>
+<!-- Standard Card 3 (Text Only Aesthetic) -->
+<div class="md:col-span-4 p-8 flex flex-col justify-center asymmetric-card-2 bg-primary/5 border border-primary/10 min-h-[400px]">
+<span class="material-symbols-outlined text-primary text-5xl mb-6" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="text-outline text-sm block mb-2">August 05, 2024</span>
+<h3 class="font-headline text-3xl text-on-surface mb-4">Sophie's "Kindness Award"</h3>
+<p class="text-on-surface-variant leading-relaxed">Recognized by her teachers for always helping new students feel welcome. A different kind of win, but our favorite one yet.</p>
+<div class="flex items-center gap-3 mt-8">
+<div class="w-8 h-8 rounded-full bg-secondary-container flex items-center justify-center font-bold text-on-secondary-container">S</div>
+<span class="text-sm font-medium">Sophie Miller</span>
+</div>
+</div>
+</div>
+<!-- Pagination or Load More -->
+<div class="mt-24 flex justify-center">
+<button class="px-10 py-4 rounded-full bg-surface-container-highest text-on-surface font-semibold hover:scale-105 transition-all shadow-sm">
+                Discover More Memories
+            </button>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full mt-20 bg-stone-200 dark:bg-stone-950">
+<div class="flex flex-col md:flex-row justify-between items-center px-12 py-10 w-full">
+<div class="mb-6 md:mb-0">
+<span class="font-headline text-lg text-stone-800 dark:text-stone-200">The Living Scrapbook</span>
+</div>
+<div class="flex gap-8 text-sm font-body tracking-wide">
+<a class="text-stone-500 hover:text-stone-800 transition-colors" href="#">Privacy</a>
+<a class="text-stone-500 hover:text-stone-800 transition-colors" href="#">Family Rules</a>
+<a class="text-stone-500 hover:text-stone-800 transition-colors" href="#">Support</a>
+</div>
+<div class="mt-6 md:mt-0 text-stone-500 text-xs uppercase tracking-widest">
+                © 2024 The Living Scrapbook. Built with heart.
+            </div>
+</div>
+</footer>
+<!-- Mobile Bottom Navigation Shell -->
+<div class="md:hidden fixed bottom-0 left-0 right-0 glass-nav px-6 py-4 flex justify-around items-center z-50 rounded-t-3xl shadow-[0_-8px_30px_rgba(0,0,0,0.04)]">
+<a class="flex flex-col items-center gap-1 text-stone-500" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="text-[10px] font-bold">Dash</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-emerald-800" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">gallery_thumbnail</span>
+<span class="text-[10px] font-bold">Gallery</span>
+</a>
+<div class="relative -top-8">
+<button class="w-14 h-14 rounded-full bg-primary text-on-primary shadow-xl flex items-center justify-center transform active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-3xl">add</span>
+</button>
+</div>
+<a class="flex flex-col items-center gap-1 text-stone-500" href="#">
+<span class="material-symbols-outlined">newspaper</span>
+<span class="text-[10px] font-bold">News</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-stone-500" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="text-[10px] font-bold">Profile</span>
+</a>
+</div>
+</body></html>

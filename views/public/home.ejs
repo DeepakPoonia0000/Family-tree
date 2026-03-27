@@ -1,0 +1,150 @@
+<%- include('../partials/tailwind-head') %>
+<%- include('../partials/tailwind-nav') %>
+
+<main class="pt-28 pb-20 px-6 md:px-12 max-w-7xl mx-auto space-y-16">
+  <style>
+    .tree-card.tree-line::before {
+      content: '';
+      position: absolute;
+      top: -1.5rem;
+      left: 50%;
+      width: 2px;
+      height: 1.5rem;
+      background-color: rgba(130,130,124,0.35);
+    }
+  </style>
+
+  <section class="relative overflow-hidden rounded-3xl bg-gradient-to-br from-primary-container to-surface p-10 md:p-16 text-on-primary shadow-soft">
+    <div class="relative z-10 max-w-3xl">
+      <p class="text-xs font-bold uppercase tracking-[0.3em] text-primary/80">Family Tree</p>
+      <h1 class="mt-4 text-5xl md:text-6xl font-headline leading-tight">The Root &amp; the Reach</h1>
+      <p class="mt-5 max-w-2xl text-lg md:text-xl text-primary/90">Explore the generations that built your family tree. Search names, relationships, and branches in one evolving family archive.</p>
+      <div class="mt-10 max-w-xl">
+        <div class="relative">
+          <span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant">search</span>
+          <input id="memberSearch" type="text" placeholder="Search family members..." class="w-full rounded-full border border-outline/20 bg-surface p-4 pl-14 text-base text-on-surface shadow-sm focus:border-primary focus:outline-none" />
+        </div>
+        <p id="searchSummary" class="mt-3 text-sm text-on-surface-variant"></p>
+      </div>
+    </div>
+    <div class="pointer-events-none absolute -right-20 -top-20 h-72 w-72 rounded-full bg-secondary/20 blur-3xl"></div>
+    <div class="pointer-events-none absolute right-10 bottom-6 h-44 w-44 rounded-full bg-on-surface/5 blur-3xl"></div>
+  </section>
+
+  <section class="space-y-12">
+    <div class="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
+      <div>
+        <p class="text-xs font-bold uppercase tracking-[0.3em] text-on-surface-variant">Family tree</p>
+        <h2 class="mt-2 text-4xl font-headline">Generations &amp; branches</h2>
+      </div>
+      <div class="inline-flex flex-wrap items-center gap-4 rounded-full bg-surface p-3 text-sm font-semibold text-on-surface-variant">
+        <span class="text-primary"><%= members.length %></span> members
+        <span class="text-primary"><%= generations.length %></span> generations
+      </div>
+    </div>
+
+    <% if (!members.length) { %>
+      <section class="rounded-3xl border border-outline/40 bg-surface p-10 text-center shadow-soft">
+        <h2 class="font-headline text-4xl">No family members yet</h2>
+        <p class="mt-4 text-on-surface-variant">Use the admin panel to add members and begin building your family tree.</p>
+        <a href="/admin/login" class="mt-8 inline-flex rounded-full bg-primary px-8 py-3 text-sm font-semibold text-white hover:bg-primary-dim transition">Admin Login</a>
+      </section>
+    <% } else { %>
+      <section id="treeArea" class="space-y-16">
+        <% generations.forEach(function(generation, genIndex) { %>
+          <section class="space-y-6" data-generation-section>
+            <div class="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+              <div>
+                <p class="text-xs uppercase tracking-[0.3em] text-on-surface-variant">Generation <%= generation %></p>
+                <h3 class="mt-2 text-3xl font-headline"><%= generationMap[generation].length %> members</h3>
+              </div>
+              <span class="rounded-full bg-surface-soft px-4 py-2 text-sm font-semibold text-on-surface-variant">Gen <%= generation %></span>
+            </div>
+
+            <div class="flex flex-wrap justify-center gap-8">
+              <% generationMap[generation].forEach(function(member) { %>
+                <article class="tree-card <%= genIndex > 0 ? 'tree-line' : '' %> relative max-w-[18rem] rounded-[2rem] border border-outline/20 bg-surface p-6 text-center shadow-soft transition-transform hover:-translate-y-1" data-search="<%= (member.fullName + ' ' + (member.relationship || '') + ' ' + (member.birthPlace || '')).toLowerCase() %>">
+                  <% if (genIndex === 0) { %>
+                    <span class="absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary px-3 py-1 text-[10px] font-bold uppercase tracking-[0.35em] text-on-primary">Root</span>
+                  <% } %>
+                  <div class="mx-auto mb-6 h-40 w-40 overflow-hidden rounded-[2rem] border border-outline/20 bg-surface-soft">
+                    <img src="<%= member.photoUrl || '/img/default-avatar.svg' %>" alt="Portrait of <%= member.fullName %>" class="h-full w-full object-cover" />
+                  </div>
+                  <h4 class="font-headline text-2xl"><%= member.fullName %></h4>
+                  <p class="mt-2 text-sm text-on-surface-variant"><%= member.relationship || 'Family member' %></p>
+                  <p class="mt-3 text-xs uppercase tracking-[0.3em] text-on-surface-variant"><%= member.birthDate ? new Date(member.birthDate).toLocaleDateString(undefined, { year: 'numeric', month: 'short', day: 'numeric' }) : 'Birth date unknown' %></p>
+                  <a href="/members/<%= member.slug %>" class="mt-5 inline-flex items-center justify-center gap-2 rounded-full border border-outline/30 bg-surface-container px-4 py-2 text-sm font-semibold text-primary hover:bg-surface-container-high transition">View profile <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+                </article>
+              <% }) %>
+            </div>
+          </section>
+        <% }) %>
+      </section>
+    <% } %>
+  </section>
+
+  <section class="grid gap-8 lg:grid-cols-[1.6fr_0.9fr]">
+    <div class="rounded-3xl bg-surface-container-low p-10 shadow-soft border border-outline/30">
+      <span class="inline-flex rounded-full bg-primary/10 px-3 py-1 text-xs font-bold uppercase tracking-widest text-primary">Story Highlight</span>
+      <h2 class="mt-6 text-4xl font-headline">Preserve the family story</h2>
+      <p class="mt-6 text-on-surface-variant leading-relaxed">Every member here is part of a growing family archive. Add memories, photos, and relationships in admin so the tree can show each branch with more depth.</p>
+      <div class="mt-10 grid gap-4 sm:grid-cols-2">
+        <div class="rounded-3xl bg-surface p-6 shadow-sm">
+          <p class="text-xs uppercase tracking-[0.3em] text-on-surface-variant">How it works</p>
+          <p class="mt-3 text-sm text-on-surface-variant">Members are grouped by generation and linked by parent and spouse relationships for a clearer family narrative.</p>
+        </div>
+        <div class="rounded-3xl bg-surface p-6 shadow-sm">
+          <p class="text-xs uppercase tracking-[0.3em] text-on-surface-variant">Keep it updated</p>
+          <p class="mt-3 text-sm text-on-surface-variant">Use admin to edit birthdays, bios, and photos so every profile in the tree stays fresh and searchable.</p>
+        </div>
+      </div>
+    </div>
+    <div class="rounded-3xl bg-secondary-container/30 p-10 shadow-soft border border-outline/30 flex flex-col justify-between">
+      <div>
+        <span class="material-symbols-outlined text-4xl text-secondary">volunteer_activism</span>
+        <h3 class="mt-6 text-3xl font-headline">Preserve the Legacy</h3>
+        <p class="mt-4 text-on-surface-variant">Search the tree, open profiles, and keep every generation connected through stories and memories.</p>
+      </div>
+      <a href="/members" class="mt-10 inline-flex items-center justify-center rounded-full border border-secondary bg-white px-6 py-3 text-sm font-bold text-secondary shadow-sm hover:bg-secondary hover:text-white transition">Browse all members</a>
+    </div>
+  </section>
+</main>
+
+<script>
+  (function() {
+    const searchInput = document.getElementById('memberSearch');
+    const cards = Array.from(document.querySelectorAll('.tree-card'));
+    const summary = document.getElementById('searchSummary');
+    const sections = Array.from(document.querySelectorAll('[data-generation-section]'));
+
+    if (!searchInput || !cards.length) return;
+
+    function updateSearch() {
+      const query = searchInput.value.toLowerCase().trim();
+      let visibleCount = 0;
+
+      cards.forEach(card => {
+        const match = !query || card.dataset.search.includes(query);
+        card.style.display = match ? '' : 'none';
+        if (match) visibleCount += 1;
+      });
+
+      sections.forEach(section => {
+        const sectionVisible = section.querySelector('.tree-card:not([style*="display: none"])');
+        section.style.display = sectionVisible ? '' : 'none';
+      });
+
+      if (!query) {
+        summary.textContent = '';
+      } else if (visibleCount) {
+        summary.textContent = `${visibleCount} result${visibleCount === 1 ? '' : 's'} for "${searchInput.value}"`;
+      } else {
+        summary.textContent = 'No family members match your search.';
+      }
+    }
+
+    searchInput.addEventListener('input', updateSearch);
+  })();
+</script>
+
+<%- include('../partials/tailwind-footer') %>

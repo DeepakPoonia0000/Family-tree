@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Events Calendar - The Digital Hearth</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&amp;family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-container": "#f6f3ed",
+              "on-background": "#383833",
+              "surface-bright": "#fffcf7",
+              "surface-container-high": "#f0eee6",
+              "on-tertiary": "#ffffff",
+              "outline-variant": "#bbb9b2",
+              "on-secondary-fixed": "#254258",
+              "on-secondary-container": "#38556c",
+              "on-error-container": "#6e1400",
+              "tertiary-container": "#fbecd8",
+              "surface-container-low": "#fcf9f3",
+              "tertiary-dim": "#615748",
+              "surface-dim": "#e4e3da",
+              "on-primary-container": "#43573b",
+              "on-secondary": "#ffffff",
+              "secondary-fixed-dim": "#bad8f4",
+              "secondary": "#4b677f",
+              "on-primary-fixed": "#31442a",
+              "surface-container-lowest": "#ffffff",
+              "primary-fixed-dim": "#c4dbb7",
+              "on-surface": "#383833",
+              "on-tertiary-fixed": "#4e4537",
+              "secondary-container": "#cbe6ff",
+              "tertiary": "#6e6354",
+              "primary": "#566a4d",
+              "background": "#fffcf7",
+              "on-tertiary-container": "#615748",
+              "on-primary": "#ffffff",
+              "on-surface-variant": "#65655e",
+              "primary-dim": "#4a5e41",
+              "surface-variant": "#eae8e0",
+              "inverse-primary": "#e6fed8",
+              "error-container": "#fd795a",
+              "outline": "#81817a",
+              "primary-fixed": "#d2eac5",
+              "tertiary-fixed": "#fbecd8",
+              "error-dim": "#791903",
+              "surface-container-highest": "#eae8e0",
+              "tertiary-fixed-dim": "#edddca",
+              "on-tertiary-fixed-variant": "#6c6152",
+              "secondary-fixed": "#cbe6ff",
+              "secondary-dim": "#3f5b73",
+              "surface": "#fffcf7",
+              "primary-container": "#d2eac5",
+              "on-secondary-fixed-variant": "#425e76",
+              "inverse-surface": "#0e0e0c",
+              "inverse-on-surface": "#9e9d98",
+              "on-primary-fixed-variant": "#4d6144",
+              "surface-tint": "#566a4d",
+              "on-error": "#ffffff",
+              "error": "#ae4025"
+            },
+            fontFamily: {
+              "headline": ["Newsreader"],
+              "body": ["Plus Jakarta Sans"],
+              "label": ["Plus Jakarta Sans"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #fffcf7; color: #383833; }
+        .font-serif { font-family: 'Newsreader', serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+    </style>
+</head>
+<body class="bg-background text-on-surface selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopNavBar -->
+<nav class="fixed top-4 left-1/2 -translate-x-1/2 w-[95%] max-w-7xl rounded-full bg-[#fffcf7]/70 dark:bg-stone-900/70 backdrop-blur-xl shadow-[0_12px_40px_rgba(56,56,51,0.06)] flex justify-between items-center px-8 py-3 z-50">
+<div class="flex items-center gap-2">
+<span class="text-2xl font-serif italic text-emerald-900 dark:text-emerald-100">The Digital Hearth</span>
+</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-stone-600 dark:text-stone-400 font-medium hover:scale-105 hover:text-emerald-700 dark:hover:text-emerald-300 transition-all" href="#">Dashboard</a>
+<a class="text-stone-600 dark:text-stone-400 font-medium hover:scale-105 hover:text-emerald-700 dark:hover:text-emerald-300 transition-all" href="#">Gallery</a>
+<a class="text-stone-600 dark:text-stone-400 font-medium hover:scale-105 hover:text-emerald-700 dark:hover:text-emerald-300 transition-all" href="#">News</a>
+<a class="text-emerald-900 dark:text-emerald-200 font-bold border-b-2 border-emerald-700/30 hover:scale-105 transition-all" href="#">Calendar</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="material-symbols-outlined text-stone-600 hover:text-emerald-700 transition-colors" data-icon="notifications">notifications</button>
+<button class="material-symbols-outlined text-stone-600 hover:text-emerald-700 transition-colors" data-icon="account_circle">account_circle</button>
+</div>
+</nav>
+<main class="pt-32 pb-20 px-6 max-w-7xl mx-auto">
+<!-- Header Section -->
+<header class="mb-12">
+<h1 class="font-serif text-5xl md:text-6xl text-on-surface mb-4 tracking-tight">Family Gatherings</h1>
+<p class="text-on-surface-variant text-lg max-w-2xl leading-relaxed">Keeping track of the moments that matter. From birthdays to school recitals, the hearth stays warm with every shared date.</p>
+</header>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+<!-- Calendar Section -->
+<div class="lg:col-span-8">
+<div class="bg-surface-container-low rounded-xl p-8 shadow-[0_12px_40px_rgba(56,56,51,0.04)]">
+<div class="flex items-center justify-between mb-10">
+<div class="flex items-center gap-4">
+<h2 class="font-serif text-3xl text-primary-dim">October 2024</h2>
+<div class="flex gap-1">
+<button class="p-2 rounded-full hover:bg-surface-container-high transition-colors"><span class="material-symbols-outlined" data-icon="chevron_left">chevron_left</span></button>
+<button class="p-2 rounded-full hover:bg-surface-container-high transition-colors"><span class="material-symbols-outlined" data-icon="chevron_right">chevron_right</span></button>
+</div>
+</div>
+<button class="flex items-center gap-2 bg-primary text-on-primary px-6 py-2.5 rounded-full font-medium hover:scale-[1.02] active:scale-95 transition-all">
+<span class="material-symbols-outlined text-sm" data-icon="add">add</span>
+                            Add Event
+                        </button>
+</div>
+<!-- Calendar Grid -->
+<div class="grid grid-cols-7 gap-px bg-outline-variant/10 rounded-lg overflow-hidden border border-outline-variant/10">
+<!-- Days of week -->
+<div class="bg-surface-container text-center py-3 text-xs font-bold uppercase tracking-widest text-on-surface-variant">Sun</div>
+<div class="bg-surface-container text-center py-3 text-xs font-bold uppercase tracking-widest text-on-surface-variant">Mon</div>
+<div class="bg-surface-container text-center py-3 text-xs font-bold uppercase tracking-widest text-on-surface-variant">Tue</div>
+<div class="bg-surface-container text-center py-3 text-xs font-bold uppercase tracking-widest text-on-surface-variant">Wed</div>
+<div class="bg-surface-container text-center py-3 text-xs font-bold uppercase tracking-widest text-on-surface-variant">Thu</div>
+<div class="bg-surface-container text-center py-3 text-xs font-bold uppercase tracking-widest text-on-surface-variant">Fri</div>
+<div class="bg-surface-container text-center py-3 text-xs font-bold uppercase tracking-widest text-on-surface-variant">Sat</div>
+<!-- Calendar Cells (Simplified for October 2024) -->
+<!-- Empty slots -->
+<div class="bg-surface-container-lowest h-32 p-2 opacity-30"></div>
+<div class="bg-surface-container-lowest h-32 p-2 opacity-30"></div>
+<!-- Oct 1 -->
+<div class="bg-surface-container-lowest h-32 p-3 group hover:bg-surface-container-high transition-colors cursor-pointer">
+<span class="text-sm font-medium">1</span>
+</div>
+<div class="bg-surface-container-lowest h-32 p-3 group hover:bg-surface-container-high transition-colors cursor-pointer">
+<span class="text-sm font-medium">2</span>
+</div>
+<div class="bg-surface-container-lowest h-32 p-3 group hover:bg-surface-container-high transition-colors cursor-pointer">
+<span class="text-sm font-medium">3</span>
+<div class="mt-2 p-1.5 rounded-md bg-secondary-container text-on-secondary-container text-[10px] font-bold truncate">School Play Rehearsal</div>
+</div>
+<div class="bg-surface-container-lowest h-32 p-3 group hover:bg-surface-container-high transition-colors cursor-pointer">
+<span class="text-sm font-medium">4</span>
+</div>
+<div class="bg-surface-container-lowest h-32 p-3 group hover:bg-surface-container-high transition-colors cursor-pointer">
+<span class="text-sm font-medium">5</span>
+<div class="mt-2 p-1.5 rounded-md bg-primary-container text-on-primary-container text-[10px] font-bold truncate">Granny's 80th Bash</div>
+</div>
+<div class="bg-surface-container-lowest h-32 p-3 group hover:bg-surface-container-high transition-colors cursor-pointer">
+<span class="text-sm font-medium">6</span>
+</div>
+<div class="bg-surface-container-lowest h-32 p-3 group hover:bg-surface-container-high transition-colors cursor-pointer">
+<span class="text-sm font-medium">7</span>
+</div>
+<div class="bg-surface-container-lowest h-32 p-3 group hover:bg-surface-container-high transition-colors cursor-pointer ring-2 ring-primary ring-inset">
+<span class="text-sm font-bold text-primary">8</span>
+<div class="mt-2 p-1.5 rounded-md bg-tertiary-container text-on-tertiary-container text-[10px] font-bold truncate">Family Dinner</div>
+</div>
+<div class="bg-surface-container-lowest h-32 p-3 group hover:bg-surface-container-high transition-colors cursor-pointer">
+<span class="text-sm font-medium">9</span>
+</div>
+<div class="bg-surface-container-lowest h-32 p-3 group hover:bg-surface-container-high transition-colors cursor-pointer">
+<span class="text-sm font-medium">10</span>
+</div>
+<div class="bg-surface-container-lowest h-32 p-3 group hover:bg-surface-container-high transition-colors cursor-pointer">
+<span class="text-sm font-medium">11</span>
+</div>
+<div class="bg-surface-container-lowest h-32 p-3 group hover:bg-surface-container-high transition-colors cursor-pointer">
+<span class="text-sm font-medium">12</span>
+<div class="mt-2 p-1.5 rounded-md bg-secondary-container text-on-secondary-container text-[10px] font-bold truncate">Hiking Trip</div>
+</div>
+<div class="bg-surface-container-lowest h-32 p-3 group hover:bg-surface-container-high transition-colors cursor-pointer">
+<span class="text-sm font-medium">13</span>
+</div>
+<div class="bg-surface-container-lowest h-32 p-3 group hover:bg-surface-container-high transition-colors cursor-pointer">
+<span class="text-sm font-medium">14</span>
+</div>
+<div class="bg-surface-container-lowest h-32 p-3 group hover:bg-surface-container-high transition-colors cursor-pointer">
+<span class="text-sm font-medium">15</span>
+</div>
+<div class="bg-surface-container-lowest h-32 p-3 group hover:bg-surface-container-high transition-colors cursor-pointer">
+<span class="text-sm font-medium">16</span>
+</div>
+<div class="bg-surface-container-lowest h-32 p-3 group hover:bg-surface-container-high transition-colors cursor-pointer">
+<span class="text-sm font-medium">17</span>
+</div>
+<div class="bg-surface-container-lowest h-32 p-3 group hover:bg-surface-container-high transition-colors cursor-pointer">
+<span class="text-sm font-medium">18</span>
+</div>
+<div class="bg-surface-container-lowest h-32 p-3 group hover:bg-surface-container-high transition-colors cursor-pointer">
+<span class="text-sm font-medium">19</span>
+</div>
+<!-- 20-31 truncated for visual brevity -->
+<div class="bg-surface-container-lowest h-32 p-3 group hover:bg-surface-container-high transition-colors cursor-pointer">
+<span class="text-sm font-medium">20</span>
+</div>
+<div class="bg-surface-container-lowest h-32 p-3 group hover:bg-surface-container-high transition-colors cursor-pointer">
+<span class="text-sm font-medium">21</span>
+</div>
+<div class="bg-surface-container-lowest h-32 p-3 group hover:bg-surface-container-high transition-colors cursor-pointer">
+<span class="text-sm font-medium">22</span>
+</div>
+<div class="bg-surface-container-lowest h-32 p-3 group hover:bg-surface-container-high transition-colors cursor-pointer">
+<span class="text-sm font-medium">23</span>
+</div>
+<div class="bg-surface-container-lowest h-32 p-3 group hover:bg-surface-container-high transition-colors cursor-pointer">
+<span class="text-sm font-medium">24</span>
+<div class="mt-2 p-1.5 rounded-md bg-error-container text-on-error-container text-[10px] font-bold truncate">Dentist - Kids</div>
+</div>
+<div class="bg-surface-container-lowest h-32 p-3 group hover:bg-surface-container-high transition-colors cursor-pointer">
+<span class="text-sm font-medium">25</span>
+</div>
+<div class="bg-surface-container-lowest h-32 p-3 group hover:bg-surface-container-high transition-colors cursor-pointer">
+<span class="text-sm font-medium">26</span>
+</div>
+<div class="bg-surface-container-lowest h-32 p-3 group hover:bg-surface-container-high transition-colors cursor-pointer">
+<span class="text-sm font-medium">27</span>
+</div>
+<div class="bg-surface-container-lowest h-32 p-3 group hover:bg-surface-container-high transition-colors cursor-pointer">
+<span class="text-sm font-medium">28</span>
+</div>
+<div class="bg-surface-container-lowest h-32 p-3 group hover:bg-surface-container-high transition-colors cursor-pointer">
+<span class="text-sm font-medium">29</span>
+</div>
+<div class="bg-surface-container-lowest h-32 p-3 group hover:bg-surface-container-high transition-colors cursor-pointer">
+<span class="text-sm font-medium">30</span>
+</div>
+<div class="bg-surface-container-lowest h-32 p-3 group hover:bg-surface-container-high transition-colors cursor-pointer">
+<span class="text-sm font-medium">31</span>
+<div class="mt-2 p-1.5 rounded-md bg-tertiary-dim text-on-tertiary text-[10px] font-bold truncate">Halloween Prep</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Sidebar Section -->
+<aside class="lg:col-span-4 space-y-8">
+<!-- Legend Card -->
+<div class="bg-surface-container-high rounded-xl p-6 shadow-sm">
+<h3 class="font-serif text-xl mb-6">Event Types</h3>
+<div class="space-y-4">
+<div class="flex items-center gap-3">
+<span class="w-3 h-3 rounded-full bg-primary"></span>
+<span class="text-sm font-medium text-on-surface-variant">Birthdays &amp; Celebrations</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="w-3 h-3 rounded-full bg-secondary"></span>
+<span class="text-sm font-medium text-on-surface-variant">School &amp; Activities</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="w-3 h-3 rounded-full bg-tertiary"></span>
+<span class="text-sm font-medium text-on-surface-variant">Family Gatherings</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="w-3 h-3 rounded-full bg-error"></span>
+<span class="text-sm font-medium text-on-surface-variant">Appointments</span>
+</div>
+</div>
+</div>
+<!-- Upcoming Highlights -->
+<div class="bg-surface-container-lowest rounded-xl p-8 shadow-[0_12px_40px_rgba(56,56,51,0.06)] border border-outline-variant/10">
+<h3 class="font-serif text-2xl mb-8">Upcoming this Month</h3>
+<div class="space-y-10">
+<div class="relative pl-6 border-l-2 border-primary-fixed">
+<span class="block text-xs font-bold text-primary mb-1 uppercase tracking-wider">Oct 5, Saturday</span>
+<h4 class="font-bold text-lg mb-1">Granny's 80th Bash</h4>
+<p class="text-sm text-on-surface-variant mb-3 leading-relaxed">Surprise party at the Willow Creek Restaurant. Don't forget the photo album!</p>
+<div class="flex -space-x-2">
+<div class="w-8 h-8 rounded-full border-2 border-white overflow-hidden bg-stone-200">
+<img alt="Family member" data-alt="close-up portrait of a smiling middle-aged woman with kind eyes in warm natural lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB1-EBwVJUl4niaxh6lTKydnGLydusGM8PkOss3uL3DSga1yBKm563tpwdB7CBGYtTNrAsnKFq3s-kb1fpAM3cBBLjuGu46sr86JPfxbO6DjKURhVvoO7ZurhulTGbFGZUNPHYhU7Mu1Lu71OeTDb52OW7sCDS6V3plUUOE0kXCpejKECrbobklN_xJ4lPGrAVC-A7XD8fOD9RWd6qTvXgq19H96Ux-kWDOegiEwauS-6tyKHbviRdomHFQe21-ehDj1lk6IbzKQJU"/>
+</div>
+<div class="w-8 h-8 rounded-full border-2 border-white overflow-hidden bg-stone-200">
+<img alt="Family member" data-alt="close-up portrait of a young man with glasses and a friendly expression in outdoor lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBEh0SeNZP11v9X03KZENTH0_YEkb82-gV5-iFUEpsUnOaQWObyih26ZnL2oTSn2NRcmzy0N4swbE5NdZ3O_TEZL9zZhPGg2g7R2oDaSB8DxnEw7jB1uNO4T11qgeqnLr-1NOd2Yrk5Eavex7euV2EyrqA-cbuZxvZLarFmaid9u3NfNjqE2j3JMD1kXQVD5J59ou8C5Ue-Q_xyO555ckaTo5VsVAS6k31WHmULcWEFsRf6HQ_PqlQmFp_wEYtnofezdq6zqQb5z3E"/>
+</div>
+<div class="w-8 h-8 rounded-full border-2 border-white flex items-center justify-center bg-surface-container text-[10px] font-bold">+4</div>
+</div>
+</div>
+<div class="relative pl-6 border-l-2 border-secondary-fixed">
+<span class="block text-xs font-bold text-secondary mb-1 uppercase tracking-wider">Oct 12, Saturday</span>
+<h4 class="font-bold text-lg mb-1">High Ridge Hiking Trip</h4>
+<p class="text-sm text-on-surface-variant leading-relaxed">Meeting at the trailhead at 8 AM. Bring lunch and plenty of water.</p>
+</div>
+<div class="relative pl-6 border-l-2 border-tertiary-fixed">
+<span class="block text-xs font-bold text-tertiary mb-1 uppercase tracking-wider">Oct 31, Thursday</span>
+<h4 class="font-bold text-lg mb-1">Halloween Prep Night</h4>
+<p class="text-sm text-on-surface-variant leading-relaxed">Costume final touches and pumpkin carving in the backyard.</p>
+</div>
+</div>
+<button class="w-full mt-10 py-3 rounded-full border border-outline-variant text-on-surface-variant font-medium hover:bg-surface-variant transition-colors">
+                        View Full List
+                    </button>
+</div>
+<!-- Memory Tile -->
+<div class="relative group overflow-hidden rounded-t-xl rounded-bl-[3rem] rounded-br-xl shadow-lg">
+<img class="w-full h-64 object-cover transition-transform duration-700 group-hover:scale-110" data-alt="a multi-generational family laughing together while having dinner in a garden at sunset with golden light flares" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAgangzJH2Mi0GduZuse0OBVVGyj0dPqixhTMdcBFyZAdXIgs9IVSGfe-NCGMZEfd4aN5h681R3CC2fXC04f-yhy9hKsY7bHmnwopmpbCkHePvdVqDwxoAQ4JPpLCNqKt7IHtGIWYmD08NWtYIuCAz9ekt1aiVkjCZHN1E_5_4XaJEaoIzjgQattpKOv_wr9Vkft6U6REaOPFWtszUNT0OJkBhR8FIbiq-Edzt3ehOWbawGrWfrIM-3xIoHPzKW0sxxz7MzP_ry8Ag"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex flex-col justify-end p-6">
+<span class="text-white/80 text-xs font-bold uppercase tracking-widest mb-1">Last Year's Memories</span>
+<h4 class="text-white font-serif text-xl italic">The Harvest Festival</h4>
+</div>
+</div>
+</aside>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full mt-20 bg-stone-200 dark:bg-stone-950 flex flex-col md:flex-row justify-between items-center px-12 py-10 w-full">
+<div class="mb-6 md:mb-0 text-center md:text-left">
+<span class="font-serif text-lg text-stone-800 dark:text-stone-200">The Living Scrapbook</span>
+<p class="text-sm font-sans tracking-wide text-stone-500 mt-2">© 2024 The Living Scrapbook. Built with heart.</p>
+</div>
+<div class="flex gap-8">
+<a class="text-sm font-sans tracking-wide text-stone-500 hover:text-stone-800 transition-colors" href="#">Privacy</a>
+<a class="text-sm font-sans tracking-wide text-stone-500 hover:text-stone-800 transition-colors" href="#">Family Rules</a>
+<a class="text-sm font-sans tracking-wide text-stone-500 hover:text-stone-800 transition-colors" href="#">Support</a>
+</div>
+</footer>
+<!-- FAB (Suppressed on Details/Calendar focused screens but shown here for accessibility to add) -->
+<button class="fixed bottom-8 right-8 w-14 h-14 bg-primary text-on-primary rounded-full shadow-[0_12px_40px_rgba(56,56,51,0.2)] flex items-center justify-center hover:scale-110 active:scale-95 transition-all md:hidden">
+<span class="material-symbols-outlined" data-icon="add">add</span>
+</button>
+</body></html>

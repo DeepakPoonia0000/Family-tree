@@ -1,0 +1,40 @@
+<%- include('../partials/tailwind-head') %>
+<%- include('../partials/tailwind-nav') %>
+
+<main class="pt-28 px-6 md:px-12 max-w-7xl mx-auto space-y-16 pb-20">
+  <section class="relative overflow-hidden rounded-3xl bg-gradient-to-br from-tertiary to-tertiary-fixed p-10 md:p-16 text-on-primary shadow-soft">
+    <div class="relative z-10 max-w-3xl">
+      <p class="text-xs font-bold uppercase tracking-[0.3em] text-primary/80">Kitchen Table</p>
+      <h1 class="mt-4 text-5xl md:text-6xl font-headline leading-tight">Discussion boards</h1>
+      <p class="mt-5 max-w-2xl text-lg md:text-xl text-on-primary/80">Family conversations, planning, and stories all managed from admin and surfaced here for everyone to read.</p>
+    </div>
+    <div class="pointer-events-none absolute -left-20 top-10 h-72 w-72 rounded-full bg-surface/40 blur-3xl"></div>
+    <div class="pointer-events-none absolute right-10 bottom-10 h-44 w-44 rounded-full bg-primary-container/40 blur-3xl"></div>
+  </section>
+
+  <% if (!items.length) { %>
+    <section class="rounded-3xl border border-outline/30 bg-surface p-10 text-center shadow-soft">
+      <h2 class="font-headline text-3xl">No discussion threads yet</h2>
+      <p class="mt-4 text-on-surface-variant">Create topics and conversation entries from the admin area, and they will appear here automatically.</p>
+    </section>
+  <% } else { %>
+    <section class="grid gap-6">
+      <% items.forEach(function(item) { %>
+        <article class="rounded-3xl border border-outline/30 bg-surface p-6 shadow-sm transition hover:-translate-y-1">
+          <div class="flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between">
+            <div>
+              <p class="text-xs uppercase tracking-[0.3em] text-on-surface-variant"><%= item.tag || 'Discussion' %></p>
+              <h2 class="mt-2 text-3xl font-headline"><%= item.title %></h2>
+              <p class="mt-3 text-sm text-on-surface-variant"><%= item.description || item.subtitle || 'A conversation started by the family admin.' %></p>
+            </div>
+            <div class="rounded-3xl bg-surface-soft px-4 py-3 text-sm font-semibold text-primary">
+              <span><%= item.metric || 'Open' %></span>
+            </div>
+          </div>
+        </article>
+      <% }) %>
+    </section>
+  <% } %>
+</main>
+
+<%- include('../partials/tailwind-footer') %>

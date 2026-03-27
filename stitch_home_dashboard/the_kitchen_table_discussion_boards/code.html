@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Kitchen Table | The Digital Hearth</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&amp;family=Plus+Jakarta+Sans:wght@200..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary-dim": "#4a5e41",
+              "surface-variant": "#eae8e0",
+              "inverse-surface": "#0e0e0c",
+              "surface-bright": "#fffcf7",
+              "on-secondary": "#ffffff",
+              "tertiary-container": "#fbecd8",
+              "surface": "#fffcf7",
+              "tertiary": "#6e6354",
+              "on-primary-fixed-variant": "#4d6144",
+              "outline": "#81817a",
+              "inverse-on-surface": "#9e9d98",
+              "background": "#fffcf7",
+              "on-secondary-fixed-variant": "#425e76",
+              "on-tertiary-fixed": "#4e4537",
+              "surface-tint": "#566a4d",
+              "on-surface": "#383833",
+              "on-primary-fixed": "#31442a",
+              "primary": "#566a4d",
+              "surface-container-high": "#f0eee6",
+              "error-dim": "#791903",
+              "secondary-dim": "#3f5b73",
+              "on-secondary-container": "#38556c",
+              "on-tertiary": "#ffffff",
+              "primary-fixed-dim": "#c4dbb7",
+              "surface-container-low": "#fcf9f3",
+              "tertiary-dim": "#615748",
+              "surface-dim": "#e4e3da",
+              "on-tertiary-fixed-variant": "#6c6152",
+              "tertiary-fixed-dim": "#edddca",
+              "primary-container": "#d2eac5",
+              "on-background": "#383833",
+              "secondary-fixed": "#cbe6ff",
+              "on-tertiary-container": "#615748",
+              "on-error": "#ffffff",
+              "surface-container": "#f6f3ed",
+              "surface-container-highest": "#eae8e0",
+              "secondary-container": "#cbe6ff",
+              "on-secondary-fixed": "#254258",
+              "primary-fixed": "#d2eac5",
+              "outline-variant": "#bbb9b2",
+              "on-surface-variant": "#65655e",
+              "error-container": "#fd795a",
+              "surface-container-lowest": "#ffffff",
+              "inverse-primary": "#e6fed8",
+              "error": "#ae4025",
+              "on-error-container": "#6e1400",
+              "secondary": "#4b677f",
+              "tertiary-fixed": "#fbecd8",
+              "on-primary-container": "#43573b",
+              "on-primary": "#ffffff",
+              "secondary-fixed-dim": "#bad8f4"
+            },
+            fontFamily: {
+              "headline": ["Newsreader", "serif"],
+              "body": ["Plus Jakarta Sans", "sans-serif"],
+              "label": ["Plus Jakarta Sans", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      .newsreader-italic { font-style: italic; }
+      body { scroll-behavior: smooth; }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body selection:bg-primary-container">
+<!-- TopNavBar -->
+<nav class="fixed top-4 inset-x-0 mx-auto w-[95%] rounded-full bg-stone-50/70 dark:bg-stone-900/70 backdrop-blur-xl flex justify-between items-center px-8 py-3 max-w-7xl z-50 shadow-[0_12px_40px_rgba(56,56,51,0.06)] no-border tonal-shift-bg">
+<div class="flex items-center gap-2">
+<span class="text-2xl font-bold italic text-emerald-900 dark:text-emerald-100 font-headline">The Digital Hearth</span>
+</div>
+<div class="hidden md:flex items-center space-x-8 font-label text-sm tracking-wide">
+<a class="text-stone-600 dark:text-stone-400 hover:text-emerald-800 dark:hover:text-emerald-200 hover:scale-105 transition-transform duration-300" href="#">Our Story</a>
+<a class="text-stone-600 dark:text-stone-400 hover:text-emerald-800 dark:hover:text-emerald-200 hover:scale-105 transition-transform duration-300" href="#">Archives</a>
+<a class="text-stone-600 dark:text-stone-400 hover:text-emerald-800 dark:hover:text-emerald-200 hover:scale-105 transition-transform duration-300" href="#">Recipes</a>
+<a class="text-stone-600 dark:text-stone-400 hover:text-emerald-800 dark:hover:text-emerald-200 hover:scale-105 transition-transform duration-300" href="#">Family Map</a>
+<a class="text-emerald-900 dark:text-emerald-50 font-bold border-b-2 border-emerald-800 dark:border-emerald-200 pb-1 hover:scale-105 transition-transform duration-300" href="#">The Kitchen Table</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="material-symbols-outlined text-stone-600 hover:scale-105 transition-all">notifications</button>
+<button class="material-symbols-outlined text-stone-600 hover:scale-105 transition-all">settings</button>
+<div class="w-10 h-10 rounded-full overflow-hidden border-2 border-primary-container ring-2 ring-white">
+<img alt="User's family portrait avatar" class="w-full h-full object-cover" data-alt="Warm portrait of a smiling family member in a rustic kitchen setting with soft sunlight" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAIInYYEM07E_uBpZDYZsAA73dLsHOl8AZsdV8vC08JFI9THanw8mil0mOKOhz17SE4wasfEWMadrWdCvnCgFY8U-Z4KtzFD2l88L01RtqucXDcOlWESR9we-vyAr-s9gpWcq7Uun5J6Y6xcK9iXROBLRK7pyuAdSx4AOgefpCTNEJw6Va_54GQN8M9CRWZM-9zEl4I1uhUrf9aVCNDzqXz4F8bHSaUfgLNCnxtmBTDY_4lH3k2eDCFzVabdTFTXnJqKtwVv2XbfmE"/>
+</div>
+</div>
+</nav>
+<main class="pt-32 px-6 max-w-7xl mx-auto min-h-screen">
+<!-- Hero Header -->
+<header class="mb-16 text-center md:text-left">
+<div class="inline-block px-4 py-1.5 rounded-full bg-tertiary-container text-on-tertiary-container font-label text-xs font-bold tracking-widest uppercase mb-4">Family Forum</div>
+<h1 class="text-5xl md:text-7xl font-headline text-on-surface mb-6 leading-tight">The Kitchen Table</h1>
+<p class="text-xl md:text-2xl text-on-surface-variant font-headline italic max-w-2xl leading-relaxed"> Pull up a chair. This is where we gather to plan, share memories, and keep the fire of our history burning bright.</p>
+</header>
+<!-- Main Content Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+<!-- Side Navigation Panel (Shared Component Style) -->
+<aside class="lg:col-span-3 space-y-8">
+<div class="bg-surface-container-low p-8 rounded-xl space-y-6">
+<div class="space-y-2">
+<h3 class="font-headline text-xl text-primary-dim">Gather Round</h3>
+<p class="text-sm text-on-surface-variant">Active members presently at the table:</p>
+</div>
+<div class="flex -space-x-3 overflow-hidden">
+<img alt="Grandpa Joe" class="inline-block h-12 w-12 rounded-full ring-4 ring-surface-container-low object-cover" data-alt="Close up portrait of a senior man with kind eyes and grey hair in a cozy home environment" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDpj95seXmPoUIs4ii1LYMSlAS7L-xatYaE5l9BwCuN2nWKSpmumsfQ0vunYXLZbwslcwZkXsdMbnI6FT8ONjLEEpSbLCtXTt4W0RT5bSYOfPVSPNg2yUL3TIJ1gJix2byPRuzNoWJh-XrgCwN0ZxAmhd9nBD268zPgv02Zt2tNZCBvl23uhmoBHwEl0xFFUbVMMpYw91ij9UCK3kiY6osKu3mo2pX1BlrH4Y4T56oGxzeO_cHkg1Vs9bIzxy85tNaWqSbP7Zo3KZs"/>
+<img alt="Cousin Sarah" class="inline-block h-12 w-12 rounded-full ring-4 ring-surface-container-low object-cover" data-alt="Portrait of a young woman with a warm smile and gentle lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDhi_qjBhfefy2D91gkhCpojiNc1bERLFrwECx34SS1VsBo7KgZfUYrdJn1SX2BK0CkXYNGueFAK901_P9viTZvwLF3xVCRDj2XEq69OBfove-xYeiH-W8lqzbIyOSnlcmJWgUzoSaBt7SskBWfnWalnhUSctRYyNAfnjEKOPFDBz5UJG1aXtfeK00rJy5P9c7VirqTjV-iZQPcL81XrIMbGkpZTOm2Y35nJgQNblr3Xah3jWTayA72foDm7C0gBH89DCy54H-McuI"/>
+<img alt="Uncle Mark" class="inline-block h-12 w-12 rounded-full ring-4 ring-surface-container-low object-cover" data-alt="Portrait of a man in his 40s wearing a comfortable linen shirt" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA1eZaIy-mlaFUjpUSFhw1srQV316Iu113ZBfDAUrCi1Xe2wSG9lINwY24NWmY3Ejroxq7cTsVmUnV8UuK9YjX3AEfY5HYGN-lg7CbgarOVc5KsXWsiKkzOwf857cPknUfVzRbcHLsvXSCwcj6999FxPeZR9HKb4hHg-LCikMibOUP7LAiN53IeATSNMvOL4UEBRbU73pmvhPy9SOM9mCfLTLwAQTIAzVnNSpcMC7PW-TM2ZTXuB2fEgI9fX4OKKVChbOOyDURmL64"/>
+<img alt="Lily" class="inline-block h-12 w-12 rounded-full ring-4 ring-surface-container-low object-cover" data-alt="Portrait of a teenage girl with natural lighting and soft focus garden background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBLjuYHh-JLx3qDBZtORI7kW1j6yard38WXOSFbjYwmCsFB3JZoX3JuBsvYTzIcwYfbDMImNg_2iLlYEa0-ysADx4kKkSYYqMms-mqtvv1HoJijTi1q04DBooZQ_67QRjqF58_IZ4X7-XtI74D-V7zbC6x70HKnnVipBWcpZXynb9UFM1GtcU5ON4H1TDXPmVM6NLz1u3mu0HVQ9dPq36L7KxhNQAWZCdWJB5WIzJ-4_5sBWqqSVRMxteTXk1hHqU9P9OxhFxtW5t4"/>
+<div class="inline-flex items-center justify-center h-12 w-12 rounded-full ring-4 ring-surface-container-low bg-primary-container text-on-primary-container text-xs font-bold">+8</div>
+</div>
+<button class="w-full py-4 px-6 bg-gradient-to-br from-primary to-primary-dim text-on-primary rounded-full font-label font-bold shadow-lg hover:scale-[1.02] transition-transform active:opacity-90 flex items-center justify-center gap-2">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">add</span>
+                        Start Conversation
+                    </button>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant/10">
+<h4 class="font-label text-xs font-bold tracking-widest text-outline uppercase mb-4">Pinned Topics</h4>
+<ul class="space-y-4">
+<li class="flex items-center gap-3 text-on-surface-variant hover:text-primary transition-colors cursor-pointer group">
+<span class="material-symbols-outlined text-sm">push_pin</span>
+<span class="font-body text-sm font-medium">Estate Planning Documents</span>
+</li>
+<li class="flex items-center gap-3 text-on-surface-variant hover:text-primary transition-colors cursor-pointer group">
+<span class="material-symbols-outlined text-sm">push_pin</span>
+<span class="font-body text-sm font-medium">Grandma's Secret Recipe Book</span>
+</li>
+</ul>
+</div>
+</aside>
+<!-- Conversations Feed -->
+<section class="lg:col-span-9 space-y-8">
+<!-- Conversation Card 1 -->
+<article class="bg-surface-container-low rounded-xl p-8 hover:bg-surface-container transition-colors cursor-pointer group shadow-sm border border-transparent hover:border-outline-variant/20">
+<div class="flex flex-col md:flex-row justify-between gap-6">
+<div class="space-y-4 flex-1">
+<div class="flex items-center gap-3">
+<span class="px-3 py-1 bg-secondary-container text-on-secondary-container rounded-full text-[10px] font-bold tracking-widest uppercase">Upcoming Events</span>
+<span class="text-xs text-on-surface-variant font-label">Started 2 days ago</span>
+</div>
+<h2 class="text-3xl font-headline text-on-surface group-hover:text-primary-dim transition-colors">2026 Reunion Planning</h2>
+<p class="text-on-surface-variant font-body leading-relaxed max-w-2xl">We're thinking of the Oregon coast this time! Should we stick to the usual July weekend, or try early September to avoid the crowds? Let's start a poll.</p>
+<div class="pt-4 flex items-center gap-6">
+<div class="flex -space-x-2">
+<img alt="Ava" class="h-8 w-8 rounded-full ring-2 ring-surface-container-low object-cover" data-alt="Portrait of a smiling woman" src="https://lh3.googleusercontent.com/aida-public/AB6AXuClvaXY7PF6Sa-9aslGwz8oQDnwuRdwwFq7-uqp5pkCPB_-emqmzX0YQEr5DLWFmo03q7XuoKiHp39w1aPJDWWp6-HCksAByNDLJ1Nm3L3pvWtsu7RtVdCkH92lSedx4r0b5x1awfBJhv2BHxByoSP51BahRhZ9yj-pJewKeSBNrG5tvavt5etJIyYFT8LxltRV14H2yzZyBuedugINd3vZPBYwclaoWRPimoHXxXhY8awO25gHo1kBF7sVfMQjTQGj7XavCxeoXMk"/>
+<img alt="Ben" class="h-8 w-8 rounded-full ring-2 ring-surface-container-low object-cover" data-alt="Portrait of a man laughing" src="https://lh3.googleusercontent.com/aida-public/AB6AXuApUXat4lr0Ir83qkn49SfmS-9YkfEop4GOyGis4r3cSuRFIUVPbpJeB7mNHkav11ObFjJMyJ88W69-dZLzJIrkmVBmSW7M7b93gNPOyhg5d8ocZ_mygDWOBwbh4gQvhlkHUyZbYFOFCEiVg9assGHqMvqozEY-ItkQtQjS_WY78SJudI495bb2oWSNQ52d8HIjQiwClWIWyWzkj8d4cfE0d6sTyxoLeZ3RPF2rR2mlGR-0RbNZElt8g9ZFm299laKtmaJD84gWlA4"/>
+<img alt="Lily" class="h-8 w-8 rounded-full ring-2 ring-surface-container-low object-cover" data-alt="Teenage girl portrait" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBYYKz_JkHpfE_ZtNR2ZH1Uspp5kDTPw8FheelC112ho04VKRPpMixsUvgMU-Knt5rGYVGpwAEXyUAB6eqLasRI6Y1MXfAMPL5bqc8l1c4r4AWMF9hRqHdhT42UMYMjG-H_CNmkTWr5H4MWJ4NQsdBCHE3bfd-Yy7hV_c03BxbQHqIYYAa4JSZb4c0QCVBF5VwXCvaELPWWDaYLIm48YdtDMge2SfbGVUGVW_fun2b72JE3jhUzeoE1dMpPB2KmnTTdsp3d7vWRISg"/>
+</div>
+<div class="flex items-center gap-2 text-on-surface-variant text-sm font-label">
+<span class="material-symbols-outlined text-lg">forum</span>
+<span>24 contributions</span>
+</div>
+<div class="flex items-center gap-2 text-on-surface-variant text-sm font-label">
+<span class="material-symbols-outlined text-lg">history</span>
+<span>Last updated 3h ago</span>
+</div>
+</div>
+</div>
+<div class="w-full md:w-48 h-32 rounded-xl overflow-hidden relative">
+<img alt="Oregon Coast" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="Misty Pacific Northwest coastline with pine trees and crashing waves at dusk" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCTScqZ0lt7KEZ-RclIlFAtwNwaSJIQr6lzxvbcc2u2BhPkpzRJN0KWNzM3RvJ7GssayKOQKj-qK9Gpb4ukTPCqk3wAFe0I6J9bbBFjo3B0bslNo7C9EUWpg9yFTKrJoy7ES84-gUBYrmWLOr6Bbl3F4qBY2NOq5VMA1Qd5CX1olYygt3LshyNIumKTtJEqy0aYzksn-e15-8_l2YN5QQ9nUCgb3Cg1URmeGTmtzSrW_yTRsmUCIXc9d_owKrgfKKejdJcy1Uy7FNw"/>
+<div class="absolute inset-0 bg-primary/20 mix-blend-multiply"></div>
+</div>
+</div>
+</article>
+<!-- Conversation Card 2 -->
+<article class="bg-surface-container-low rounded-xl p-8 hover:bg-surface-container transition-colors cursor-pointer group shadow-sm border border-transparent hover:border-outline-variant/20">
+<div class="flex flex-col md:flex-row justify-between gap-6">
+<div class="space-y-4 flex-1">
+<div class="flex items-center gap-3">
+<span class="px-3 py-1 bg-tertiary-container text-on-tertiary-container rounded-full text-[10px] font-bold tracking-widest uppercase">Legacy</span>
+<span class="text-xs text-on-surface-variant font-label">Ongoing discussion</span>
+</div>
+<h2 class="text-3xl font-headline text-on-surface group-hover:text-primary-dim transition-colors">Updating the Family Tree</h2>
+<p class="text-on-surface-variant font-body leading-relaxed max-w-2xl">Grandpa found some old birth certificates from the 1890s in the attic! We need to add the Branch of the 'Vance' family to the Digital Map. Any volunteers to digitize these?</p>
+<div class="pt-4 flex items-center gap-6">
+<div class="flex -space-x-2">
+<img alt="Grandpa" class="h-8 w-8 rounded-full ring-2 ring-surface-container-low object-cover" data-alt="Senior man portrait" src="https://lh3.googleusercontent.com/aida-public/AB6AXuASRiYSMtR71JBnjAnY5VwYKoSSt1AAadOaN2YC-keJrkcaa_nGuT0DvEXuRwxNbSM9VCDjeLCTeyEzbhecKReb8I9ZcDQFv-QKQJLkV6hXOMthiWGFHBjSl81jTWwY106_7-1YojCvOIvvV4jrKB8BlgsKz4x1DValo2tnRj5R6tOK4pIDfB0da30puU7zi8TBHCoh7Iupos8Yg09o3VGbflqI9S4FEZtklCl5dysTwiuR7Jr55GOXjgY_qeRfTQ4daXEVQbOO8rw"/>
+<img alt="Uncle" class="h-8 w-8 rounded-full ring-2 ring-surface-container-low object-cover" data-alt="Middle aged man portrait" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDyYND_9vc3PUeULEFoWyBO-s7NsbcJaIqOPk7OegH0QJBJAOjoajIzymhfYGGgokd9FYwSTFiZaSkZuDonS62MWIA1vKuMp_fuZDvO4tZJOmjpSKi7NXUFspuV7mZN2oPMY8_ubXRQCPrHOQadDrPhMkzPQpry6xCTpF6yYbPQaUKYK_eSvc612HIDu27YK-hqaNSD1R61Fgw-eio3Bfdug4NxmmeAiEUfLC-o4iswB4wuJahiOFoy5h4VNXn62Bco21dSY_nF5OY"/>
+</div>
+<div class="flex items-center gap-2 text-on-surface-variant text-sm font-label">
+<span class="material-symbols-outlined text-lg">forum</span>
+<span>12 contributions</span>
+</div>
+<div class="flex items-center gap-2 text-on-surface-variant text-sm font-label">
+<span class="material-symbols-outlined text-lg">history</span>
+<span>Last updated 1d ago</span>
+</div>
+</div>
+</div>
+<div class="w-full md:w-48 h-32 rounded-xl overflow-hidden relative">
+<img alt="Vintage documents" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="Stack of vintage black and white family photographs and handwritten letters on a wooden table" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDVvFbuCcuTQui54RXfNdse9zK1AGzQbfQIPHyaD5BQkmRxXBAoIj2w7DA4jROX575lbuSPiZqg-DE1tS69h9bH9yFAebv-R3yTsd7UPqBNTh3FnWN6NbtCHSFwbduATF787pYL9_TOJEEO6Of3WFMu2oS2Nokvlzbt39VL_505M5GDiZEpSrwwuZmU-HhBC-DRrl1--A8vJbZyGfqG4v_CHnzGS0i-nMkawQzs55PP882g6vBg3omFMs9WPtlt0pISzf33RM2lDWw"/>
+<div class="absolute inset-0 bg-primary/10 mix-blend-multiply"></div>
+</div>
+</div>
+</article>
+<!-- Conversation Card 3 (Text Focus) -->
+<article class="bg-surface-container-low rounded-xl p-8 hover:bg-surface-container transition-colors cursor-pointer group shadow-sm border border-transparent hover:border-outline-variant/20">
+<div class="space-y-4">
+<div class="flex items-center gap-3">
+<span class="px-3 py-1 bg-primary-container text-on-primary-container rounded-full text-[10px] font-bold tracking-widest uppercase">Stories</span>
+<span class="text-xs text-on-surface-variant font-label">New today</span>
+</div>
+<h2 class="text-3xl font-headline text-on-surface group-hover:text-primary-dim transition-colors">Favorite Childhood Stories</h2>
+<p class="text-on-surface-variant font-body leading-relaxed max-w-4xl italic text-lg">"I remember Aunt May used to tell us that the fireflies in the garden were actually tiny lanterns carried by the field mice. Does anyone else remember her saying that?"</p>
+<div class="pt-4 flex items-center justify-between">
+<div class="flex items-center gap-6">
+<div class="flex -space-x-2">
+<img alt="Sarah" class="h-8 w-8 rounded-full ring-2 ring-surface-container-low object-cover" data-alt="Woman smiling" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD5oqW0xggKeuth9m6Ne0iFfviyOsW-UkzFh--kU02ZFn_sB_MSqgc3zNajyHeyJcsS366szviJyFNownjpTti0ubPP5hFvxsi10R7h6l5NhaSrK7ZF9Pe-KoQcCosKVS1rymFGs5gVs6748aEluqJDmU6GbVFjUWQbtoQvIk7WE0rhJ3-qRnezARO3qLtt2q3gr9i2OsiiifrTqbEYEc4xkg6rSt8MKcPItTphwxUrZn8Zbevqjcc_CJL-jUws59Km5__ZZeLtDEM"/>
+<div class="inline-flex items-center justify-center h-8 w-8 rounded-full ring-2 ring-surface-container-low bg-surface-variant text-on-surface-variant text-[10px] font-bold">+3</div>
+</div>
+<div class="flex items-center gap-2 text-on-surface-variant text-sm font-label">
+<span class="material-symbols-outlined text-lg">forum</span>
+<span>5 contributions</span>
+</div>
+</div>
+<div class="flex items-center gap-2 text-primary font-bold font-label text-sm group-hover:translate-x-1 transition-transform">
+                                Join Conversation
+                                <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</div>
+</div>
+</div>
+</article>
+<!-- Load More Button -->
+<div class="flex justify-center py-12">
+<button class="px-12 py-3 rounded-full border border-outline-variant text-on-surface-variant font-label hover:bg-surface-container-high transition-colors text-sm tracking-wide">
+                        See Older Conversations
+                    </button>
+</div>
+</section>
+</div>
+</main>
+<!-- Footer Component -->
+<footer class="w-full pt-12 pb-8 bg-stone-200 dark:bg-stone-950 flex flex-col items-center space-y-6 mt-24 tonal-depth-shift no-shadows fade-in duration-500">
+<div class="font-headline italic text-lg text-stone-800 dark:text-stone-200">The Digital Hearth</div>
+<div class="flex flex-wrap justify-center gap-8 font-label text-sm tracking-wide">
+<a class="text-stone-500 dark:text-stone-400 hover:text-emerald-700 dark:hover:text-emerald-300 transition-colors underline decoration-emerald-500" href="#">Privacy Policy</a>
+<a class="text-stone-500 dark:text-stone-400 hover:text-emerald-700 dark:hover:text-emerald-300 transition-colors" href="#">Terms of Heritage</a>
+<a class="text-stone-500 dark:text-stone-400 hover:text-emerald-700 dark:hover:text-emerald-300 transition-colors" href="#">Contact Elder</a>
+<a class="text-stone-500 dark:text-stone-400 hover:text-emerald-700 dark:hover:text-emerald-300 transition-colors" href="#">Help Center</a>
+</div>
+<p class="text-stone-500 dark:text-stone-400 font-label text-xs tracking-widest uppercase">© 2024 The Digital Hearth. Handcrafted for the family.</p>
+</footer>
+<!-- Mobile FAB (Contextual suppression for Details/Transactional, but kept for main dashboard-like view) -->
+<button class="md:hidden fixed bottom-6 right-6 w-16 h-16 rounded-full bg-primary text-on-primary shadow-2xl flex items-center justify-center z-50 active:scale-95 transition-transform">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">add_comment</span>
+</button>
+</body></html>

@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" fill="none">
+  <rect width="1200" height="630" fill="#FFFCF7"/>
+  <ellipse cx="990" cy="-20" rx="430" ry="280" fill="#DCEED1"/>
+  <rect x="84" y="90" width="1032" height="450" rx="30" fill="#FFFFFF" stroke="#E5E2D8" stroke-width="2"/>
+  <text x="140" y="210" fill="#264B2A" font-size="66" font-family="Georgia, serif">The Living Scrapbook</text>
+  <text x="140" y="290" fill="#383833" font-size="78" font-family="Georgia, serif">Family Tree</text>
+  <text x="140" y="360" fill="#5C5C56" font-size="30" font-family="Arial, sans-serif">Preserving stories across generations.</text>
+  <g stroke="#AFC8A0" stroke-width="5">
+    <line x1="740" y1="250" x2="950" y2="250"/>
+    <line x1="740" y1="350" x2="950" y2="350"/>
+    <line x1="740" y1="250" x2="740" y2="350"/>
+    <line x1="950" y1="250" x2="950" y2="350"/>
+  </g>
+  <g fill="#6B8A60">
+    <circle cx="740" cy="250" r="32"/>
+    <circle cx="950" cy="250" r="32"/>
+    <circle cx="740" cy="350" r="32"/>
+    <circle cx="950" cy="350" r="32"/>
+  </g>
+</svg>

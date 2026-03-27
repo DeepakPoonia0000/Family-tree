@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Family Map | The Digital Hearth</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary-dim": "#4a5e41",
+              "surface-variant": "#eae8e0",
+              "inverse-surface": "#0e0e0c",
+              "surface-bright": "#fffcf7",
+              "on-secondary": "#ffffff",
+              "tertiary-container": "#fbecd8",
+              "surface": "#fffcf7",
+              "tertiary": "#6e6354",
+              "on-primary-fixed-variant": "#4d6144",
+              "outline": "#81817a",
+              "inverse-on-surface": "#9e9d98",
+              "background": "#fffcf7",
+              "on-secondary-fixed-variant": "#425e76",
+              "on-tertiary-fixed": "#4e4537",
+              "surface-tint": "#566a4d",
+              "on-surface": "#383833",
+              "on-primary-fixed": "#31442a",
+              "primary": "#566a4d",
+              "surface-container-high": "#f0eee6",
+              "error-dim": "#791903",
+              "secondary-dim": "#3f5b73",
+              "on-secondary-container": "#38556c",
+              "on-tertiary": "#ffffff",
+              "primary-fixed-dim": "#c4dbb7",
+              "surface-container-low": "#fcf9f3",
+              "tertiary-dim": "#615748",
+              "surface-dim": "#e4e3da",
+              "on-tertiary-fixed-variant": "#6c6152",
+              "tertiary-fixed-dim": "#edddca",
+              "primary-container": "#d2eac5",
+              "on-background": "#383833",
+              "secondary-fixed": "#cbe6ff",
+              "on-tertiary-container": "#615748",
+              "on-error": "#ffffff",
+              "surface-container": "#f6f3ed",
+              "surface-container-highest": "#eae8e0",
+              "secondary-container": "#cbe6ff",
+              "on-secondary-fixed": "#254258",
+              "primary-fixed": "#d2eac5",
+              "outline-variant": "#bbb9b2",
+              "on-surface-variant": "#65655e",
+              "error-container": "#fd795a",
+              "surface-container-lowest": "#ffffff",
+              "inverse-primary": "#e6fed8",
+              "error": "#ae4025",
+              "on-error-container": "#6e1400",
+              "secondary": "#4b677f",
+              "tertiary-fixed": "#fbecd8",
+              "on-primary-container": "#43573b",
+              "on-primary": "#ffffff",
+              "secondary-fixed-dim": "#bad8f4"
+            },
+            fontFamily: {
+              "headline": ["Newsreader", "serif"],
+              "body": ["Plus Jakarta Sans", "sans-serif"],
+              "label": ["Plus Jakarta Sans", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>.material-symbols-outlined {
+    font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24
+    }
+.serif-italic {
+    font-family: "Newsreader";
+    font-style: italic
+    }
+.map-texture {
+    background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuCrjPyFk7Hyh_wCWxsdRjjZcy3NymwBTg83EuOpm0wPBgIj9qtoTuRC54wJFZ3aQi1WGgQEsL5g4TQN1fdBVus9s4ztgywkppwE6EDGZQ0tfmqDDJInIQKob74TOxKWQjEHgRmeO_GDNjfnys2R132ebaRWFlH6rxxv4pVmGPZN3TmBKErdfOWJCbY8bATkG7LUyfiofFdaC9Dx6zRu4TD01TAshH4UfDvhbDmYDA35N55AJYh3Hm12fCNe8YsTGZzdXtLMfOYLdNA)
+    }
+.glass-nav {
+    background: rgba(255, 252, 247, 0.7);
+    backdrop-filter: blur(12px)
+    }</style>
+</head>
+<body class="bg-background text-on-surface font-body selection:bg-primary-container">
+<!-- Top Navigation Shell -->
+<nav class="fixed top-4 inset-x-0 mx-auto w-[95%] rounded-full bg-stone-50/70 dark:bg-stone-900/70 backdrop-blur-xl flex justify-between items-center px-8 py-3 max-w-7xl z-50 shadow-[0_12px_40px_rgba(56,56,51,0.06)] font-['Newsreader'] serif antialiased">
+<div class="text-2xl font-bold italic text-emerald-900 dark:text-emerald-100">The Digital Hearth</div>
+<div class="hidden md:flex items-center space-x-8">
+<a class="text-stone-600 dark:text-stone-400 hover:text-emerald-800 dark:hover:text-emerald-200 hover:scale-105 transition-transform duration-300" href="#">Our Story</a>
+<a class="text-stone-600 dark:text-stone-400 hover:text-emerald-800 dark:hover:text-emerald-200 hover:scale-105 transition-transform duration-300" href="#">Archives</a>
+<a class="text-stone-600 dark:text-stone-400 hover:text-emerald-800 dark:hover:text-emerald-200 hover:scale-105 transition-transform duration-300" href="#">Recipes</a>
+<a class="text-emerald-900 dark:text-emerald-50 font-bold border-b-2 border-emerald-800 dark:border-emerald-200 pb-1 hover:scale-105 transition-transform duration-300" href="#">Family Map</a>
+<a class="text-stone-600 dark:text-stone-400 hover:text-emerald-800 dark:hover:text-emerald-200 hover:scale-105 transition-transform duration-300" href="#">The Kitchen Table</a>
+</div>
+<div class="flex items-center space-x-4">
+<button class="p-2 text-stone-600 hover:bg-stone-100 rounded-full transition-colors">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="p-2 text-stone-600 hover:bg-stone-100 rounded-full transition-colors">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+</button>
+<div class="w-10 h-10 rounded-full overflow-hidden border-2 border-primary-container">
+<img alt="User's family portrait avatar" data-alt="close-up portrait of a middle-aged man with a warm smile, soft natural lighting, heritage photography style" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDkrENak1fLS8lOW0bIAqxepGEjyuiXkxGjAFN-jRNbwyP8FgKDZsduIq341uHzkpnmU_v1dn2Q6h2CMr8vSr2N7l4y_D6YhFf6n1k402e7OBUtG7_XYILxP5cz7v35Jo-spJvVHcTdui4Pc0aCMWoAm_bbLbIj20Q5Bl7rAJeI4qRRnhboQzRMcqt8nZdNlwyil4PdTqrk4qwLQ9A_aEG2F1QCrxXs8jkThflewWkIaN5QiYNwgvVR0qfo1JB36o4IugGEqwMmNFw"/>
+</div>
+</div>
+</nav>
+<main class="min-h-screen pt-28 px-4 md:px-8 max-w-[1600px] mx-auto flex flex-col gap-8">
+<!-- Header Section -->
+<header class="flex flex-col md:flex-row justify-between items-end gap-6">
+<div class="max-w-2xl">
+<h1 class="font-headline text-5xl md:text-6xl text-on-surface mb-4">Tracing Our Paths</h1>
+<p class="text-on-surface-variant text-lg leading-relaxed">A living tapestry of where we've been and where we are. From the cobblestones of the old country to the bustling cities we call home today.</p>
+</div>
+<div class="flex gap-3">
+<button class="flex items-center gap-2 px-6 py-3 bg-surface-container-high text-on-surface rounded-full font-medium hover:scale-105 transition-all">
+<span class="material-symbols-outlined" data-icon="filter_list">filter_list</span>
+<span>Filter View</span>
+</button>
+<button class="flex items-center gap-2 px-6 py-3 bg-gradient-to-br from-primary to-primary-dim text-on-primary rounded-full font-medium hover:scale-105 transition-all shadow-lg">
+<span class="material-symbols-outlined" data-icon="add_location">add_location</span>
+<span>Add Milestone</span>
+</button>
+</div>
+</header>
+<!-- Main Map Interactive Area -->
+<div class="relative w-full aspect-[21/9] min-h-[600px] rounded-xl overflow-hidden shadow-2xl bg-surface-container border border-outline-variant/10">
+<!-- Simulated Styled Map -->
+<div class="absolute inset-0 bg-stone-200 map-texture opacity-40"></div>
+<img alt="vintage cartography map background" class="absolute inset-0 w-full h-full object-cover mix-blend-multiply opacity-30 grayscale" data-alt="high-detail vintage paper map texture with faded continents, sepia tones, and intricate line work reflecting heritage and history" data-location="World Map" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB6aNpbTn3K4K6zFzJorhEFFfp_-XTRCb4yfAhuv0fTs12RHHDbkW4dMDYMTQKXIUgEHRDI-z-MBKTv-VW4sJV8CuR5Nqr3qZr4Y7QAzQb3M9H0I8MNXOg7EBdOCZe1PLv4SvbJr0ZfjpfUsz0ZysfmY-NKE2cNLBo-U94P6IZiP9UDxx_vj4-AyHb5QiQcHC7KjX6CzGOOcdVOBYNPBV_50w-Vqo1tcKxtzgZMbwPL-J9KxvVRA5sMuKWv_wtKgq_C5kEpEHWVqiI"/>
+<!-- Map Markers & Connecting Lines (SVG Overlay) -->
+<svg class="absolute inset-0 w-full h-full pointer-events-none" viewbox="0 0 1600 600">
+<path class="text-primary/40" d="M400,300 Q600,150 900,350" fill="none" stroke="currentColor" stroke-dasharray="8 8" stroke-width="2"></path>
+<path class="text-primary/40" d="M900,350 Q1100,450 1300,200" fill="none" stroke="currentColor" stroke-dasharray="8 8" stroke-width="2"></path>
+</svg>
+<!-- Interactive Pin: The Ancestral Home -->
+<div class="absolute top-1/4 left-1/4 -translate-x-1/2 -translate-y-1/2 group cursor-pointer">
+<div class="relative">
+<div class="w-12 h-12 bg-tertiary-container rounded-full flex items-center justify-center shadow-lg border-2 border-tertiary group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-tertiary" data-icon="castle">castle</span>
+</div>
+<!-- Label -->
+<div class="absolute top-full mt-2 left-1/2 -translate-x-1/2 bg-surface px-3 py-1 rounded-md shadow-sm whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="text-xs font-bold font-label uppercase tracking-widest text-tertiary">Historical</span>
+<p class="text-sm font-headline">The Old Homestead</p>
+</div>
+</div>
+</div>
+<!-- Interactive Pin: London (Family Member) -->
+<div class="absolute top-[58%] left-[56%] -translate-x-1/2 -translate-y-1/2 group cursor-pointer z-20">
+<div class="relative">
+<div class="w-16 h-16 p-1 bg-surface rounded-full shadow-xl border-2 border-primary group-hover:scale-110 transition-transform">
+<img alt="Sarah Chen profile" class="w-full h-full rounded-full object-cover" data-alt="headshot of a young woman with smiling eyes and soft lighting, professional and friendly aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBAPnRudiVOy68w64Wb464X__3UHSjsHaDp4mru5m2_1geQ0GjDgZKI_ZP441XNPAd2QNfvEEBl77a1ILWejplJNE9LlN58RiWUKXCxHXGIm46Gn-EeS2UroKIcGXH8Ak1a7qxQuHaoVYffRE3yf7vuoSsW6wAKawf2SjgOibbXugFMoDBnHMxsogwqfY59jb7DUKV52vCyZw5xja8my2_BUJLbM-_Ugy3c8M9xf7YtxgNYTRXbdxWo0YiVh_afpI6y6-oAKLFWnFE"/>
+</div>
+<!-- Pulse effect -->
+<div class="absolute inset-0 rounded-full bg-primary/20 animate-ping -z-10"></div>
+</div>
+<!-- Expanded Pop-up (Active State Design) -->
+<div class="absolute bottom-full mb-6 left-1/2 -translate-x-1/2 w-72 bg-surface rounded-lg shadow-[0_20px_50px_rgba(0,0,0,0.1)] p-5 pointer-events-auto border border-outline-variant/10">
+<div class="flex items-center justify-between mb-4">
+<div>
+<h4 class="font-headline text-xl leading-none">Sarah Chen</h4>
+<p class="text-xs text-on-surface-variant font-label mt-1">London, United Kingdom</p>
+</div>
+<span class="material-symbols-outlined text-primary" data-icon="home" style="font-variation-settings: 'FILL' 1;">home</span>
+</div>
+<div class="space-y-3">
+<div class="bg-surface-container-low p-3 rounded-md">
+<p class="text-xs font-bold uppercase tracking-tighter text-on-surface-variant mb-1">Latest News</p>
+<p class="text-sm text-on-surface italic leading-relaxed">"Just finished the marathon! Thinking of the family during every mile. Love you all."</p>
+</div>
+<button class="w-full py-2 bg-primary-container text-on-primary-container rounded-full text-xs font-bold hover:bg-primary hover:text-on-primary transition-colors">
+                            Send a Note
+                        </button>
+</div>
+<div class="absolute -bottom-2 left-1/2 -translate-x-1/2 w-4 h-4 bg-surface rotate-45 border-r border-b border-outline-variant/10"></div>
+</div>
+</div>
+<!-- Map Controls Overlay -->
+<div class="absolute bottom-6 right-6 flex flex-col gap-2">
+<button class="w-10 h-10 bg-surface rounded-full shadow-md flex items-center justify-center hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined" data-icon="add">add</span>
+</button>
+<button class="w-10 h-10 bg-surface rounded-full shadow-md flex items-center justify-center hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined" data-icon="remove">remove</span>
+</button>
+<button class="w-10 h-10 bg-surface rounded-full shadow-md flex items-center justify-center hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined" data-icon="my_location">my_location</span>
+</button>
+</div>
+</div>
+<!-- Sidebar / Bottom Panel for Locations -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+<!-- Section 1: Family Residing Abroad -->
+<div class="bg-surface-container-low p-8 rounded-xl flex flex-col">
+<h3 class="font-headline text-2xl mb-6">Across the Ocean</h3>
+<div class="space-y-6">
+<div class="flex items-center gap-4 group">
+<div class="w-12 h-12 rounded-full overflow-hidden flex-shrink-0 grayscale group-hover:grayscale-0 transition-all">
+<img alt="Uncle Robert" data-alt="portrait of an older man with silver hair and kind expression, wearing a tweed jacket, classic warm lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAvMaI0KGLR0FSxsD1xkdof5EwkFO3uVNJhKRUB5tLC7mS2ErLg2gKaLAaW08QD6-akWHyB4QowmXeq4biGt0TUDBdP1jY8snS0Ph_F4E5xt6uom8cvMkhrBQbrHWrHGbFNCVi_7jTOsVpUpTm4KSdpUdYtfp61nQAE4IP1VA1d6q61ulazKocyCG9Qx_aAGGqEl_lGM42YhQEVu4afNxWhVij9AVpkxh9GJDu_PqysLRqo_ENgValwzXrrTxbdMP7JmPftaNpkE20"/>
+</div>
+<div>
+<p class="font-bold text-on-surface">Uncle Robert</p>
+<p class="text-sm text-on-surface-variant">Tokyo, Japan</p>
+</div>
+<span class="material-symbols-outlined ml-auto text-primary-dim opacity-0 group-hover:opacity-100 transition-opacity" data-icon="arrow_forward">arrow_forward</span>
+</div>
+<div class="flex items-center gap-4 group">
+<div class="w-12 h-12 rounded-full overflow-hidden flex-shrink-0 grayscale group-hover:grayscale-0 transition-all">
+<img alt="Cousin Elara" data-alt="portrait of a woman in her late 20s with artistic flair, soft natural lighting, creative photography" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAaRrmALaaLsNJeUIAA6yHKLnyFLc24n7DqSLkC5wL3Su4dXEVyJCFX_ZAxqRmbo8bjM40cLXmIiEzF9Z9oV0RH8MwLNUjp3wd1CBjKNlfBYEz37NcMGj4K0XMUm37lBVhUGKwDdqTxiLXb0ejBTa3vCDBlRyHsma0XoH1Shv-bU-oKvPYvNw58XvMiv0-iN3ivAEidT3w1AltcMmhs4cBpJ02zqyNinnaKAoO4s2FLgdz8KFsylfT8YENIhMIvCfcwTbkMehzb8A4"/>
+</div>
+<div>
+<p class="font-bold text-on-surface">Cousin Elara</p>
+<p class="text-sm text-on-surface-variant">Berlin, Germany</p>
+</div>
+<span class="material-symbols-outlined ml-auto text-primary-dim opacity-0 group-hover:opacity-100 transition-opacity" data-icon="arrow_forward">arrow_forward</span>
+</div>
+</div>
+<button class="mt-8 text-primary font-bold text-sm flex items-center gap-2 hover:translate-x-1 transition-transform">
+                    View all 14 members <span class="material-symbols-outlined text-sm" data-icon="trending_flat">trending_flat</span>
+</button>
+</div>
+<!-- Section 2: Historical Landmarks -->
+<div class="bg-surface-container-high p-8 rounded-xl flex flex-col md:col-span-2">
+<div class="flex justify-between items-start mb-6">
+<h3 class="font-headline text-2xl">Landmarks of Our Legacy</h3>
+<div class="flex gap-2">
+<button class="p-2 bg-surface rounded-full"><span class="material-symbols-outlined" data-icon="chevron_left">chevron_left</span></button>
+<button class="p-2 bg-surface rounded-full"><span class="material-symbols-outlined" data-icon="chevron_right">chevron_right</span></button>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
+<div class="relative h-48 rounded-lg overflow-hidden group">
+<img alt="cottage in ireland" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="cozy traditional Irish stone cottage with thatched roof nestled in a lush green valley at sunrise, cinematic lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuALc9KkuWc1x5_3PWb0ggUEtynYbPuKdjNMi-8iznZxTMSAo7zZzLAQS9nsEK5UKq1h_LyUNXSWA7wTXg-LHe-BVhJb4bkiD2vZvFkHjPlU5WzNKR_TKFua6R-q-4wv91SXeED-4T_-OGQLhr0tqf-Nc9n42zUD1fxdmcc0LemkSdK7k3oDkjzgGw4Ut01upNAAZtg3TR2v77i545UqPyxJd1ZjqCKJPnt47valGWF8dyb9qkW_O057TAh04TqH6wiHqgKSkv5sElc"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+<div class="absolute bottom-4 left-4 text-white">
+<p class="text-xs font-bold uppercase tracking-widest opacity-80">Ireland, 1892</p>
+<h4 class="font-headline text-lg">The O'Malley Cottage</h4>
+</div>
+</div>
+<div class="relative h-48 rounded-lg overflow-hidden group">
+<img alt="grand library hall" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="majestic old library with tall wooden shelves and arched windows, golden sunbeams streaming through the air, historical atmosphere" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDLtU9kFcX3BVQsOTCXgIs8iEFKmKrBfkbGqIyZ-DMjse9cdpT8JVpn27DPMhC9_7oTi2LUHjGsZqrTrsJ2aELIXCym2FdxqT65y7dGJujgMebQ9oNt5lt2Mee5Tq4nZUe-wQ1Z_jvTTDOJVibzssNoy3UaAZTKs7x1XLldST1ocvTL-u5Y4nwj5mFxhkwS_BkfJNqV0vjdnpJctuGdRMyfTcDsI2T37Z489tdx5wNYjl-mD4KdESLhPWGr9O6aHIxoqRQRZibE2zc"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+<div class="absolute bottom-4 left-4 text-white">
+<p class="text-xs font-bold uppercase tracking-widest opacity-80">Boston, 1924</p>
+<h4 class="font-headline text-lg">Grandfather's Print Shop</h4>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Side Navigation (Mobile Hidden) -->
+<aside class="fixed left-0 top-0 h-full w-64 rounded-r-3xl bg-stone-100 dark:bg-stone-900 hidden lg:flex flex-col p-6 space-y-4 z-40 transform -translate-x-full hover:translate-x-0 transition-transform duration-500 ease-in-out">
+<div class="flex items-center space-x-3 pb-6 border-b border-outline-variant/10">
+<div class="w-12 h-12 bg-primary rounded-xl flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined" data-icon="family_history" style="font-variation-settings: 'FILL' 1;">family_history</span>
+</div>
+<div>
+<h2 class="font-headline text-xl text-emerald-900 dark:text-emerald-50">The Living Scrapbook</h2>
+<p class="text-xs text-stone-500">Preserving our legacy</p>
+</div>
+</div>
+<nav class="flex-grow space-y-2 mt-4 font-['Plus_Jakarta_Sans'] font-medium">
+<a class="flex items-center space-x-3 p-3 text-stone-500 hover:bg-stone-200/50 rounded-xl transition-all hover:translate-x-1" href="#">
+<span class="material-symbols-outlined" data-icon="inventory_2">inventory_2</span>
+<span>The Digital Attic</span>
+</a>
+<a class="flex items-center space-x-3 p-3 text-stone-500 hover:bg-stone-200/50 rounded-xl transition-all hover:translate-x-1" href="#">
+<span class="material-symbols-outlined" data-icon="menu_book">menu_book</span>
+<span>Family Recipes</span>
+</a>
+<a class="flex items-center space-x-3 p-3 bg-emerald-100/50 text-emerald-900 rounded-xl transition-all hover:translate-x-1" href="#">
+<span class="material-symbols-outlined" data-icon="public" style="font-variation-settings: 'FILL' 1;">public</span>
+<span>Family Map</span>
+</a>
+<a class="flex items-center space-x-3 p-3 text-stone-500 hover:bg-stone-200/50 rounded-xl transition-all hover:translate-x-1" href="#">
+<span class="material-symbols-outlined" data-icon="forum">forum</span>
+<span>The Kitchen Table</span>
+</a>
+</nav>
+<button class="w-full py-4 bg-primary text-on-primary rounded-xl font-bold shadow-lg flex items-center justify-center space-x-2 active:scale-95 transition-transform">
+<span class="material-symbols-outlined" data-icon="add">add</span>
+<span>Add New Memory</span>
+</button>
+</aside>
+<!-- Footer -->
+<footer class="w-full pt-12 pb-8 bg-stone-200 dark:bg-stone-950 flex flex-col items-center space-y-6 mt-24 font-['Plus_Jakarta_Sans'] text-sm tracking-wide text-stone-800 dark:text-stone-200">
+<div class="font-['Newsreader'] italic text-lg text-emerald-900">The Digital Hearth</div>
+<div class="flex space-x-8">
+<a class="text-stone-500 hover:text-emerald-700 transition-colors" href="#">Privacy Policy</a>
+<a class="text-stone-500 hover:text-emerald-700 transition-colors" href="#">Terms of Heritage</a>
+<a class="text-stone-500 hover:text-emerald-700 transition-colors" href="#">Contact Elder</a>
+<a class="text-stone-500 hover:text-emerald-700 transition-colors" href="#">Help Center</a>
+</div>
+<p class="text-stone-400">© 2024 The Digital Hearth. Handcrafted for the family.</p>
+</footer>
+</body></html>

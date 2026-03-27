@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Digital Hearth | Latest Events &amp; News</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&amp;family=Plus+Jakarta+Sans:wght@200..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-container": "#f6f3ed",
+              "on-background": "#383833",
+              "surface-bright": "#fffcf7",
+              "surface-container-high": "#f0eee6",
+              "on-tertiary": "#ffffff",
+              "outline-variant": "#bbb9b2",
+              "on-secondary-fixed": "#254258",
+              "on-secondary-container": "#38556c",
+              "on-error-container": "#6e1400",
+              "tertiary-container": "#fbecd8",
+              "surface-container-low": "#fcf9f3",
+              "tertiary-dim": "#615748",
+              "surface-dim": "#e4e3da",
+              "on-primary-container": "#43573b",
+              "on-secondary": "#ffffff",
+              "secondary-fixed-dim": "#bad8f4",
+              "secondary": "#4b677f",
+              "on-primary-fixed": "#31442a",
+              "surface-container-lowest": "#ffffff",
+              "primary-fixed-dim": "#c4dbb7",
+              "on-surface": "#383833",
+              "on-tertiary-fixed": "#4e4537",
+              "secondary-container": "#cbe6ff",
+              "tertiary": "#6e6354",
+              "primary": "#566a4d",
+              "background": "#fffcf7",
+              "on-tertiary-container": "#615748",
+              "on-primary": "#ffffff",
+              "on-surface-variant": "#65655e",
+              "primary-dim": "#4a5e41",
+              "surface-variant": "#eae8e0",
+              "inverse-primary": "#e6fed8",
+              "error-container": "#fd795a",
+              "outline": "#81817a",
+              "primary-fixed": "#d2eac5",
+              "tertiary-fixed": "#fbecd8",
+              "error-dim": "#791903",
+              "surface-container-highest": "#eae8e0",
+              "tertiary-fixed-dim": "#edddca",
+              "on-tertiary-fixed-variant": "#6c6152",
+              "secondary-fixed": "#cbe6ff",
+              "secondary-dim": "#3f5b73",
+              "surface": "#fffcf7",
+              "primary-container": "#d2eac5",
+              "on-secondary-fixed-variant": "#425e76",
+              "inverse-surface": "#0e0e0c",
+              "inverse-on-surface": "#9e9d98",
+              "on-primary-fixed-variant": "#4d6144",
+              "surface-tint": "#566a4d",
+              "on-error": "#ffffff",
+              "error": "#ae4025"
+            },
+            fontFamily: {
+              "headline": ["Newsreader"],
+              "body": ["Plus Jakarta Sans"],
+              "label": ["Plus Jakarta Sans"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #fffcf7; color: #383833; }
+        .font-serif { font-family: 'Newsreader', serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+    </style>
+</head>
+<body class="bg-surface selection:bg-primary-container selection:text-on-primary-container">
+<!-- Top Navigation Bar -->
+<nav class="fixed top-4 left-1/2 -translate-x-1/2 w-[95%] max-w-7xl rounded-full bg-[#fffcf7]/70 dark:bg-stone-900/70 backdrop-blur-xl shadow-[0_12px_40px_rgba(56,56,51,0.06)] flex justify-between items-center px-8 py-3 z-50">
+<div class="text-2xl font-serif italic text-emerald-900 dark:text-emerald-100">The Digital Hearth</div>
+<div class="hidden md:flex items-center space-x-8">
+<a class="text-stone-600 dark:text-stone-400 font-medium hover:scale-105 hover:text-emerald-700 dark:hover:text-emerald-300 transition-all" href="#">Dashboard</a>
+<a class="text-stone-600 dark:text-stone-400 font-medium hover:scale-105 hover:text-emerald-700 dark:hover:text-emerald-300 transition-all" href="#">Gallery</a>
+<a class="text-emerald-900 dark:text-emerald-200 font-bold border-b-2 border-emerald-700/30 hover:scale-105 transition-all" href="#">News</a>
+<a class="text-stone-600 dark:text-stone-400 font-medium hover:scale-105 hover:text-emerald-700 dark:hover:text-emerald-300 transition-all" href="#">Calendar</a>
+</div>
+<div class="flex items-center space-x-4">
+<button class="p-2 text-stone-600 hover:bg-surface-container-high rounded-full transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="p-2 text-stone-600 hover:bg-surface-container-high rounded-full transition-colors">
+<span class="material-symbols-outlined">account_circle</span>
+</button>
+</div>
+</nav>
+<main class="pt-32 pb-20 px-6 max-w-7xl mx-auto">
+<!-- Header Section -->
+<header class="mb-16">
+<span class="text-primary font-bold tracking-widest uppercase text-sm mb-4 block">The Daily Chronicle</span>
+<h1 class="text-6xl md:text-7xl font-serif text-on-surface leading-tight max-w-3xl">
+                Gathering our stories, <br/><span class="italic text-primary">one chapter at a time.</span>
+</h1>
+</header>
+<!-- Featured News Item (Asymmetric Layout) -->
+<section class="mb-24 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+<div class="lg:col-span-7 relative group">
+<div class="absolute -inset-4 bg-primary-container/30 rounded-xl -rotate-1 group-hover:rotate-0 transition-transform duration-500"></div>
+<img alt="Family Garden" class="relative w-full h-[500px] object-cover rounded-xl shadow-lg" data-alt="a sun-drenched lush vegetable garden with heirloom tomatoes and blooming marigolds in warm golden morning light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuChC4lb0OJeO-O1p3SOA9TnzXY0yat0pof-cEkV_BDmMK0NIag9zlNqFlJaWhxBEy9swzuYfHO85HqD_z2nKUt90e9pEWB5g3kTHIL4wrhSfrUMMvgx_8Fi4AkK4hkGstNQ5sj2GmCymZqvo13Z52iNwulnSQpW-TPlyywIXhCVsk1UyNdAaWABrRLfPxHmXmppH5SfBWmRUMV7cnmoVcOwi-wBVd1IJTNxwrcXgqxP5GZr1MXWgZVNm3HH5pp6M2PnC1rZuVTSM2Q"/>
+</div>
+<div class="lg:col-span-5 lg:pl-12">
+<div class="flex items-center gap-4 mb-6">
+<span class="bg-tertiary-container text-on-tertiary-container px-4 py-1 rounded-full text-xs font-bold tracking-wide uppercase">New Project</span>
+<span class="text-outline text-sm">June 12, 2024</span>
+</div>
+<h2 class="text-4xl font-serif mb-6 leading-snug">Grandma's New Garden: A Labor of Love &amp; Lavender</h2>
+<p class="text-on-surface-variant text-lg leading-relaxed mb-8">
+                    After months of planning, Grandma June has finally finished her meditation garden. It's a sanctuary of fragrant herbs and vintage roses, designed for quiet afternoons and family tea times.
+                </p>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-surface-container-highest overflow-hidden">
+<img alt="Grandma June" class="w-full h-full object-cover" data-alt="portrait of a smiling senior woman with silver hair and warm eyes in a natural outdoor setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC-c1EltcY6ODOcAWgFK2hyUjLB9LnAvfHVqpdzkhEGvwYHBqL9jl_DSM-Pm28ZxBi1HapbnK67Tfv03fUNVxiqjWrF2S5XZSvVARobl-sPdc23-DtoHw3ftC7J_IT1FiLVyh6Hw-GVAqka9-ew3fJMurfF4OeK4_kN1EkDMwuvee2_5JsZRPsoNg0-aDXW0l4_cx_E_TVGxS1-ag2WtPbt9A-2WCNJBTmba5VJ-AINL1sn9j6xXJiMRclxO_YJtLA3brqCM95Dljo"/>
+</div>
+<div>
+<p class="font-bold text-on-surface">Grandma June</p>
+<p class="text-sm text-outline">Garden Lead</p>
+</div>
+</div>
+</div>
+</section>
+<!-- News Grid (Editorial Bento Style) -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+<!-- Item 1: Summer Vacation -->
+<article class="flex flex-col group">
+<div class="overflow-hidden rounded-lg mb-6 bg-surface-container-high">
+<img alt="Summer Planning" class="w-full aspect-[4/3] object-cover group-hover:scale-105 transition-transform duration-700" data-alt="scenic view of a tranquil blue lake nestled between pine trees and distant misty mountains during summer" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDpHZaCzb3EfJ4CUeYfUKi727Q3mkcPaBI64Xcchv1pVixyj6m5ILn91Sio9vg5rqFSyhjL_dzG9x5qq-fCdqKlYFJS8Jojw_qnZ9dQ3ehqw9Z67u1FSY87DA8THgxxM3LCv9jzVGN9RYWVfcmS0w_sFvBN07woCLTBkDuM5dy3e963WuFyd8-kofdCUe_YK4E24H_2YYJPay6vGzWdCwtk-zr3bMzdE5BEFAivsoCB4ZFoxeeB0t1SwCCzvq-Bq64Uh_X2SlmEbvs"/>
+</div>
+<div class="flex items-center gap-3 mb-3">
+<span class="text-secondary font-bold text-xs uppercase tracking-tighter">Event Planning</span>
+<div class="w-1 h-1 bg-outline-variant rounded-full"></div>
+<span class="text-outline text-xs">May 28, 2024</span>
+</div>
+<h3 class="text-2xl font-serif mb-3 group-hover:text-primary transition-colors">Summer Vacation Planning: The Great Lakes Tour</h3>
+<p class="text-on-surface-variant line-clamp-3 mb-6">
+                    It's that time of year again! We're mapping out our two-week journey through the northern lakes. Suggestions for hidden campsites and local bakeries are officially open.
+                </p>
+<div class="mt-auto pt-4 flex items-center justify-between border-t border-transparent">
+<span class="text-sm font-medium">By Uncle Robert</span>
+<button class="text-primary hover:translate-x-1 transition-transform">
+<span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</article>
+<!-- Item 2: Family Cookbook (Glassmorphism Variant) -->
+<article class="bg-surface-container-low p-8 rounded-xl flex flex-col relative overflow-hidden">
+<div class="absolute top-0 right-0 -mr-8 -mt-8 w-32 h-32 bg-primary-container/20 rounded-full blur-3xl"></div>
+<div class="mb-8">
+<span class="bg-on-primary-fixed text-primary-fixed px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-widest">Heritage</span>
+</div>
+<h3 class="text-3xl font-serif mb-4 italic">Digitizing Great Aunt Clara's Secret Recipe Box</h3>
+<p class="text-on-surface-variant mb-8 leading-relaxed">
+                    We've started the huge task of scanning over 300 handwritten recipe cards. From the famous "Blueberry Cloud" to the "Midnight Chili," our family secrets are finally going digital.
+                </p>
+<div class="mt-auto flex items-center gap-4">
+<img alt="Cousin Sarah" class="w-10 h-10 rounded-full object-cover" data-alt="casual headshot of a young man with a friendly expression and short dark hair" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD5URd3HoM0VyAa7PIPum9TD_3SK4iL2mEB9LIqT9L8GotlP9Odblk39TkwzJiAOVzs3W01GHhVZjQa25LBA9u_lTGqqj4AHW-4JEPI05bG8Syc0d3p4K0rRjbvyt4g_r6etSwSP473YiIuRkHoVSETY9KWXXdtWJ3WZPAxlgzfrwnQumn1kQglu07XKSExxaty1OB0iEv-N9RRyJhJ3hjog5J-VpLQlHs56_IWMrKLIaVUrJrGZiNzibIdog9i0PhoADMydVTqqGA"/>
+<div class="text-xs">
+<p class="font-bold">Cousin Sarah</p>
+<p class="text-outline">May 15, 2024</p>
+</div>
+</div>
+</article>
+<!-- Item 3: New Baby News -->
+<article class="flex flex-col group">
+<div class="overflow-hidden rounded-xl mb-6 shadow-sm">
+<img alt="New Baby" class="w-full aspect-[4/3] object-cover group-hover:scale-105 transition-transform duration-700" data-alt="soft close-up of a baby's tiny hand holding an adult's finger in gentle natural indoor lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDXsrTx0aJgVaB0SerMYLyQ1MYbu2bKe1nKq4hCwSHzeTBFHdvjcc4ufaXZb3CXOQvefq7DGpSsDYDj6c5k07kiuMPBkol13-Oe8WljsxvUgtATta5-_c4qs_W7ddwnvW1Zk3YcKg9BXVrqIC4pPfR7EJzsn3bb7WyIn65wPY-gG_UO5GLzcODn3yJ5SWry5cFHEkzUgbx4IkqSu2xWSMjCAuy_3y6HdXK5cnW7DUQR6rImEAbr5M2juXXBWDztsVMj_VIdQPOV-OA"/>
+</div>
+<div class="flex items-center gap-3 mb-3">
+<span class="text-error font-bold text-xs uppercase tracking-tighter">Milestone</span>
+<div class="w-1 h-1 bg-outline-variant rounded-full"></div>
+<span class="text-outline text-xs">May 10, 2024</span>
+</div>
+<h3 class="text-2xl font-serif mb-3 group-hover:text-primary transition-colors">Welcoming Little Liam: The Newest Hearth Member</h3>
+<p class="text-on-surface-variant line-clamp-3 mb-6">
+                    The wait is over! Liam arrived early Tuesday morning, healthy and already showing off a impressive set of lungs. Both mom and baby are resting well at home.
+                </p>
+<div class="mt-auto pt-4 flex items-center justify-between">
+<span class="text-sm font-medium">By Mom &amp; Dad</span>
+<button class="bg-primary-container text-on-primary-container px-4 py-2 rounded-full text-xs font-bold hover:scale-105 transition-all">Read Story</button>
+</div>
+</article>
+<!-- Item 4: Home Renovation -->
+<article class="lg:col-span-2 bg-surface-container-high rounded-xl p-10 flex flex-col md:flex-row gap-10 items-center">
+<div class="w-full md:w-1/2">
+<img alt="Kitchen Reno" class="w-full h-64 object-cover rounded-lg shadow-inner" data-alt="modern warm kitchen with oak cabinetry and marble countertops during a renovation phase with tools neatly arranged" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBLD_sY_-v7qZozMVdPKUA0GvNWs9UCQhMgowCMBrMZETYSLDyHLySN1kyZW2JI_DNA9ajG1BR-Z6nFyrSESb1et53zOWtYoSIT2LlVB8KfNmef2VuSQ7Gl2qD_3bBLP3Bf75wIdPJU17_beKulJDsG6y0zvOllPw27riPue_v0JxfxyzP-8PbBP0CuOmhQeLi2XaiSHhmMhDIgYJEXmSaEHiKo5KFRpk0rCGsDQ4CvsjYwyN0aPqYlCTio_T13Ux76hGS2LW5liL4"/>
+</div>
+<div class="w-full md:w-1/2">
+<span class="text-tertiary-dim text-xs font-bold tracking-widest uppercase mb-4 block">Transformation</span>
+<h3 class="text-3xl font-serif mb-4">Phase One: The Kitchen Reimagined</h3>
+<p class="text-on-surface-variant mb-6">
+                        We're finally knocking down the wall between the dining room and kitchen. It's messy, loud, and dusty, but the open concept is going to change family dinners forever.
+                    </p>
+<div class="flex items-center justify-between">
+<div class="flex -space-x-3">
+<div class="w-8 h-8 rounded-full border-2 border-surface bg-slate-200"></div>
+<div class="w-8 h-8 rounded-full border-2 border-surface bg-emerald-200"></div>
+</div>
+<span class="text-xs text-outline italic">Updated 2 days ago</span>
+</div>
+</div>
+</article>
+<!-- Quick Update Card -->
+<article class="bg-primary text-on-primary p-8 rounded-xl flex flex-col justify-center text-center">
+<span class="material-symbols-outlined text-4xl mb-4">forum</span>
+<h3 class="text-2xl font-serif mb-4 italic">Have news to share?</h3>
+<p class="text-primary-fixed/80 mb-8">Whether it's a small win or a big milestone, we want to hear from you!</p>
+<button class="bg-surface-container-lowest text-primary font-bold py-3 px-6 rounded-full hover:scale-105 transition-transform">Post an Update</button>
+</article>
+</div>
+<!-- Pagination/Load More -->
+<div class="mt-20 flex flex-col items-center">
+<button class="group flex items-center gap-2 text-stone-500 hover:text-primary transition-colors">
+<span class="font-bold tracking-widest uppercase text-sm">Load Older Memories</span>
+<span class="material-symbols-outlined group-hover:translate-y-1 transition-transform">expand_more</span>
+</button>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full mt-20 bg-stone-200 dark:bg-stone-950 flex flex-col md:flex-row justify-between items-center px-12 py-10 w-full">
+<div class="mb-6 md:mb-0">
+<div class="font-serif text-lg text-stone-800 dark:text-stone-200 mb-2">The Living Scrapbook</div>
+<p class="text-sm font-sans tracking-wide text-stone-500">© 2024 The Living Scrapbook. Built with heart.</p>
+</div>
+<div class="flex gap-8">
+<a class="text-sm font-sans tracking-wide text-stone-500 hover:text-stone-800 hover:text-emerald-600 transition-colors" href="#">Privacy</a>
+<a class="text-sm font-sans tracking-wide text-stone-500 hover:text-stone-800 hover:text-emerald-600 transition-colors" href="#">Family Rules</a>
+<a class="text-sm font-sans tracking-wide text-stone-500 hover:text-stone-800 hover:text-emerald-600 transition-colors" href="#">Support</a>
+</div>
+</footer>
+<!-- Mobile Navigation Bar -->
+<div class="md:hidden fixed bottom-0 left-0 right-0 bg-surface/80 backdrop-blur-lg px-6 py-4 flex justify-around items-center z-50 shadow-[0_-4px_20px_rgba(0,0,0,0.05)]">
+<button class="flex flex-col items-center text-stone-400">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="text-[10px] mt-1 font-bold">HOME</span>
+</button>
+<button class="flex flex-col items-center text-emerald-800">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">newspaper</span>
+<span class="text-[10px] mt-1 font-bold">NEWS</span>
+</button>
+<button class="flex flex-col items-center text-stone-400">
+<span class="material-symbols-outlined">photo_library</span>
+<span class="text-[10px] mt-1 font-bold">GALLERY</span>
+</button>
+<button class="flex flex-col items-center text-stone-400">
+<span class="material-symbols-outlined">settings</span>
+<span class="text-[10px] mt-1 font-bold">MORE</span>
+</button>
+</div>
+</body></html>

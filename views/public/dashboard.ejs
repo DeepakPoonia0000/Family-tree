@@ -1,0 +1,154 @@
+<%- include('../partials/tailwind-head') %>
+<%- include('../partials/tailwind-nav') %>
+
+<main class="pt-28 px-6 md:px-12 max-w-7xl mx-auto space-y-16 pb-20">
+  <section class="group relative overflow-hidden rounded-3xl bg-gradient-to-br from-primary to-primary-container p-10 md:p-16 text-on-primary shadow-soft" style="background-image: url('/img/family-27-may-img.jpeg'); background-size: cover; background-position: center;">
+    <div class="absolute inset-0 bg-surface/10"></div>
+    <div class="relative z-10 max-w-3xl">
+      <div class="rounded-3xl border border-white/30 bg-white/40 p-8 md:p-10 backdrop-blur-xl transition duration-500 opacity-20 group-hover:opacity-100">
+        <p class="text-xs font-bold uppercase tracking-[0.3em] text-primary/80">Home Dashboard</p>
+        <h1 class="mt-4 text-5xl md:text-6xl font-headline leading-tight">Welcome Home, <br /> <%= siteName || 'The Family' %></h1>
+        <p class="mt-5 max-w-2xl text-lg md:text-xl text-primary/90">Everything you see here is managed from the admin area and updates automatically as new stories, events, photos, and conversations are published.</p>
+        <div class="mt-10 flex flex-col gap-3 sm:flex-row sm:items-center">
+          <a href="/news" class="inline-flex items-center justify-center rounded-full bg-surface text-primary px-8 py-3 font-semibold shadow-sm hover:shadow-md transition">Browse News</a>
+          <a href="/gallery" class="inline-flex items-center justify-center rounded-full border border-primary/30 bg-primary/10 text-primary px-8 py-3 font-semibold hover:bg-primary/20 transition">View Gallery</a>
+        </div>
+      </div>
+    </div>
+    <div class="pointer-events-none absolute -right-20 -top-20 h-72 w-72 rounded-full bg-secondary/20 blur-3xl"></div>
+    <div class="pointer-events-none absolute right-10 bottom-6 h-44 w-44 rounded-full bg-on-surface/5 blur-3xl"></div>
+  </section>
+
+  <div class="grid gap-8 lg:grid-cols-[2fr_1fr]">
+    <section class="space-y-8">
+      <div class="rounded-3xl bg-surface p-8 shadow-soft border border-outline/30">
+        <div class="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+          <div>
+            <p class="text-xs font-bold uppercase tracking-[0.3em] text-on-surface-variant">The Hearth News</p>
+            <h2 class="mt-2 text-4xl font-headline">Latest announcements</h2>
+          </div>
+          <a href="/news" class="text-sm font-semibold text-primary hover:underline">See all news</a>
+        </div>
+
+        <% if (highlights.news.length) { %>
+          <% const heroNews = highlights.news[0]; %>
+          <div class="group mt-8 overflow-hidden rounded-3xl bg-surface-container-high p-6 md:flex md:items-center md:gap-6">
+            <% if (heroNews.imageUrl) { %>
+              <div class="mb-6 md:mb-0 md:w-1/3 overflow-hidden rounded-3xl">
+                <img src="<%= heroNews.imageUrl %>" alt="<%= heroNews.title %>" class="h-56 w-full object-cover transition-transform duration-500 group-hover:scale-105" />
+              </div>
+            <% } %>
+            <div class="md:flex-1">
+              <span class="text-xs uppercase tracking-[0.35em] text-secondary">Featured</span>
+              <h3 class="mt-4 text-3xl font-headline"><%= heroNews.title %></h3>
+              <p class="mt-3 text-on-surface-variant"><%= heroNews.description || heroNews.subtitle || heroNews.tag || 'Published by the family admin.' %></p>
+              <div class="mt-6 text-sm text-on-surface-variant flex flex-wrap gap-3">
+                <% if (heroNews.eventDate) { %><span class="rounded-full bg-surface-muted px-3 py-1">Date: <%= new Date(heroNews.eventDate).toLocaleDateString() %></span><% } %>
+                <% if (heroNews.location) { %><span class="rounded-full bg-surface-muted px-3 py-1">Venue: <%= heroNews.location %></span><% } %>
+                <% if (heroNews.tag) { %><span class="rounded-full bg-surface-muted px-3 py-1"><%= heroNews.tag %></span><% } %>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-8 grid gap-4 md:grid-cols-2">
+            <% highlights.news.slice(1).forEach(function(item) { %>
+              <article class="rounded-3xl border border-outline/30 bg-surface p-5 shadow-sm">
+                <h4 class="font-semibold"><%= item.title %></h4>
+                <p class="mt-2 text-sm text-on-surface-variant"><%= item.subtitle || item.tag || item.description?.slice(0, 100) || 'Admin update' %></p>
+              </article>
+            <% }) %>
+          </div>
+        <% } else { %>
+          <p class="mt-8 text-on-surface-variant">No news has been published yet. Use the admin panel to add news items and they'll appear here instantly.</p>
+        <% } %>
+      </div>
+
+      <section class="rounded-3xl bg-surface p-8 shadow-soft border border-outline/30">
+        <div class="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+          <div>
+            <p class="text-xs font-bold uppercase tracking-[0.3em] text-on-surface-variant">Recent Milestones</p>
+            <h2 class="mt-2 text-4xl font-headline">Gallery highlights</h2>
+          </div>
+          <a href="/gallery" class="text-sm font-semibold text-primary hover:underline">View all gallery</a>
+        </div>
+
+        <% if (highlights.gallery.length) { %>
+          <div class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4 auto-rows-[180px]">
+            <% highlights.gallery.forEach(function(item) { %>
+              <article class="relative overflow-hidden rounded-3xl bg-surface-container-high shadow-sm">
+                <% if (item.imageUrl) { %>
+                  <img src="<%= item.imageUrl %>" alt="<%= item.title %>" class="h-full w-full object-cover transition-transform duration-500 hover:scale-105" />
+                <% } else { %>
+                  <div class="flex h-full items-center justify-center bg-surface-muted text-on-surface-variant text-center p-4"><%= item.title %></div>
+                <% } %>
+                <div class="absolute inset-0 bg-gradient-to-t from-on-surface/90 via-transparent to-transparent p-4 flex flex-col justify-end text-white">
+                  <p class="text-sm font-semibold"><%= item.title %></p>
+                  <p class="text-xs opacity-90"><%= item.subtitle || item.tag || 'Shared memory' %></p>
+                </div>
+              </article>
+            <% }) %>
+          </div>
+        <% } else { %>
+          <p class="mt-8 text-on-surface-variant">No photo highlights yet. Add gallery items from the admin area to bring this section to life.</p>
+        <% } %>
+      </section>
+    </section>
+
+    <aside class="space-y-8">
+      <section class="rounded-3xl bg-surface p-8 shadow-soft border border-outline/30">
+        <div class="flex items-center justify-between gap-4">
+          <div>
+            <p class="text-xs font-bold uppercase tracking-[0.3em] text-on-surface-variant">Celebrations</p>
+            <h2 class="mt-2 text-3xl font-headline">Upcoming events</h2>
+          </div>
+          <a href="/calendar" class="text-sm font-semibold text-primary hover:underline">See calendar</a>
+        </div>
+
+        <% if (highlights.calendar.length) { %>
+          <div class="mt-8 space-y-4">
+            <% highlights.calendar.forEach(function(item) { %>
+              <article class="rounded-3xl border border-outline/30 bg-surface-container-low p-5">
+                <div class="flex items-center justify-between gap-4">
+                  <div>
+                    <p class="font-semibold"><%= item.title %></p>
+                    <p class="mt-1 text-sm text-on-surface-variant"><%= item.location || item.host || item.subtitle || 'Family event' %></p>
+                  </div>
+                  <% if (item.eventDate) { %>
+                    <span class="rounded-full bg-primary-container px-3 py-1 text-xs font-semibold text-on-primary-container"><%= new Date(item.eventDate).toLocaleDateString(undefined, { month: 'short', day: 'numeric' }) %></span>
+                  <% } %>
+                </div>
+              </article>
+            <% }) %>
+          </div>
+        <% } else { %>
+          <p class="mt-8 text-on-surface-variant">No calendar events are published yet. Add family gatherings, birthdays, or reunions from admin.</p>
+        <% } %>
+      </section>
+
+      <section class="rounded-3xl bg-surface p-8 shadow-soft border border-outline/30">
+        <div class="flex items-center justify-between gap-4">
+          <div>
+            <p class="text-xs font-bold uppercase tracking-[0.3em] text-on-surface-variant">Conversations</p>
+            <h2 class="mt-2 text-3xl font-headline">Active discussions</h2>
+          </div>
+          <a href="/discussions" class="text-sm font-semibold text-primary hover:underline">Join in</a>
+        </div>
+
+        <% if (highlights.discussions.length) { %>
+          <div class="mt-8 space-y-4">
+            <% highlights.discussions.forEach(function(item) { %>
+              <article class="rounded-3xl border border-outline/30 bg-surface-container-low p-5">
+                <p class="font-semibold"><%= item.title %></p>
+                <p class="mt-2 text-sm text-on-surface-variant"><%= item.metric || item.subtitle || 'A new family conversation' %></p>
+              </article>
+            <% }) %>
+          </div>
+        <% } else { %>
+          <p class="mt-8 text-on-surface-variant">No discussions have started yet. Admin-managed discussion topics appear here as they are published.</p>
+        <% } %>
+      </section>
+    </aside>
+  </div>
+</main>
+
+<%- include('../partials/tailwind-footer') %>

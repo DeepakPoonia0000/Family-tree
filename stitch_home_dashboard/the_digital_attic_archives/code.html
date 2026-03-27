@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&amp;family=Plus+Jakarta+Sans:wght@200..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary-dim": "#4a5e41",
+              "surface-variant": "#eae8e0",
+              "inverse-surface": "#0e0e0c",
+              "surface-bright": "#fffcf7",
+              "on-secondary": "#ffffff",
+              "tertiary-container": "#fbecd8",
+              "surface": "#fffcf7",
+              "tertiary": "#6e6354",
+              "on-primary-fixed-variant": "#4d6144",
+              "outline": "#81817a",
+              "inverse-on-surface": "#9e9d98",
+              "background": "#fffcf7",
+              "on-secondary-fixed-variant": "#425e76",
+              "on-tertiary-fixed": "#4e4537",
+              "surface-tint": "#566a4d",
+              "on-surface": "#383833",
+              "on-primary-fixed": "#31442a",
+              "primary": "#566a4d",
+              "surface-container-high": "#f0eee6",
+              "error-dim": "#791903",
+              "secondary-dim": "#3f5b73",
+              "on-secondary-container": "#38556c",
+              "on-tertiary": "#ffffff",
+              "primary-fixed-dim": "#c4dbb7",
+              "surface-container-low": "#fcf9f3",
+              "tertiary-dim": "#615748",
+              "surface-dim": "#e4e3da",
+              "on-tertiary-fixed-variant": "#6c6152",
+              "tertiary-fixed-dim": "#edddca",
+              "primary-container": "#d2eac5",
+              "on-background": "#383833",
+              "secondary-fixed": "#cbe6ff",
+              "on-tertiary-container": "#615748",
+              "on-error": "#ffffff",
+              "surface-container": "#f6f3ed",
+              "surface-container-highest": "#eae8e0",
+              "secondary-container": "#cbe6ff",
+              "on-secondary-fixed": "#254258",
+              "primary-fixed": "#d2eac5",
+              "outline-variant": "#bbb9b2",
+              "on-surface-variant": "#65655e",
+              "error-container": "#fd795a",
+              "surface-container-lowest": "#ffffff",
+              "inverse-primary": "#e6fed8",
+              "error": "#ae4025",
+              "on-error-container": "#6e1400",
+              "secondary": "#4b677f",
+              "tertiary-fixed": "#fbecd8",
+              "on-primary-container": "#43573b",
+              "on-primary": "#ffffff",
+              "secondary-fixed-dim": "#bad8f4"
+            },
+            fontFamily: {
+              "headline": ["Newsreader", "serif"],
+              "body": ["Plus Jakarta Sans", "sans-serif"],
+              "label": ["Plus Jakarta Sans", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      .serif-italic { font-style: italic; }
+      .tonal-shift-bg { background-color: rgba(246, 243, 237, 0.8); }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopNavBar -->
+<nav class="fixed top-4 inset-x-0 mx-auto w-[95%] rounded-full bg-stone-50/70 dark:bg-stone-900/70 backdrop-blur-xl shadow-[0_12px_40px_rgba(56,56,51,0.06)] flex justify-between items-center px-8 py-3 max-w-7xl z-50">
+<div class="flex items-center gap-2">
+<span class="text-2xl font-bold italic text-emerald-900 dark:text-emerald-100 font-headline">The Digital Hearth</span>
+</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-stone-600 dark:text-stone-400 hover:text-emerald-800 dark:hover:text-emerald-200 hover:scale-105 transition-transform duration-300 font-body" href="#">Our Story</a>
+<a class="text-emerald-900 dark:text-emerald-50 font-bold border-b-2 border-emerald-800 dark:border-emerald-200 pb-1 font-body" href="#">Archives</a>
+<a class="text-stone-600 dark:text-stone-400 hover:text-emerald-800 dark:hover:text-emerald-200 hover:scale-105 transition-transform duration-300 font-body" href="#">Recipes</a>
+<a class="text-stone-600 dark:text-stone-400 hover:text-emerald-800 dark:hover:text-emerald-200 hover:scale-105 transition-transform duration-300 font-body" href="#">Family Map</a>
+<a class="text-stone-600 dark:text-stone-400 hover:text-emerald-800 dark:hover:text-emerald-200 hover:scale-105 transition-transform duration-300 font-body" href="#">The Kitchen Table</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 text-emerald-800 dark:text-emerald-200 hover:scale-105 transition-transform active:opacity-80">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="p-2 text-emerald-800 dark:text-emerald-200 hover:scale-105 transition-transform active:opacity-80">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+</button>
+<div class="w-10 h-10 rounded-full bg-surface-container-high overflow-hidden border-2 border-primary-container">
+<img alt="User's family portrait avatar" class="w-full h-full object-cover" data-alt="vintage-inspired warm family portrait in sepia tones showing a multi-generational group smiling softly in a library setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCFj0ZgOdE8aA17tX1k945h0MwX3DFtQMnOLmcUsSQCLCC_eprHj4o_QCVQkXqF7W-nDZwdxWGWxRVxoJA56gWTMWugqSnM-BOy79IHNrajnU5kBaDfdFjjiqptjiLQfcS9keelfrnvjGPEaFMJADT09NvwBO9GMBv1iFBOnnC3MoSogZXRUHJqWra-7flNeI2YoiZNf8K85EpqHQqoizIzP3gq94v_yrW7e9TF60rMruJmWaGB-rHuMXMiVIhRH0Udb8al7mzspCk"/>
+</div>
+</div>
+</nav>
+<div class="flex pt-28 min-h-screen">
+<!-- SideNavBar -->
+<aside class="hidden lg:flex flex-col p-6 space-y-4 h-full w-64 rounded-r-3xl bg-stone-100 dark:bg-stone-900 bg-stone-50 dark:bg-stone-950 font-body font-medium">
+<div class="mb-8 px-2">
+<h2 class="font-headline text-xl text-emerald-900 dark:text-emerald-50">The Living Scrapbook</h2>
+<p class="text-xs text-stone-500 uppercase tracking-widest mt-1">Preserving our legacy</p>
+</div>
+<nav class="flex-1 space-y-1">
+<a class="flex items-center gap-3 px-4 py-3 bg-emerald-100/50 dark:bg-emerald-900/30 text-emerald-900 dark:text-emerald-100 rounded-xl hover:translate-x-1 transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="inventory_2" style="font-variation-settings: 'FILL' 1;">inventory_2</span>
+<span>The Digital Attic</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-stone-500 dark:text-stone-400 hover:bg-stone-200/50 dark:hover:bg-stone-800/50 rounded-xl hover:translate-x-1 transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="menu_book">menu_book</span>
+<span>Family Recipes</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-stone-500 dark:text-stone-400 hover:bg-stone-200/50 dark:hover:bg-stone-800/50 rounded-xl hover:translate-x-1 transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="public">public</span>
+<span>Family Map</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-stone-500 dark:text-stone-400 hover:bg-stone-200/50 dark:hover:bg-stone-800/50 rounded-xl hover:translate-x-1 transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="forum">forum</span>
+<span>The Kitchen Table</span>
+</a>
+</nav>
+<button class="mt-auto w-full py-4 px-6 rounded-full bg-gradient-to-br from-primary to-primary-dim text-on-primary font-bold shadow-lg hover:scale-[1.02] transition-transform active:scale-98 flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-sm">add</span>
+                Add New Memory
+            </button>
+</aside>
+<!-- Main Canvas -->
+<main class="flex-1 px-8 lg:px-16 pb-24">
+<!-- Header Section -->
+<header class="mb-16">
+<h1 class="text-6xl md:text-7xl font-headline text-on-surface mb-4 leading-tight">The Digital Attic</h1>
+<p class="text-lg text-on-surface-variant max-w-2xl font-body leading-relaxed">
+                    A curated repository of our family's most precious paper trails. From handwritten letters that crossed oceans to the certificates that marked our new beginnings.
+                </p>
+</header>
+<!-- Categories Bento Grid -->
+<section class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-20">
+<div class="md:col-span-2 group relative overflow-hidden rounded-xl bg-surface-container-high h-80 cursor-pointer">
+<img alt="Old Letters" class="w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-700" data-alt="stack of vintage handwritten letters with faded ink and yellowed edges resting on a weathered wooden table with soft morning sunlight" src="https://lh3.googleusercontent.com/aida-public/AB6AXuACN283iAHyVy6NPdw8lyXdPjpfMnPQLGLyq7OZTW8mcIQ2tXr3oXZObhZEHUEB2N3vpjiB1ATIrPDgweeIebCCjI5cehVo8vykJGYRfPckIGPz1_wb9OquzHYguU4d_1zOBGKH7qj5ydMkqZ3nS0kfjyrHO21uj-q7vRBgvEo52LTKIocGHHMybUEHxUd6_30N7-Id92hEIy1YKw1efsmlB42xypivQTGNT3SEQvSQjwQlvFVKy58QLHhnAUsvbbdWZyOLXsLgCt4"/>
+<div class="absolute inset-0 bg-gradient-to-t from-on-surface/80 to-transparent flex flex-col justify-end p-8">
+<h3 class="font-headline text-3xl text-surface">Old Letters</h3>
+<p class="text-surface-variant font-body mt-2">124 archives</p>
+</div>
+</div>
+<div class="group relative overflow-hidden rounded-xl bg-surface-container-high h-80 cursor-pointer">
+<div class="absolute inset-0 bg-tertiary-container/30 z-10"></div>
+<img alt="Marriage Certificates" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="antique decorative marriage certificate with elegant calligraphy and faded gold leaf details under warm gallery lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBytGUv1rrDytgdzO78vpXsW7HBF8UCL2mpwepCA9qlkZiP2M6qY7x3rYA9tKt-aDwaWCfigKxaMNf9Unb99nL78Bek2gXeebGBbSgS4Jk3SBRIE0suVqV1wvBxcNUhaErnfW03NnOEFcXBH1GxMO6k2TFbVAYUIF4X8d0QZzrYnkxY4mctQek5J-UoF3PmksRnDK4NVgMmKpfesI1U6pn9rv7viM3Q2V9Ndd4DmM0V5ApkOqMywy9H9xYXC5bY2uptuhfmqeuIz4o"/>
+<div class="absolute inset-0 z-20 flex flex-col justify-end p-6 bg-gradient-to-t from-on-surface/60 to-transparent">
+<h3 class="font-headline text-2xl text-surface">Marriage Certificates</h3>
+</div>
+</div>
+<div class="group relative overflow-hidden rounded-xl bg-surface-container-high h-80 cursor-pointer">
+<img alt="Military Records" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="weathered military service papers and a pair of vintage dog tags resting on a dark woolen blanket texture" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDl0PneVBLd7Ps3Imgh-F-e0T30DaLg_mjjFK0sUGDy7HFNiFq2MYFYinLCIzkl6qO4vMsVnQaVxWJ44yeXL3u2gDhqb_Ytefumq-u-sBQhURPW_tBQ-dK5QfK_gsxNFltczelq_o1VAaHvxnZ3mG7RlX9AtgYHJMwHFUBwCVVubxlVivRTryVwfhKbs3xYD5RA233qOSVK_Pplm_SrofK2u8xVOpxVkFgtZOT0KaB0_KLS4ScoBe3MHLDRik15AN9cCxYKM3K6QA0"/>
+<div class="absolute inset-0 z-20 flex flex-col justify-end p-6 bg-gradient-to-t from-on-surface/60 to-transparent">
+<h3 class="font-headline text-2xl text-surface">Military Records</h3>
+</div>
+</div>
+</section>
+<!-- Document Feed - Asymmetric Layout -->
+<div class="mb-12 flex justify-between items-end">
+<h2 class="font-headline text-4xl">Recent Treasures</h2>
+<div class="flex gap-4">
+<button class="px-6 py-2 rounded-full border border-outline-variant hover:bg-surface-container-low transition-colors font-body text-sm">Filter by Year</button>
+<button class="px-6 py-2 rounded-full border border-outline-variant hover:bg-surface-container-low transition-colors font-body text-sm">Sort: Latest</button>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-12 items-start">
+<!-- Column 1 -->
+<div class="space-y-12">
+<article class="group">
+<div class="relative mb-4 overflow-hidden rounded-lg aspect-[3/4] bg-surface-container-high rotate-1 group-hover:rotate-0 transition-transform">
+<img alt="Scrapbook Scan" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="high resolution scan of a 1920s scrapbook page with pressed flowers, black and white photos, and handwritten notes" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB4ZZzOTe1fMZkQ4WzF2VSBrmYWNVhDpqKNhTu7ZMyDnYfqOVLMTDNFpH1K9UyyxT_zgWMfJIN4mbo6g9I8JOYwnq-q7rpSWDkTi0c0P-MtCaxyR0Nwvad6CVHwxmT4fD9j8uCs2IRBWjuTrgvIB8mnG54lt2D5VLhPkEefW91dktLfqNole7OSA-diGKkLkJG7ix1WzdHOyQGAj-NpyittPY0WnaUNKI6KyEfMiWOSrmLKgjgE_t5KKb31fXkm-sszUH2JY8I8QrU"/>
+</div>
+<div class="px-2">
+<span class="text-xs uppercase tracking-widest text-primary-dim font-bold mb-1 block">Scrapbook Scans</span>
+<h4 class="font-headline text-2xl mb-1">Summer of '24 Journal</h4>
+<p class="text-on-surface-variant italic font-headline opacity-70">August 12, 1924</p>
+</div>
+</article>
+<article class="group">
+<div class="relative mb-4 overflow-hidden rounded-xl aspect-square bg-surface-container-low -rotate-2 group-hover:rotate-0 transition-transform">
+<img alt="Telegram" class="w-full h-full object-cover" data-alt="sepia-toned vintage telegram from the early 20th century with typewriter text and official courier stamps" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDhh1TrFoNLGqSA96lfMTeWJ8rj_qYfze4NN_F5FFBOo6x22VOIbkHaBL23RT9vTTqQfQqISzOkoe0oV0pI2rCnaADTKH0YJqoL2cJbGk_17K9T2jjnqa5ZRmfDJrJS_PZD9uLrUblQLb2to4gODtFZzkrAFzheXcvD0_NsBp_1BEx7PeFVSoo00wSRiRgZzhAzO6AeUPsv9Zbj2iZ7dzddh5FvCJW2v4KYScFZfQ8TYC9nDDzun9aPcmwjH6WU3mUzg-nnyVkcvd0"/>
+</div>
+<div class="px-2">
+<span class="text-xs uppercase tracking-widest text-primary-dim font-bold mb-1 block">Old Letters</span>
+<h4 class="font-headline text-2xl mb-1">Arrival in New York Telegram</h4>
+<p class="text-on-surface-variant italic font-headline opacity-70">May 19, 1912</p>
+</div>
+</article>
+</div>
+<!-- Column 2 (Taller/Hero emphasis) -->
+<div class="space-y-12 pt-12 md:pt-24">
+<article class="group">
+<div class="relative mb-6 overflow-hidden rounded-xl aspect-[4/5] bg-surface-container-highest shadow-xl group-hover:shadow-2xl transition-all">
+<img alt="Grandpa's Ledger" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000" data-alt="macro photo of a leather-bound 19th-century ledger book with yellowed pages and intricate fountain pen ledger entries" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBsECQPSVp-PkX6Jx2m_1Khs0npeL3g5aQtqFTsGDil7pPoYcqEGFu5pfEfMgtFOgMhvhn66JWNzqBztrY3oS71YQMG58AAQcUMmePV3aZOeA7gfqLAlL4TWDH7-40taMGT_2F-aPI9Y5Y4zycTJPHVuiTasRezC3hJ3_UHsnJXv4l429DcqTz_oWwt1_jBzgdivIMKqJl_m2BryHxyUzDDuPlUFw0D9CCMwOYMs1Drq4_0nqpjCpqajsEFc0EjXQmAUo7qoaMr_p8"/>
+<div class="absolute inset-0 ring-1 ring-inset ring-black/10 rounded-xl"></div>
+</div>
+<div class="px-2 text-center">
+<span class="text-xs uppercase tracking-widest text-primary-dim font-bold mb-1 block">Military Records</span>
+<h4 class="font-headline text-3xl mb-1">The Great War Ledger</h4>
+<p class="text-on-surface-variant italic font-headline opacity-70">Circa 1917</p>
+</div>
+</article>
+<article class="group">
+<div class="relative mb-4 overflow-hidden rounded-lg aspect-video bg-surface-container-high group-hover:rotate-1 transition-transform">
+<img alt="Draft Card" class="w-full h-full object-cover" data-alt="historical draft registration card with tactile paper texture and handwritten signatures from the 1940s" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDKss-xeELYl4CjS-8G_m5FoyuCQbLNALuSvG7yUN1eHsu5mpVCgpxw6OXF2-ydQV7P6wFN8aJSUkoq1Xoragg4ln-TA5sUlrAgTyo_O_c_r6H0wsXTwIcfSMVHLk95rlmu1_AdVNBC_d_Ay8RiPqNwYvZWfBWlr0kAbDvHQPcbof6rxAJZfwPoSXVGlquG97X3o1CTHoPugEotrNYqfuyUjFFspYpNshrD2QfdNlFtLEz7V0DNu9caJjFhTYJPb5jajCWfB0D58tU"/>
+</div>
+<div class="px-2">
+<span class="text-xs uppercase tracking-widest text-primary-dim font-bold mb-1 block">Military Records</span>
+<h4 class="font-headline text-2xl mb-1">Arthur's Service Card</h4>
+<p class="text-on-surface-variant italic font-headline opacity-70">December 1941</p>
+</div>
+</article>
+</div>
+<!-- Column 3 -->
+<div class="space-y-12">
+<article class="group">
+<div class="relative mb-4 overflow-hidden rounded-full aspect-square bg-surface-container-highest shadow-inner p-4 group-hover:scale-105 transition-transform">
+<img alt="Family Crest" class="w-full h-full object-cover rounded-full grayscale opacity-80" data-alt="antique family seal carved into aged stone with mossy details and intricate heraldic imagery" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBcKefaTEBu4sXrnvz4dEDazcu8KW-Jevf20tMsnzRy3TSodV5c7Nu-63Zu8entb-z0iOf4apRtX2yYKGHfke_tN4-K1q_jf94gLADLPbsl-2EP_dQADi700WE0lDIJftEkIQMS08jrP7F7uFbpdxyJm35jWaxdLe2Qf09jtomEdCdusW-O63om0io8iZAYWp4jJ4vtnD28rXDSqfmPzrXlN6aLTGalvgReoRcITO5WUhqIBAQgt7ZN_KsrDmsAbO-5V0SfmpM5koE"/>
+</div>
+<div class="px-2 text-right">
+<span class="text-xs uppercase tracking-widest text-primary-dim font-bold mb-1 block">Archives</span>
+<h4 class="font-headline text-2xl mb-1">Crest Impression Scan</h4>
+<p class="text-on-surface-variant italic font-headline opacity-70">Unknown Date</p>
+</div>
+</article>
+<article class="group">
+<div class="relative mb-4 overflow-hidden rounded-lg aspect-[3/4] bg-surface-container-high rotate-[-1deg] group-hover:rotate-0 transition-transform">
+<img alt="Old Newspaper" class="w-full h-full object-cover group-hover:scale-105 transition-transform" data-alt="front page of a historical local newspaper with prominent headlines and grainy black and white photography" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDUjaoX70I1kQncc6p1J91Vdl8IBA2_dtuco_MhQapRcSjoTIp7KoA1YiM8T6jToqGypzB0JS6_d3CENuE31mKq2w0cVFZg_0fDCYA-P96fMVIneReMRZtI6Yt3zDJ5SZSSG1SjiG2UtreZVCcakhPxTATO7KE0FCeSnHCpthSfpeaJ0nr7iUfZyQ2dlbepSW_qyr9R-24xH2xaIR5n6_7mQ2l0u8RqlaurNrh0Y8NrXSJmfG4n0WLt-Xr3d-sFGoXwhs77gqTI3dA"/>
+</div>
+<div class="px-2">
+<span class="text-xs uppercase tracking-widest text-primary-dim font-bold mb-1 block">Scrapbook Scans</span>
+<h4 class="font-headline text-2xl mb-1">Town Centennial Feature</h4>
+<p class="text-on-surface-variant italic font-headline opacity-70">July 1952</p>
+</div>
+</article>
+</div>
+</div>
+<!-- Call to Action -->
+<section class="mt-32 p-12 rounded-xl bg-surface-container-low text-center max-w-4xl mx-auto relative overflow-hidden">
+<div class="absolute -top-12 -left-12 w-32 h-32 bg-primary/10 rounded-full blur-3xl"></div>
+<div class="absolute -bottom-12 -right-12 w-48 h-48 bg-tertiary-container/30 rounded-full blur-3xl"></div>
+<h2 class="font-headline text-4xl mb-4 relative z-10">Found something in your trunk?</h2>
+<p class="font-body text-on-surface-variant mb-8 max-w-lg mx-auto relative z-10">Our digital archive is always growing. Scan and upload your physical documents to ensure they're preserved for the next hundred years.</p>
+<div class="flex flex-col md:flex-row gap-4 justify-center relative z-10">
+<button class="px-8 py-4 bg-primary text-on-primary rounded-full font-bold hover:scale-105 transition-transform flex items-center justify-center gap-2">
+<span class="material-symbols-outlined">upload</span>
+                        Start Archive Scan
+                    </button>
+<button class="px-8 py-4 border border-outline text-on-surface rounded-full font-bold hover:bg-surface-container-high transition-colors">
+                        Explore Methodology
+                    </button>
+</div>
+</section>
+</main>
+</div>
+<!-- Footer -->
+<footer class="w-full pt-12 pb-8 bg-stone-200 dark:bg-stone-950 font-body text-sm tracking-wide flex flex-col items-center space-y-6 mt-24">
+<div class="flex flex-col items-center gap-2">
+<span class="font-headline italic text-lg text-emerald-900 dark:text-emerald-100">The Digital Hearth</span>
+<p class="text-stone-500 dark:text-stone-400">© 2024 The Digital Hearth. Handcrafted for the family.</p>
+</div>
+<div class="flex gap-8">
+<a class="text-stone-500 dark:text-stone-400 hover:text-emerald-700 dark:hover:text-emerald-300 transition-colors" href="#">Privacy Policy</a>
+<a class="text-stone-500 dark:text-stone-400 hover:text-emerald-700 dark:hover:text-emerald-300 transition-colors" href="#">Terms of Heritage</a>
+<a class="text-stone-500 dark:text-stone-400 hover:text-emerald-700 dark:hover:text-emerald-300 transition-colors" href="#">Contact Elder</a>
+<a class="text-stone-500 dark:text-stone-400 hover:text-emerald-700 dark:hover:text-emerald-300 transition-colors" href="#">Help Center</a>
+</div>
+<div class="pt-8 border-t border-stone-300/30 w-full max-w-screen-xl flex justify-between items-center px-8 opacity-60">
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-stone-400">social_leaderboard</span>
+<span class="material-symbols-outlined text-stone-400">history_edu</span>
+<span class="material-symbols-outlined text-stone-400">volunteer_activism</span>
+</div>
+<p class="italic font-headline">"Memory is the treasury and guardian of all things."</p>
+</div>
+</footer>
+</body></html>

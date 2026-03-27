@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Family Member Details - The Living Scrapbook</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,600;0,700;1,400;1,600&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-dim": "#3f5b73",
+                        "primary": "#566a4d",
+                        "outline": "#81817a",
+                        "tertiary-dim": "#615748",
+                        "on-background": "#383833",
+                        "tertiary": "#6e6354",
+                        "on-tertiary": "#ffffff",
+                        "error-container": "#fd795a",
+                        "secondary-container": "#cbe6ff",
+                        "outline-variant": "#bbb9b2",
+                        "inverse-primary": "#e6fed8",
+                        "on-surface-variant": "#65655e",
+                        "surface-bright": "#fffcf7",
+                        "secondary-fixed-dim": "#bad8f4",
+                        "error": "#ae4025",
+                        "on-primary": "#ffffff",
+                        "inverse-surface": "#0e0e0c",
+                        "surface-variant": "#eae8e0",
+                        "secondary-fixed": "#cbe6ff",
+                        "on-primary-fixed-variant": "#4d6144",
+                        "on-primary-container": "#43573b",
+                        "primary-fixed": "#d2eac5",
+                        "primary-container": "#d2eac5",
+                        "surface-container-high": "#f0eee6",
+                        "primary-fixed-dim": "#c4dbb7",
+                        "on-secondary": "#ffffff",
+                        "on-error": "#ffffff",
+                        "surface-container-low": "#fcf9f3",
+                        "error-dim": "#791903",
+                        "tertiary-container": "#fbecd8",
+                        "surface-container": "#f6f3ed",
+                        "surface-container-highest": "#eae8e0",
+                        "primary-dim": "#4a5e41",
+                        "surface-tint": "#566a4d",
+                        "on-tertiary-fixed-variant": "#6c6152",
+                        "on-tertiary-container": "#615748",
+                        "surface": "#fffcf7",
+                        "on-surface": "#383833",
+                        "on-error-container": "#6e1400",
+                        "surface-dim": "#e4e3da",
+                        "inverse-on-surface": "#9e9d98",
+                        "secondary": "#4b677f",
+                        "on-primary-fixed": "#31442a",
+                        "background": "#fffcf7",
+                        "on-tertiary-fixed": "#4e4537",
+                        "on-secondary-fixed-variant": "#425e76",
+                        "on-secondary-container": "#38556c",
+                        "tertiary-fixed": "#fbecd8",
+                        "tertiary-fixed-dim": "#edddca",
+                        "on-secondary-fixed": "#254258"
+                    },
+                    fontFamily: {
+                        "headline": ["Newsreader"],
+                        "body": ["Plus Jakarta Sans"],
+                        "label": ["Plus Jakarta Sans"]
+                    },
+                    borderRadius: { "DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #fffcf7;
+            color: #383833;
+        }
+        .serif-italic { font-family: 'Newsreader', serif; font-style: italic; }
+        .headline-lg { font-family: 'Newsreader', serif; font-weight: 700; line-height: 1.1; }
+    </style>
+</head>
+<body class="bg-surface selection:bg-primary-container selection:text-on-primary-container">
+<!-- Top Navigation (Shell Implementation) -->
+<nav class="fixed top-4 inset-x-4 rounded-full z-50 bg-stone-50/70 dark:bg-stone-900/70 backdrop-blur-xl shadow-[0_12px_40px_rgba(56,56,51,0.06)] flex justify-between items-center px-8 h-16 max-w-5xl mx-auto">
+<div class="text-2xl font-serif text-emerald-900 dark:text-emerald-50 tracking-tight">The Living Scrapbook</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="font-['Newsreader'] italic text-lg text-stone-600 dark:text-stone-400 hover:text-emerald-800 hover:scale-105 transition-all" href="#">Our Story</a>
+<a class="font-['Newsreader'] italic text-lg text-stone-600 dark:text-stone-400 hover:text-emerald-800 hover:scale-105 transition-all" href="#">Chronicle</a>
+<a class="font-['Newsreader'] italic text-lg text-stone-600 dark:text-stone-400 hover:text-emerald-800 hover:scale-105 transition-all" href="#">Gallery</a>
+<a class="font-['Newsreader'] italic text-lg text-emerald-900 dark:text-emerald-50 font-bold border-b-2 border-emerald-800/30 hover:scale-105 transition-all" href="#">Family Tree</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-colors">notifications</button>
+<button class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-colors">settings</button>
+<div class="w-8 h-8 rounded-full bg-surface-container-highest overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="close-up portrait of a middle aged woman with a warm smile and kind eyes in soft daylight" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBXtAQCKzhMlY6AM7nIb7tQW4Akknnx1LKcCsh6--phtGx6i5yHChcypQisj7QtETHdbO3d5HQhHt5jan-r4I4ou3XQJHIgqzixqQLktS4HJfFj-vPHJY5sXSLH_JzIsxmXXTDgADXlIHASrni6bCZgoV_-mP6Rf-dOlPo7TLRs0TMygL2BU9N_afwuC5nYHh7_eqqsnz_t1Jz953hYmAOKMRUV17Ceb-xizCuzhxKXLeO8NDCNOdpGdGOO5fyfq3ac_zvrzIbpmtg"/>
+</div>
+</div>
+</nav>
+<main class="pt-28 pb-32 px-4 max-w-6xl mx-auto">
+<!-- Back Navigation -->
+<div class="mb-12 flex items-center">
+<a class="flex items-center gap-2 group text-on-surface-variant hover:text-primary transition-all" href="#">
+<span class="material-symbols-outlined transition-transform group-hover:-translate-x-1">arrow_back</span>
+<span class="font-label font-semibold text-sm tracking-wide uppercase">Return to Family Tree</span>
+</a>
+</div>
+<!-- Hero Header: Profile Portrait & Identity -->
+<section class="relative mb-24">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-end">
+<div class="md:col-span-5 relative group">
+<div class="aspect-[4/5] rounded-tl-xl rounded-tr-[4rem] rounded-bl-[4rem] rounded-br-xl overflow-hidden shadow-2xl rotate-[-2deg] bg-surface-container-high transition-transform duration-500 group-hover:rotate-0">
+<img class="w-full h-full object-cover grayscale-[20%] hover:grayscale-0 transition-all duration-700" data-alt="elegant vintage style portrait of an elderly matriarch with silver hair wearing a sage green knit sweater against a warm beige background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBLiGojMUM0IqB8_kB_z8O6Tk6OcHt93_tI3Twz8MpFWRGe0oOwEbR7xA0VhefVlwvdNx92WK5tbyZLAa-3j8lAWh7W-Dcgpjm3F8JBNztK8OywvosOwNxV6XMQn_ZMYlBOhcy66g6rUNurvwb9Pjul2xrgT-cZyzE8bBOOC_yNU3AcV8ryUTyQIJXESaO6UCpfa0BUdc-bZOuDdIw0BjEHM_tHaQTTC_3zEOTILAeYBmgBadEYOyE8EPm3hRS-XOvsjWK_J9966Lc"/>
+</div>
+<!-- Decorative Element -->
+<div class="absolute -bottom-6 -right-6 w-32 h-32 bg-primary-container/40 rounded-full blur-2xl -z-10"></div>
+</div>
+<div class="md:col-span-7 pb-4">
+<div class="flex flex-wrap gap-3 mb-6">
+<span class="px-4 py-1 bg-primary-container text-on-primary-container rounded-full text-xs font-bold uppercase tracking-widest">Matriarch</span>
+<span class="px-4 py-1 bg-surface-container-highest text-on-surface-variant rounded-full text-xs font-bold uppercase tracking-widest">3rd Generation</span>
+</div>
+<h1 class="headline-lg text-6xl md:text-8xl text-on-surface mb-4">Eleanor <br/><span class="serif-italic font-normal">Rose Thorne</span></h1>
+<div class="flex items-center gap-6 text-on-surface-variant">
+<div class="flex flex-col">
+<span class="text-[10px] uppercase font-bold tracking-tighter opacity-60">Born</span>
+<span class="font-headline italic text-2xl">May 14, 1942</span>
+</div>
+<div class="w-px h-10 bg-outline-variant/30"></div>
+<div class="flex flex-col">
+<span class="text-[10px] uppercase font-bold tracking-tighter opacity-60">Birthplace</span>
+<span class="font-headline italic text-2xl">Savannah, GA</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Life Story & Bento Layout -->
+<section class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-24">
+<!-- Biography Card -->
+<div class="md:col-span-2 bg-surface-container-low p-10 md:p-14 rounded-xl relative overflow-hidden">
+<div class="absolute top-0 right-0 w-48 h-48 bg-tertiary-container/20 rounded-full -mr-24 -mt-24 blur-3xl"></div>
+<h2 class="font-headline text-4xl mb-8">The Life Story</h2>
+<div class="font-body text-lg leading-relaxed text-on-surface-variant space-y-6">
+<p>
+                        Born in the heart of the Deep South during a pivotal decade, Eleanor grew up in the shade of ancient oaks and the fragrance of blooming jasmine. Her early years were defined by a profound curiosity for the natural world, often found sketching local flora in her father's garden—a passion that would later define her career in botanical illustration.
+                    </p>
+<p>
+                        She moved to the Pacific Northwest in the late 60s, seeking a change in scenery that mirrored her inner transformation. It was there she met Arthur, beginning a fifty-year partnership built on shared values of community, art, and the preservation of family stories. Her legacy is one of quiet strength and vivid color.
+                    </p>
+</div>
+</div>
+<!-- Quick Stats / Personal Details -->
+<div class="space-y-8">
+<div class="bg-primary p-8 rounded-lg text-on-primary">
+<span class="material-symbols-outlined text-3xl mb-4" data-weight="fill">favorite</span>
+<h3 class="font-headline text-2xl mb-2">Favorite Memory</h3>
+<p class="font-body text-sm opacity-90 leading-snug italic">"The first time I saw the Pacific Ocean at Cannon Beach. The mist felt like a new beginning."</p>
+</div>
+<div class="bg-surface-container-high p-8 rounded-lg">
+<h3 class="font-label font-bold text-xs uppercase tracking-widest mb-4 text-on-surface-variant">Affiliations</h3>
+<ul class="space-y-3 font-body text-sm text-on-surface">
+<li class="flex items-center gap-2">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+                            National Botanical Society
+                        </li>
+<li class="flex items-center gap-2">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+                            Savannah Arts Guild (1960-1968)
+                        </li>
+<li class="flex items-center gap-2">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+                            Founder, Thorne Family Archive
+                        </li>
+</ul>
+</div>
+</div>
+</section>
+<!-- Milestones Timeline -->
+<section class="mb-24">
+<h2 class="font-headline text-4xl text-center mb-16 italic">Significant Milestones</h2>
+<div class="relative max-w-4xl mx-auto">
+<!-- Timeline Vertical Line -->
+<div class="absolute left-1/2 top-0 bottom-0 w-px bg-outline-variant/40 hidden md:block"></div>
+<div class="space-y-16">
+<!-- Milestone 1 -->
+<div class="flex flex-col md:flex-row items-center gap-8 md:gap-0">
+<div class="md:w-1/2 md:pr-12 md:text-right">
+<span class="font-headline text-3xl text-primary">1964</span>
+<h4 class="font-label font-bold text-on-surface">Graduated Honors Art</h4>
+<p class="text-sm text-on-surface-variant mt-2">BFA in Visual Communication from Savannah College of Art &amp; Design.</p>
+</div>
+<div class="z-10 w-4 h-4 rounded-full bg-primary border-4 border-surface shadow-md"></div>
+<div class="md:w-1/2 md:pl-12"></div>
+</div>
+<!-- Milestone 2 -->
+<div class="flex flex-col md:flex-row items-center gap-8 md:gap-0">
+<div class="md:w-1/2 md:pr-12"></div>
+<div class="z-10 w-4 h-4 rounded-full bg-tertiary border-4 border-surface shadow-md"></div>
+<div class="md:w-1/2 md:pl-12">
+<span class="font-headline text-3xl text-tertiary">1971</span>
+<h4 class="font-label font-bold text-on-surface">Marriage to Arthur Thorne</h4>
+<p class="text-sm text-on-surface-variant mt-2">A small garden ceremony held at the historic Mercer House, followed by a move to Seattle.</p>
+</div>
+</div>
+<!-- Milestone 3 -->
+<div class="flex flex-col md:flex-row items-center gap-8 md:gap-0">
+<div class="md:w-1/2 md:pr-12 md:text-right">
+<span class="font-headline text-3xl text-secondary">1985</span>
+<h4 class="font-label font-bold text-on-surface">Published 'Coastal Flora'</h4>
+<p class="text-sm text-on-surface-variant mt-2">Her definitive guide to PNW wildflowers, featuring over 200 hand-drawn illustrations.</p>
+</div>
+<div class="z-10 w-4 h-4 rounded-full bg-secondary border-4 border-surface shadow-md"></div>
+<div class="md:w-1/2 md:pl-12"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Personal Gallery -->
+<section class="mb-24">
+<div class="flex justify-between items-end mb-12">
+<div>
+<h2 class="font-headline text-4xl mb-2">Personal Gallery</h2>
+<p class="font-body text-on-surface-variant">Glimpses into a life well-lived.</p>
+</div>
+<button class="bg-surface-container-high hover:bg-surface-container-highest px-6 py-2 rounded-full font-label font-bold text-xs uppercase tracking-wider transition-all">View All 42 Photos</button>
+</div>
+<!-- Asymmetric Gallery Grid -->
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 auto-rows-[200px]">
+<div class="col-span-2 row-span-2 rounded-xl overflow-hidden shadow-lg group">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="vintage black and white photo of a young couple walking through a meadow with mountains in the background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBqN89bR0tvUPwuoegy3b5oUrv7BMZbEnfsUhP-bJJlL89lNM9KnAwChj3uvbr2qOoG5xPepITux9TeH5pvv-y8Qe3nl-NWMfO00lwGA9NnNN5jUWNQvJDRDY3CP8KbQL_ObD7lgoOoHNXkPgPdo6oUOSyby3ovTaqubUqbl6bYOzLBS01Qp2sUhHrCYPDGV2VAfDngp18lI42kyz_IX1PsS1F_UKYx2KqzVWb26rxfUpVOCASyTKv2MIh24cUj6gaSwcfI0-NcB70"/>
+</div>
+<div class="col-span-1 row-span-1 rounded-tr-[3rem] overflow-hidden shadow-lg group">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="close-up of delicate watercolor botanical illustration of a lavender sprig on aged paper" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAOvC1egQia_UmIuhUYr3_u-iUMv9yu1JNHiOnnKff5wtd6-C-ysUzji6tjbcCSGgLo7pbEJ-PYOAu-4nyoxEtpdA_vZdDbIeQBeTFo-qRzhXuEuisefNeWP9CWjbzA3IZIdOxMnpG2xPkJ9LzdJroutGBI0D5D7RTQ-tY8fEj78R6qojqDkuTM4eGpthFBe2g2y1JW2RdZn3gF53rkHaKdm-jYRmOy1yll7ftB_hqew2qZWQhOlr5Jrws0iCspZOpMX49NZAkHkD0"/>
+</div>
+<div class="col-span-1 row-span-2 rounded-bl-[3rem] overflow-hidden shadow-lg group">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="warm sunlit living room with stacks of old books and a cozy green armchair near a large window" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCfZ0x-G0ZwmTvSgyLUmLtXiPy1PherKa7G9WTPOZxdBIqgtB9GWsOzbFzjwqYs0DnzhF04hkw55u2UgzpNtXPzkHryoC5HPPuV7Oq5vsvD9D8GhSpF-w9pL7Nm0RhpdCrol6IBEfF2bYW6JG4xK_lSLj0WgjgoedudC35Yv76ukRWZ_g0DiBZkJbUlmX18ef5j38UzDbFhYX2hP1LlH2WmPbf5HA8JLdcFRVYhIEeQrD5xnzy58BrhbOGzlT0XbezEEvnRwlLkxEU"/>
+</div>
+<div class="col-span-1 row-span-1 rounded-xl overflow-hidden shadow-lg group">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="candid photo of an elderly woman laughing while gardening in a sun-drenched backyard" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCs7hwCEJfCzfB54HIcoJgxDZiaOLPuM805aanG_RORRYZX3JF_wGO-UHTo47jvZPQimF4fwlAmtor8aPHAz0qFEPgjGTNISYt7lHTMu288u_0BLYSnTE5M_aSGPvZ4Y7CO22Nn3ptKcGMrdoqxKkmbEibGfVEJa5hb1lHPeqAG1LeJ4ddsRyrLn5gasPya9Y4cN6jtfxF3Pwfjyii3onnemPzuU4LV8pSaN1kEt8g-UgYoHDHKHDkhXuiXUnnWxqOPvJiHL0Wd1uI"/>
+</div>
+</div>
+</section>
+</main>
+<!-- Bottom Navigation (Shell Implementation) -->
+<div class="md:hidden fixed bottom-0 left-0 w-full flex justify-around items-center px-4 pb-6 pt-3 bg-stone-50/80 dark:bg-stone-900/80 backdrop-blur-md z-50 rounded-t-[3rem]">
+<button class="flex flex-col items-center justify-center text-stone-500 dark:text-stone-400 px-6 py-2">
+<span class="material-symbols-outlined mb-1">home_app_logo</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[10px] font-semibold tracking-wide uppercase">Home</span>
+</button>
+<button class="flex flex-col items-center justify-center text-stone-500 dark:text-stone-400 px-6 py-2">
+<span class="material-symbols-outlined mb-1">auto_stories</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[10px] font-semibold tracking-wide uppercase">Memories</span>
+</button>
+<button class="flex flex-col items-center justify-center bg-emerald-100 dark:bg-emerald-900/40 text-emerald-900 dark:text-emerald-100 rounded-[2rem] px-6 py-2">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 1;">account_tree</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[10px] font-semibold tracking-wide uppercase">Tree</span>
+</button>
+<button class="flex flex-col items-center justify-center text-stone-500 dark:text-stone-400 px-6 py-2">
+<span class="material-symbols-outlined mb-1">chat_bubble</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[10px] font-semibold tracking-wide uppercase">Chat</span>
+</button>
+</div>
+</body></html>

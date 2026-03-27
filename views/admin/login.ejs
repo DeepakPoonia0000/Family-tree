@@ -1,0 +1,25 @@
+<%- include('../partials/tailwind-head') %>
+
+<main class="grid min-h-screen place-items-center px-4">
+  <section class="w-full max-w-md rounded-3xl border border-outline/40 bg-surface p-8 shadow-soft">
+    <p class="text-xs font-bold uppercase tracking-[0.16em] text-on-surface-variant">Single Admin Access</p>
+    <h1 class="mt-2 font-headline text-5xl">Admin Login</h1>
+    <p class="mt-2 text-sm text-on-surface-variant">Only one admin can manage members and family records.</p>
+    <% if (error) { %><p class="mt-4 rounded-xl bg-red-100 px-4 py-3 text-sm text-red-700"><%= error %></p><% } %>
+
+    <form method="post" action="/admin/login" class="mt-6 space-y-4">
+      <div>
+        <label class="mb-1 block text-sm font-semibold">Username</label>
+        <input type="text" name="username" required class="w-full rounded-xl border-outline/60 bg-surface-soft" />
+      </div>
+      <div>
+        <label class="mb-1 block text-sm font-semibold">Password</label>
+        <input type="password" name="password" required class="w-full rounded-xl border-outline/60 bg-surface-soft" />
+      </div>
+      <button class="w-full rounded-full bg-primary px-5 py-3 text-sm font-bold text-white" type="submit">Login</button>
+      <a href="/" class="block text-center text-sm font-semibold text-primary">Back to Family Tree</a>
+    </form>
+  </section>
+</main>
+
+<%- include('../partials/tailwind-footer') %>

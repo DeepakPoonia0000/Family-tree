@@ -1,0 +1,161 @@
+<%- include('../partials/tailwind-head') %>
+<%- include('../partials/tailwind-nav') %>
+
+<main class="pt-28 px-6 md:px-12 max-w-7xl mx-auto space-y-16 pb-20">
+  <section class="relative overflow-hidden rounded-3xl bg-gradient-to-br from-primary-container to-surface p-10 md:p-16 text-on-primary shadow-soft">
+    <div class="relative z-10 max-w-3xl">
+      <p class="text-xs font-bold uppercase tracking-[0.3em] text-primary/80">Family Calendar</p>
+      <h1 class="mt-4 text-5xl md:text-6xl font-headline leading-tight">Upcoming gatherings</h1>
+      <p class="mt-5 max-w-2xl text-lg md:text-xl text-primary/90">Family dates, reunions, birthdays, and special moments managed from admin and displayed here automatically.</p>
+    </div>
+    <div class="pointer-events-none absolute left-10 top-10 h-56 w-56 rounded-full bg-surface/40 blur-3xl"></div>
+    <div class="pointer-events-none absolute right-10 bottom-10 h-44 w-44 rounded-full bg-secondary/20 blur-3xl"></div>
+  </section>
+
+  <div class="grid gap-8 xl:grid-cols-[1.7fr_0.9fr]">
+    <div class="space-y-8">
+      <section class="rounded-3xl border border-outline/30 bg-surface p-8 shadow-soft">
+        <div class="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+          <div>
+            <p class="text-xs font-bold uppercase tracking-[0.3em] text-on-surface-variant">Calendar view</p>
+            <h2 class="mt-2 text-3xl font-headline"><%= calendarState.monthName %> <%= calendarState.currentYear %></h2>
+          </div>
+          <div class="flex flex-wrap items-center gap-3">
+            <a href="/calendar?month=<%= calendarState.prevMonth %>&year=<%= calendarState.prevYear %>" class="inline-flex items-center gap-2 rounded-full border border-outline/30 bg-surface px-4 py-2 text-sm font-semibold text-on-surface-variant hover:bg-surface-container-low transition">
+              <span class="material-symbols-outlined text-sm">chevron_left</span>
+              Prev
+            </a>
+            <a href="/calendar?month=<%= calendarState.nextMonth %>&year=<%= calendarState.nextYear %>" class="inline-flex items-center gap-2 rounded-full border border-outline/30 bg-surface px-4 py-2 text-sm font-semibold text-on-surface-variant hover:bg-surface-container-low transition">
+              Next
+              <span class="material-symbols-outlined text-sm">chevron_right</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="mt-8 grid grid-cols-7 gap-px bg-outline-variant/10 rounded-3xl overflow-hidden border border-outline-variant/10">
+          <% ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'].forEach(function(day) { %>
+            <div class="bg-surface-container text-center py-3 text-xs font-bold uppercase tracking-widest text-on-surface-variant"><%= day %></div>
+          <% }) %>
+
+          <% calendarState.calendarDays.forEach(function(day) { %>
+            <% if (day === null) { %>
+              <div class="bg-surface-container-lowest h-32 p-3"></div>
+            <% } else { %>
+              <% const dayEvents = calendarState.calendarEvents.filter(function(event) { return event.dateObj.getDate() === day; }); %>
+              <div class="bg-surface-container-lowest h-32 p-3 group hover:bg-surface-container-high transition-colors cursor-pointer">
+                <div class="flex items-center justify-between">
+                  <span class="text-sm font-medium"><%= day %></span>
+                  <% if (day === new Date().getDate() && calendarState.currentMonth === new Date().getMonth() && calendarState.currentYear === new Date().getFullYear()) { %>
+                    <span class="rounded-full bg-primary-container px-2 py-1 text-[10px] font-semibold text-on-primary-container">Today</span>
+                  <% } %>
+                </div>
+                <div class="mt-2 space-y-1">
+                  <% dayEvents.slice(0, 2).forEach(function(event) { %>
+                    <span class="block truncate rounded-full px-2 py-1 text-[10px] font-semibold text-white <%= event.typeInfo.color %>"><%= event.title %></span>
+                  <% }) %>
+                  <% if (dayEvents.length > 2) { %>
+                    <span class="inline-flex items-center rounded-full bg-surface-muted px-2 py-1 text-[10px] font-semibold text-on-surface-variant">+<%= dayEvents.length - 2 %> more</span>
+                  <% } %>
+                </div>
+              </div>
+            <% } %>
+          <% }) %>
+        </div>
+      </section>
+
+      <section class="rounded-3xl border border-outline/30 bg-surface p-8 shadow-soft">
+        <div class="flex items-center justify-between gap-4">
+          <div>
+            <p class="text-xs font-bold uppercase tracking-[0.3em] text-on-surface-variant">Event cards</p>
+            <h2 class="mt-2 text-3xl font-headline">All calendar events</h2>
+          </div>
+          <a class="text-sm font-semibold text-primary hover:underline" href="/calendar">Refresh</a>
+        </div>
+
+        <% if (!items.length) { %>
+          <div class="mt-8 rounded-3xl border border-dashed border-outline/30 bg-surface-container-low p-10 text-center text-on-surface-variant">No calendar entries yet. Add events from admin.</div>
+        <% } else { %>
+          <div class="mt-8 grid gap-4 md:grid-cols-2">
+            <% items.forEach(function(item) { %>
+              <article class="rounded-3xl border border-outline/30 bg-surface p-6 shadow-sm">
+                <div class="flex items-start justify-between gap-4">
+                  <div>
+                    <p class="text-xs uppercase tracking-[0.3em] text-on-surface-variant"><%= item.tag || 'Event' %></p>
+                    <h3 class="mt-3 text-2xl font-headline"><%= item.title %></h3>
+                  </div>
+                  <span class="rounded-full px-3 py-1 text-xs font-semibold text-white <%= item.typeInfo.color %>"><%= item.typeInfo.badge %></span>
+                </div>
+                <p class="mt-4 text-sm text-on-surface-variant"><%= item.description || item.subtitle || 'No description provided.' %></p>
+                <div class="mt-5 flex flex-wrap gap-3 text-sm text-on-surface-variant">
+                  <% if (item.eventDate) { %>
+                    <span class="rounded-full bg-surface-muted px-3 py-1">Date: <%= new Date(item.eventDate).toLocaleDateString(undefined, { month: 'short', day: 'numeric' }) %></span>
+                  <% } %>
+                  <% if (item.location) { %>
+                    <span class="rounded-full bg-surface-muted px-3 py-1">Location: <%= item.location %></span>
+                  <% } %>
+                  <% if (item.host) { %>
+                    <span class="rounded-full bg-surface-muted px-3 py-1">Host: <%= item.host %></span>
+                  <% } %>
+                </div>
+              </article>
+            <% }) %>
+          </div>
+        <% } %>
+      </section>
+    </div>
+
+    <aside class="space-y-8">
+      <section class="rounded-3xl border border-outline/30 bg-surface p-8 shadow-soft">
+        <h3 class="font-serif text-2xl mb-6">Event Types</h3>
+        <div class="space-y-4">
+          <% calendarState.eventTypes.forEach(function(type) { %>
+            <% const colorClass = type === 'Birthdays & Celebrations' ? 'bg-primary' : type === 'School & Activities' ? 'bg-secondary' : type === 'Family Gatherings' ? 'bg-tertiary' : 'bg-error'; %>
+            <div class="flex items-center justify-between gap-3 rounded-3xl bg-surface-container-low p-4">
+              <div class="flex items-center gap-3">
+                <span class="w-3 h-3 rounded-full <%= colorClass %>"></span>
+                <span class="text-sm font-medium text-on-surface-variant"><%= type %></span>
+              </div>
+              <span class="rounded-full bg-surface-muted px-3 py-1 text-xs font-semibold text-on-surface-variant"><%= calendarState.typeCounts[type] || 0 %></span>
+            </div>
+          <% }) %>
+        </div>
+      </section>
+
+      <section class="rounded-3xl border border-outline/30 bg-surface p-8 shadow-soft">
+        <h3 class="font-serif text-2xl mb-6">Upcoming this Month</h3>
+        <% if (!calendarState.upcomingThisMonth.length) { %>
+          <div class="rounded-3xl border border-dashed border-outline/30 bg-surface-container-low p-8 text-center text-on-surface-variant">No events scheduled for this month. Add new dates from admin to populate this list.</div>
+        <% } else { %>
+          <div class="space-y-8">
+            <% calendarState.upcomingThisMonth.forEach(function(item) { %>
+              <div class="relative pl-6 border-l-2 border-primary">
+                <span class="block text-xs font-bold uppercase tracking-wider text-on-surface-variant"><%= item.eventDate ? new Date(item.eventDate).toLocaleDateString(undefined, { month: 'short', day: 'numeric' }) : 'TBA' %></span>
+                <h4 class="font-bold text-lg mt-2"><%= item.title %></h4>
+                <p class="text-sm text-on-surface-variant mt-2"><%= item.description || item.subtitle || 'Family event' %></p>
+              </div>
+            <% }) %>
+          </div>
+        <% } %>
+        <button class="w-full mt-10 py-3 rounded-full border border-outline/30 text-on-surface-variant font-medium hover:bg-surface-container-low transition-colors">View Full List</button>
+      </section>
+
+      <div class="relative group overflow-hidden rounded-t-xl rounded-bl-[3rem] rounded-br-xl shadow-lg">
+        <% if (calendarState.lastEvent) { %>
+          <img class="w-full h-64 object-cover transition-transform duration-700 group-hover:scale-110" src="<%= calendarState.lastEvent.imageUrl || 'https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=900&q=80' %>" alt="<%= calendarState.lastEvent.title %>" />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex flex-col justify-end p-6">
+            <span class="text-white/80 text-xs font-bold uppercase tracking-widest mb-1">Last event</span>
+            <h4 class="text-white font-serif text-xl italic"><%= calendarState.lastEvent.title %></h4>
+            <p class="mt-2 text-sm text-white/80"><%= calendarState.lastEvent.eventDate ? new Date(calendarState.lastEvent.eventDate).toLocaleDateString(undefined, { month: 'long', day: 'numeric', year: 'numeric' }) : 'Date TBA' %> • <%= calendarState.lastEvent.location || 'Location not specified' %></p>
+            <p class="mt-2 text-sm text-white/80"><%= calendarState.lastEvent.description || calendarState.lastEvent.subtitle || 'This was the most recent recorded event.' %></p>
+          </div>
+        <% } else { %>
+          <div class="flex h-64 items-center justify-center bg-surface-container-low p-6 text-on-surface-variant text-center">
+            No event details available yet. Add events in admin and the last event will appear here.
+          </div>
+        <% } %>
+      </div>
+    </aside>
+  </div>
+</main>
+
+<%- include('../partials/tailwind-footer') %>

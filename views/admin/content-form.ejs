@@ -1,0 +1,70 @@
+<%- include('../partials/tailwind-head') %>
+<%- include('../partials/tailwind-nav') %>
+
+<main class="mx-auto mt-8 max-w-5xl px-4">
+  <section class="rounded-3xl border border-outline/40 bg-surface p-6 shadow-soft">
+    <h1 class="font-headline text-5xl"><%= formTitle %></h1>
+    <p class="mt-2 text-sm text-on-surface-variant">Fields are shared across modules. Use relevant ones for this content type.</p>
+
+    <form method="post" action="<%= action %>" enctype="multipart/form-data" class="mt-6 grid gap-4 md:grid-cols-2">
+      <div>
+        <label class="mb-1 block text-sm font-semibold">Title</label>
+        <input type="text" name="title" required value="<%= item.title || '' %>" class="w-full rounded-xl border-outline/60 bg-surface-soft" />
+      </div>
+      <div>
+        <label class="mb-1 block text-sm font-semibold">Subtitle</label>
+        <input type="text" name="subtitle" value="<%= item.subtitle || '' %>" class="w-full rounded-xl border-outline/60 bg-surface-soft" />
+      </div>
+      <div>
+        <label class="mb-1 block text-sm font-semibold">Tag / Category</label>
+        <input type="text" name="tag" value="<%= item.tag || '' %>" class="w-full rounded-xl border-outline/60 bg-surface-soft" />
+      </div>
+      <div>
+        <label class="mb-1 block text-sm font-semibold">Metric (e.g. 18 replies)</label>
+        <input type="text" name="metric" value="<%= item.metric || '' %>" class="w-full rounded-xl border-outline/60 bg-surface-soft" />
+      </div>
+      <div>
+        <label class="mb-1 block text-sm font-semibold">Date</label>
+        <input type="date" name="eventDate" value="<%= item.eventDate ? new Date(item.eventDate).toISOString().slice(0, 10) : '' %>" class="w-full rounded-xl border-outline/60 bg-surface-soft" />
+      </div>
+      <div>
+        <label class="mb-1 block text-sm font-semibold">Period (e.g. 1930-1955)</label>
+        <input type="text" name="period" value="<%= item.period || '' %>" class="w-full rounded-xl border-outline/60 bg-surface-soft" />
+      </div>
+      <div>
+        <label class="mb-1 block text-sm font-semibold">Location</label>
+        <input type="text" name="location" value="<%= item.location || '' %>" class="w-full rounded-xl border-outline/60 bg-surface-soft" />
+      </div>
+      <div>
+        <label class="mb-1 block text-sm font-semibold">Host / Owner</label>
+        <input type="text" name="host" value="<%= item.host || '' %>" class="w-full rounded-xl border-outline/60 bg-surface-soft" />
+      </div>
+      <div class="md:col-span-2">
+        <label class="mb-1 block text-sm font-semibold">Image URL</label>
+        <input type="url" name="imageUrl" value="<%= item.imageUrl || '' %>" class="w-full rounded-xl border-outline/60 bg-surface-soft" />
+      </div>
+      <div class="md:col-span-2">
+        <label class="mb-1 block text-sm font-semibold">Upload Image</label>
+        <input type="file" name="imageFile" accept="image/*" class="w-full rounded-xl border-outline/60 bg-surface-soft" />
+        <% if (item.imageUrl) { %><p class="mt-1 text-xs text-on-surface-variant">Current: <%= item.imageUrl %></p><% } %>
+      </div>
+      <div>
+        <label class="mb-1 block text-sm font-semibold">Display Order</label>
+        <input type="number" name="displayOrder" value="<%= item.displayOrder || 0 %>" class="w-full rounded-xl border-outline/60 bg-surface-soft" />
+      </div>
+      <label class="flex items-center gap-2 pt-7"><input type="checkbox" name="isPublished" <%= item.isPublished === false ? '' : 'checked' %> /> <span class="text-sm font-semibold">Published</span></label>
+
+      <div class="md:col-span-2">
+        <label class="mb-1 block text-sm font-semibold">Description</label>
+        <textarea name="description" rows="6" class="w-full rounded-xl border-outline/60 bg-surface-soft"><%= item.description || '' %></textarea>
+      </div>
+
+      <div class="flex gap-3 md:col-span-2">
+        <button type="submit" class="rounded-full bg-primary px-6 py-3 text-sm font-bold text-white">Save Item</button>
+        <a href="<%= typeMeta.routeBase %>" class="rounded-full bg-surface-soft px-6 py-3 text-sm font-bold text-on-surface">Cancel</a>
+      </div>
+    </form>
+  </section>
+</main>
+
+<%- include('../partials/tailwind-footer') %>

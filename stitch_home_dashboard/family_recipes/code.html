@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Family Recipes | The Digital Hearth</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&amp;family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary-dim": "#4a5e41",
+              "surface-variant": "#eae8e0",
+              "inverse-surface": "#0e0e0c",
+              "surface-bright": "#fffcf7",
+              "on-secondary": "#ffffff",
+              "tertiary-container": "#fbecd8",
+              "surface": "#fffcf7",
+              "tertiary": "#6e6354",
+              "on-primary-fixed-variant": "#4d6144",
+              "outline": "#81817a",
+              "inverse-on-surface": "#9e9d98",
+              "background": "#fffcf7",
+              "on-secondary-fixed-variant": "#425e76",
+              "on-tertiary-fixed": "#4e4537",
+              "surface-tint": "#566a4d",
+              "on-surface": "#383833",
+              "on-primary-fixed": "#31442a",
+              "primary": "#566a4d",
+              "surface-container-high": "#f0eee6",
+              "error-dim": "#791903",
+              "secondary-dim": "#3f5b73",
+              "on-secondary-container": "#38556c",
+              "on-tertiary": "#ffffff",
+              "primary-fixed-dim": "#c4dbb7",
+              "surface-container-low": "#fcf9f3",
+              "tertiary-dim": "#615748",
+              "surface-dim": "#e4e3da",
+              "on-tertiary-fixed-variant": "#6c6152",
+              "tertiary-fixed-dim": "#edddca",
+              "primary-container": "#d2eac5",
+              "on-background": "#383833",
+              "secondary-fixed": "#cbe6ff",
+              "on-tertiary-container": "#615748",
+              "on-error": "#ffffff",
+              "surface-container": "#f6f3ed",
+              "surface-container-highest": "#eae8e0",
+              "secondary-container": "#cbe6ff",
+              "on-secondary-fixed": "#254258",
+              "primary-fixed": "#d2eac5",
+              "outline-variant": "#bbb9b2",
+              "on-surface-variant": "#65655e",
+              "error-container": "#fd795a",
+              "surface-container-lowest": "#ffffff",
+              "inverse-primary": "#e6fed8",
+              "error": "#ae4025",
+              "on-error-container": "#6e1400",
+              "secondary": "#4b677f",
+              "tertiary-fixed": "#fbecd8",
+              "on-primary-container": "#43573b",
+              "on-primary": "#ffffff",
+              "secondary-fixed-dim": "#bad8f4"
+            },
+            fontFamily: {
+              "headline": ["Newsreader", "serif"],
+              "body": ["Plus Jakarta Sans", "sans-serif"],
+              "label": ["Plus Jakarta Sans", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      .serif-italic { font-family: 'Newsreader'; font-style: italic; }
+      .bg-glass { backdrop-filter: blur(12px); }
+      .asymmetric-card-1 { border-radius: 3rem 1rem 2rem 1rem; }
+      .asymmetric-card-2 { border-radius: 1rem 3rem 1rem 2rem; }
+      .asymmetric-card-3 { border-radius: 2rem 1rem 3rem 1.5rem; }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body selection:bg-primary-container">
+<!-- Top Navigation Bar -->
+<nav class="fixed top-4 inset-x-0 mx-auto w-[95%] rounded-full bg-stone-50/70 dark:bg-stone-900/70 backdrop-blur-xl z-50 flex justify-between items-center px-8 py-3 max-w-7xl shadow-[0_12px_40px_rgba(56,56,51,0.06)]">
+<div class="text-2xl font-bold italic text-emerald-900 dark:text-emerald-100 font-headline">The Digital Hearth</div>
+<div class="hidden md:flex items-center space-x-8">
+<a class="text-stone-600 dark:text-stone-400 hover:text-emerald-800 dark:hover:text-emerald-200 transition-transform duration-300 hover:scale-105" href="#">Our Story</a>
+<a class="text-stone-600 dark:text-stone-400 hover:text-emerald-800 dark:hover:text-emerald-200 transition-transform duration-300 hover:scale-105" href="#">Archives</a>
+<a class="text-emerald-900 dark:text-emerald-50 font-bold border-b-2 border-emerald-800 dark:border-emerald-200 pb-1 transition-transform duration-300 hover:scale-105" href="#">Recipes</a>
+<a class="text-stone-600 dark:text-stone-400 hover:text-emerald-800 dark:hover:text-emerald-200 transition-transform duration-300 hover:scale-105" href="#">Family Map</a>
+<a class="text-stone-600 dark:text-stone-400 hover:text-emerald-800 dark:hover:text-emerald-200 transition-transform duration-300 hover:scale-105" href="#">The Kitchen Table</a>
+</div>
+<div class="flex items-center space-x-4">
+<button class="p-2 text-emerald-800 dark:text-emerald-200 hover:scale-105 transition-all active:opacity-80">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="p-2 text-emerald-800 dark:text-emerald-200 hover:scale-105 transition-all active:opacity-80">
+<span class="material-symbols-outlined">settings</span>
+</button>
+<div class="w-10 h-10 rounded-full bg-surface-container-high overflow-hidden border-2 border-primary-fixed">
+<img alt="User's family portrait avatar" data-alt="close-up portrait of a smiling older woman with warm lighting and a soft painterly background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDlK_LQQjs6PdJu2ElyTzR03EFGozLRouIXiAvExfzyS3_edihYR19vk22EnQu2qdvbtZqyQEM9W0KqjyQg7tNVu0kjPDK-AuEG5eXhqjjEwAmBiffwSkD2a3H21G1iy4IoE0KUBnegiS1CLzluaPwk7ZUGaZJdrlhJvE5iatX7Xha7Nqjd6RoIVDRMZQw_mdHYrxLbPCz_Hir6QP1eqxn0N7ppXUnsXQYHRHUnsOYFOQ007nOQ7u3OfDQIoPXO6lUi8T3T2K6Zyoo"/>
+</div>
+</div>
+</nav>
+<main class="pt-32 pb-20 px-6 max-w-7xl mx-auto">
+<!-- Hero Section -->
+<header class="mb-20 text-center">
+<h1 class="font-headline text-5xl md:text-7xl text-on-surface mb-6 leading-tight">
+                Family <span class="serif-italic text-primary">Recipes</span>
+</h1>
+<p class="text-on-surface-variant max-w-2xl mx-auto text-lg leading-relaxed">
+                A living collection of tastes, smells, and memories passed down through generations. The secret ingredients aren't just spices—they're the stories told around the table.
+            </p>
+</header>
+<!-- Bento Layout / Masonry-style Grid -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-8">
+<!-- Main Featured Recipe (Asymmetric Card) -->
+<div class="md:col-span-8 group relative asymmetric-card-1 bg-surface-container-low overflow-hidden hover:shadow-xl transition-shadow duration-500">
+<div class="relative h-[500px] w-full">
+<img alt="Grandma's Sourdough" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="rustic freshly baked sourdough bread loaf on a floured wooden table with soft morning sunlight streaming in" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD_POCzDImKaJNVR2Dbc5rlxCrdkglAvrTJvszqLhN7zhpBqNiKwDPolvQ777G0kl4qdAklve7mgBiyYsu28aZpGbiYUpDEZ0OGRV1fl-m6dwEql1A6c2rUkk1uimIiSkgCftfwrEMCn2hzHM6Lz1_wIilC9kaz3f28Ccl4xTKVQc6AmpYB1bKjbU4-NekRsW1GVsaYn4hddBkP_SaILS4devzEpQ6toq-eiuJVW2VfaBxozo0b_-LQrp1_cTz4GwH5T9a369_J6dA"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-10 text-white">
+<span class="bg-primary/90 text-on-primary px-4 py-1 rounded-full text-sm font-medium mb-4 inline-block">Featured Heirloom</span>
+<h2 class="font-headline text-4xl mb-2">Grandma's Sourdough</h2>
+<div class="flex items-center space-x-4 opacity-90">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">person</span> Contributed by Elena</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">schedule</span> 24h Prep</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Side Card 1 -->
+<div class="md:col-span-4 asymmetric-card-2 bg-primary-container/30 p-8 flex flex-col justify-between border-primary-fixed/20 border">
+<div>
+<span class="material-symbols-outlined text-primary text-4xl mb-6" style="font-variation-settings: 'FILL' 1;">menu_book</span>
+<h3 class="font-headline text-2xl text-on-primary-container mb-4">Add Your Secret Sauce</h3>
+<p class="text-on-primary-container/80 mb-8 leading-relaxed">Have a recipe that belongs in the hearth? Share it with the family and keep the legacy cooking.</p>
+</div>
+<button class="w-full bg-gradient-to-br from-primary to-primary-dim text-white py-4 rounded-full font-bold flex items-center justify-center gap-2 hover:scale-[1.02] transition-transform active:opacity-90">
+<span class="material-symbols-outlined">add</span>
+                    Add New Memory
+                </button>
+</div>
+<!-- Recipe Grid Item 1 -->
+<div class="md:col-span-4 group bg-surface-container-high asymmetric-card-3 p-4 hover:bg-surface-container-highest transition-colors duration-300">
+<div class="aspect-[4/5] rounded-2xl overflow-hidden mb-6">
+<img alt="Uncle Joe's BBQ Rub" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="close-up of slow-cooked bbq ribs glazed with thick sauce on a wooden serving board with herbs" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAHj-skmq4jrT7_lYAwrRbXCfvoh-hpYXRjKq3Mn1Q8LsF1jrCeyNYrtXi0JHX5qC27pMpj9m0e0nW3u1ri4rFzq4X6aJskUnyaSz64N9DqZZVVKw5pVYCriZXeQSvZcpIzCdmEebCKIFLSqhKuWMt7TDs59tWj8o5gJPja63bUCHS6yklJjdZM0F9cvt-utjeSkNJm2JsyMbmtWhNaNR76PDg95stdWxTVJkWyCHe07-fW4hw1mGADdYEiX64WUfE8VAsh7tKyTpQ"/>
+</div>
+<div class="px-2">
+<h4 class="font-headline text-2xl mb-2">Uncle Joe's BBQ Rub</h4>
+<div class="flex items-center justify-between text-on-surface-variant text-sm">
+<span>Joe Thompson</span>
+<span class="flex items-center gap-1 font-medium text-primary"><span class="material-symbols-outlined text-xs">bolt</span> Easy</span>
+</div>
+</div>
+</div>
+<!-- Recipe Grid Item 2 -->
+<div class="md:col-span-4 group bg-surface-container-high asymmetric-card-1 p-4 hover:bg-surface-container-highest transition-colors duration-300">
+<div class="aspect-[4/5] rounded-2xl overflow-hidden mb-6">
+<img alt="Summer Harvest Salad" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="vibrant vegetable salad in a ceramic bowl with fresh greens, radishes, and a light citrus dressing on a linen cloth" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA1MdYanlvAmKsbZi8dgP4GqglJaKY7lf0PIm151h8xDcsrf75mBQc5WBCG6b348UpMuR6S2HXW8J6_Kg7YGtO6Ag9dmXs7MW7UrDsOV8L1qEvWQJIs8IOnwiDJMQU21i598lIIKcG7yWZR3d_2r2P-JrghYupW3QxYeNlW1oTIq4TPoTTXac_xZ760hJd_IAAB1PoravUaxPcYeflvmqbcZsOcOyHeXKTRZt80ocLgrW9rh7MUplz8FouJV--7Ef3gAPbSk1WW7pk"/>
+</div>
+<div class="px-2">
+<h4 class="font-headline text-2xl mb-2">Summer Harvest Salad</h4>
+<div class="flex items-center justify-between text-on-surface-variant text-sm">
+<span>Aunt Martha</span>
+<span class="flex items-center gap-1 font-medium text-primary"><span class="material-symbols-outlined text-xs">bolt</span> 15 min</span>
+</div>
+</div>
+</div>
+<!-- Recipe Grid Item 3 -->
+<div class="md:col-span-4 group bg-surface-container-high asymmetric-card-2 p-4 hover:bg-surface-container-highest transition-colors duration-300">
+<div class="aspect-[4/5] rounded-2xl overflow-hidden mb-6">
+<img alt="Christmas Morning Casserole" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="golden brown breakfast egg casserole in a white ceramic dish being served with a silver spatula" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD3QDpoQBIS_Z1JL8H9PAKMuu2E7G8vOFxuKz6zJ5j1bmVu0NhVSdE43osRE1M9wQbek95EN0o4QjKAVJ3kO8PvYGKAPa33OZKNyoigCz4JpeZKeChf34emgZ7rUKdKNH9qC_gk8OYZeK_SyWta72anFdotB5UBVRelhC1NWr6tV7Ef0gcfWrQ1LEt4gFt0K7nmta1yrV_ItC7n9CIUY1fX0aslr2UAxjtDAaL3lJiPA3PJavCI2gts8iq_uHuBnoeNvNxky1N0d8Y"/>
+</div>
+<div class="px-2">
+<h4 class="font-headline text-2xl mb-2">Christmas Morning Casserole</h4>
+<div class="flex items-center justify-between text-on-surface-variant text-sm">
+<span>Mom</span>
+<span class="flex items-center gap-1 font-medium text-primary"><span class="material-symbols-outlined text-xs">bolt</span> Moderate</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Handwritten Inspiration Section -->
+<section class="mt-24 bg-surface-container-low rounded-xl p-12 text-center relative overflow-hidden">
+<div class="absolute top-0 left-0 w-full h-full opacity-5 pointer-events-none" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCrmumWL7aap3jxhFL1gcsE8MmESRnCn9Ojct70E_D_pUP384KVRDHTdf8PD_oCatrgWThtJZxEwa-Z_sRzFct07R6k6sDXqX7MxpmYsU3cfbe14IhN6KGRW3GiE7_NCXaDgbz9NlO-QTgTHGUIcWF3GgZ8VgSuscEfWMYTgYKsoSYi6om-SC0uNXS3ha_8vZPGBHLrsdtxcJ2IX5pDOSZPpTMyeH1NTCLqAmzlPJYfAAbzqZzwxqOO87YWVHCPq08_4VPSEcWq0E4');"></div>
+<div class="relative z-10">
+<span class="material-symbols-outlined text-6xl text-primary-dim mb-6" style="font-variation-settings: 'FILL' 0;">auto_stories</span>
+<h3 class="font-headline text-3xl mb-4 italic">"A recipe has no soul. You, as the cook, must bring soul to the recipe."</h3>
+<p class="text-on-surface-variant font-label">— Family Proverb</p>
+</div>
+</section>
+</main>
+<!-- Side Navigation Bar (Hidden on Mobile) -->
+<aside class="hidden lg:flex fixed left-0 top-0 h-full w-64 bg-stone-100 dark:bg-stone-900 flex-col p-6 space-y-4 z-40 rounded-r-3xl">
+<div class="pt-24 mb-10">
+<div class="flex items-center gap-3 mb-2">
+<div class="w-10 h-10 rounded-xl bg-primary-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">favorite</span>
+</div>
+<h2 class="font-headline text-xl text-emerald-900 dark:text-emerald-50">The Living Scrapbook</h2>
+</div>
+<p class="text-sm text-stone-500 dark:text-stone-400 font-medium px-1">Preserving our legacy</p>
+</div>
+<nav class="flex-1 space-y-2">
+<a class="flex items-center gap-3 p-3 text-stone-500 dark:text-stone-400 hover:bg-stone-200/50 dark:hover:bg-stone-800/50 hover:translate-x-1 transition-transform rounded-xl" href="#">
+<span class="material-symbols-outlined">inventory_2</span>
+<span>The Digital Attic</span>
+</a>
+<a class="flex items-center gap-3 p-3 bg-emerald-100/50 dark:bg-emerald-900/30 text-emerald-900 dark:text-emerald-100 rounded-xl hover:translate-x-1 transition-transform" href="#">
+<span class="material-symbols-outlined">menu_book</span>
+<span>Family Recipes</span>
+</a>
+<a class="flex items-center gap-3 p-3 text-stone-500 dark:text-stone-400 hover:bg-stone-200/50 dark:hover:bg-stone-800/50 hover:translate-x-1 transition-transform rounded-xl" href="#">
+<span class="material-symbols-outlined">public</span>
+<span>Family Map</span>
+</a>
+<a class="flex items-center gap-3 p-3 text-stone-500 dark:text-stone-400 hover:bg-stone-200/50 dark:hover:bg-stone-800/50 hover:translate-x-1 transition-transform rounded-xl" href="#">
+<span class="material-symbols-outlined">forum</span>
+<span>The Kitchen Table</span>
+</a>
+</nav>
+<button class="mt-auto bg-primary text-white p-4 rounded-xl flex items-center justify-center gap-2 hover:scale-[1.02] transition-transform active:opacity-90">
+<span class="material-symbols-outlined">add_circle</span>
+            Add New Memory
+        </button>
+</aside>
+<!-- Footer -->
+<footer class="w-full pt-12 pb-8 bg-stone-200 dark:bg-stone-950 flex flex-col items-center space-y-6 w-full mt-24">
+<div class="font-headline italic text-lg text-stone-800 dark:text-stone-200">The Digital Hearth</div>
+<div class="flex flex-wrap justify-center gap-8 font-label text-sm tracking-wide">
+<a class="text-stone-500 dark:text-stone-400 hover:text-emerald-700 dark:hover:text-emerald-300 transition-colors" href="#">Privacy Policy</a>
+<a class="text-stone-500 dark:text-stone-400 hover:text-emerald-700 dark:hover:text-emerald-300 transition-colors" href="#">Terms of Heritage</a>
+<a class="text-stone-500 dark:text-stone-400 hover:text-emerald-700 dark:hover:text-emerald-300 transition-colors" href="#">Contact Elder</a>
+<a class="text-stone-500 dark:text-stone-400 hover:text-emerald-700 dark:hover:text-emerald-300 transition-colors" href="#">Help Center</a>
+</div>
+<div class="text-stone-500 dark:text-stone-400 text-xs font-label">
+            © 2024 The Digital Hearth. Handcrafted for the family.
+        </div>
+</footer>
+<!-- Floating Action Button (Mobile Only) -->
+<button class="md:hidden fixed bottom-6 right-6 w-14 h-14 bg-primary text-white rounded-full shadow-lg flex items-center justify-center z-50 hover:scale-110 active:scale-95 transition-all">
+<span class="material-symbols-outlined">add</span>
+</button>
+</body></html>

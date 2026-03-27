@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Family Tree | The Digital Hearth</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&amp;family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-error-container": "#6e1400",
+                        "inverse-surface": "#0e0e0c",
+                        "inverse-primary": "#e6fed8",
+                        "secondary-fixed-dim": "#bad8f4",
+                        "on-primary-fixed": "#31442a",
+                        "outline-variant": "#bbb9b2",
+                        "surface-variant": "#eae8e0",
+                        "tertiary-fixed": "#fbecd8",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary-container": "#615748",
+                        "on-secondary": "#ffffff",
+                        "primary-container": "#d2eac5",
+                        "surface-container-highest": "#eae8e0",
+                        "primary-dim": "#4a5e41",
+                        "on-primary-container": "#43573b",
+                        "on-surface-variant": "#65655e",
+                        "tertiary-container": "#fbecd8",
+                        "tertiary-dim": "#615748",
+                        "on-secondary-fixed-variant": "#425e76",
+                        "background": "#fffcf7",
+                        "secondary-container": "#cbe6ff",
+                        "surface-tint": "#566a4d",
+                        "surface-container-high": "#f0eee6",
+                        "on-tertiary": "#ffffff",
+                        "secondary": "#4b677f",
+                        "secondary-dim": "#3f5b73",
+                        "primary": "#566a4d",
+                        "surface-bright": "#fffcf7",
+                        "primary-fixed": "#d2eac5",
+                        "on-background": "#383833",
+                        "error": "#ae4025",
+                        "on-primary": "#ffffff",
+                        "surface-container-low": "#fcf9f3",
+                        "surface-container": "#f6f3ed",
+                        "on-secondary-fixed": "#254258",
+                        "inverse-on-surface": "#9e9d98",
+                        "on-tertiary-fixed-variant": "#6c6152",
+                        "tertiary-fixed-dim": "#edddca",
+                        "outline": "#81817a",
+                        "error-dim": "#791903",
+                        "surface": "#fffcf7",
+                        "on-primary-fixed-variant": "#4d6144",
+                        "tertiary": "#6e6354",
+                        "on-secondary-container": "#38556c",
+                        "on-surface": "#383833",
+                        "secondary-fixed": "#cbe6ff",
+                        "surface-dim": "#e4e3da",
+                        "on-tertiary-fixed": "#4e4537",
+                        "error-container": "#fd795a",
+                        "on-error": "#ffffff",
+                        "primary-fixed-dim": "#c4dbb7"
+                    },
+                    fontFamily: {
+                        "headline": ["Newsreader", "serif"],
+                        "body": ["Plus Jakarta Sans", "sans-serif"],
+                        "label": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            background-color: #fffcf7;
+            color: #383833;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+        .serif-text {
+            font-family: 'Newsreader', serif;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .tree-line::before {
+            content: '';
+            position: absolute;
+            top: -2rem;
+            left: 50%;
+            width: 2px;
+            height: 2rem;
+            background-color: #bbb9b2;
+        }
+        .ancestor-glow {
+            background: linear-gradient(135deg, #566a4d 0%, #d2eac5 100%);
+        }
+    </style>
+</head>
+<body class="bg-background selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopNavBar Navigation Shell -->
+<nav class="fixed top-4 left-1/2 -translate-x-1/2 w-[95%] max-w-7xl rounded-full bg-stone-50/70 dark:bg-stone-950/70 backdrop-blur-xl flex justify-between items-center px-8 py-3 z-50 shadow-[0_12_40px_rgba(56,56,51,0.06)]">
+<div class="flex items-center gap-2">
+<span class="text-2xl font-serif italic text-emerald-900 dark:text-emerald-200">The Digital Hearth</span>
+</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-stone-600 dark:text-stone-400 font-medium hover:text-emerald-700 dark:hover:text-emerald-300 transition-colors hover:scale-105 transition-transform duration-200" href="#">Dashboard</a>
+<a class="text-stone-600 dark:text-stone-400 font-medium hover:text-emerald-700 dark:hover:text-emerald-300 transition-colors hover:scale-105 transition-transform duration-200" href="#">Gallery</a>
+<a class="text-emerald-900 dark:text-emerald-100 font-bold border-b-2 border-emerald-700 dark:border-emerald-400 pb-1 hover:scale-105 transition-transform duration-200" href="#">Family Tree</a>
+<a class="text-stone-600 dark:text-stone-400 font-medium hover:text-emerald-700 dark:hover:text-emerald-300 transition-colors hover:scale-105 transition-transform duration-200" href="#">News</a>
+<a class="text-stone-600 dark:text-stone-400 font-medium hover:text-emerald-700 dark:hover:text-emerald-300 transition-colors hover:scale-105 transition-transform duration-200" href="#">Calendar</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="text-emerald-800 dark:text-emerald-400 hover:scale-105 transition-transform duration-200">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="text-emerald-800 dark:text-emerald-400 hover:scale-105 transition-transform duration-200">
+<span class="material-symbols-outlined">settings</span>
+</button>
+<div class="w-10 h-10 rounded-full overflow-hidden border-2 border-primary-container">
+<img alt="User profile avatar" data-alt="Close up portrait of a kind-looking man with salt and pepper hair and a warm smile in natural outdoor lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBhyh7KVYjma-NwcOYvTXdWU82F8DmvzMU6fgvFPIw5-1YhwCnQzdFUiwmQk7im2fE7q93GNMD5aVtV4CKvfYgacQbjuxU66mEIAN8UzeWQIRzP9uOhjcAovYXVWd96San1As3u_FqUceTGgbzAn8VuTzt8iP3EE5s2tmUyEORzvYx9YoFUqUZPBg4SrFFJ_jdvLGEo3Fa3WBbcmGFRNbkP6R-9UeeLrkI09eukwfs-FJTbDXCEzubhsBDVZItR-8IdjpXextLFED4"/>
+</div>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="pt-32 pb-20 px-6 max-w-7xl mx-auto">
+<!-- Header & Search Section -->
+<header class="mb-16 text-center md:text-left flex flex-col md:flex-row justify-between items-end gap-8">
+<div class="max-w-2xl">
+<h1 class="text-5xl md:text-6xl font-headline text-on-background mb-4">The Root &amp; The Reach</h1>
+<p class="text-on-surface-variant text-lg max-w-lg font-body leading-relaxed">
+                    Our story didn't start with us. Explore the generations that shaped the hearth we gather around today.
+                </p>
+</div>
+<div class="w-full md:w-auto">
+<div class="relative group">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline group-focus-within:text-primary transition-colors">search</span>
+<input class="pl-12 pr-6 py-4 bg-surface-container-highest border-none rounded-md w-full md:w-80 focus:ring-2 focus:ring-secondary-fixed-dim focus:ring-opacity-40 transition-all font-body text-on-surface" placeholder="Find a relative..." type="text"/>
+</div>
+</div>
+</header>
+<!-- Family Tree Interactive Area -->
+<div class="relative overflow-x-auto pb-12">
+<div class="min-w-[1200px] flex flex-col items-center gap-24">
+<!-- Level 1: Patriarch & Matriarch -->
+<section class="relative">
+<div class="flex gap-16">
+<!-- Ancestor Card 1 -->
+<div class="relative group">
+<div class="absolute -inset-1 ancestor-glow rounded-xl blur opacity-20 group-hover:opacity-40 transition duration-500"></div>
+<div class="relative bg-surface-container-lowest p-6 rounded-xl w-64 shadow-[0_12px_40px_rgba(56,56,51,0.06)] hover:scale-[1.02] transition-transform duration-300">
+<div class="w-20 h-20 mx-auto rounded-full overflow-hidden mb-4 ring-4 ring-primary-container">
+<img alt="Arthur Sterling" data-alt="Classic black and white vintage portrait of an elderly gentleman with spectacles and a tweed waistcoat, looking dignified" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJ6CeBmtdzwlYFy5hG368leKpbIAqv7e0HY2PfxfnRGrZTVeqcqA2BUP8CapOtBA1OIdvPxcQas0_a_0OZoAHXzR1tLCCEvsWCWciRCQVYmxWv3kf4DAAoHXbPe65FNpZfhOco_Vr05J4qLIjob4Mj1GJclp9dgo4gUuBpaykt20zThdUHqbx3BZSwkoBbwjhGfD9zT7_-zSD8s8lpBMHIWH-_kG_XrFT5f4Z16HoxsYnLTDbdzENe6W_zb1iP0B2jmXylWXZcMnM"/>
+</div>
+<h3 class="text-xl font-headline text-center text-on-background">Arthur Sterling</h3>
+<p class="text-sm text-center font-body text-on-surface-variant mb-4">Born 1928 • Patriarch</p>
+<div class="flex gap-2">
+<button class="flex-1 text-xs py-2 px-3 bg-surface-container-high rounded-full font-bold text-on-surface-variant hover:bg-primary-container hover:text-on-primary-container transition-colors">View Profile</button>
+<button class="p-2 bg-surface-container-high rounded-full text-on-surface-variant hover:bg-primary-container hover:text-on-primary-container transition-colors">
+<span class="material-symbols-outlined text-sm">history_edu</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Ancestor Card 2 -->
+<div class="relative group">
+<div class="absolute -inset-1 ancestor-glow rounded-xl blur opacity-20 group-hover:opacity-40 transition duration-500"></div>
+<div class="relative bg-surface-container-lowest p-6 rounded-xl w-64 shadow-[0_12px_40px_rgba(56,56,51,0.06)] hover:scale-[1.02] transition-transform duration-300">
+<div class="w-20 h-20 mx-auto rounded-full overflow-hidden mb-4 ring-4 ring-primary-container">
+<img alt="Eleanor Sterling" data-alt="Elegant vintage studio portrait of a woman with curled hair and pearl necklace, soft lighting and grainy texture" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB-QMk3DDl0D4wcU0wC_JSIHLzbAPYrCma2PGDo4ZC_jzDon4K2iGVgP2whxHqKvsyy7i7fA6inH0RcSEVIfvKc3_gL3ufUO5rp7CJuUF6-uKllhJfymQ2MwJJT99U9EW5G6YMqGjnB6TR-XXtzOkWKP-zZkGV5nByX-BQcV18SzWAwbQBkclgXeFb3PtPyCtuVai57TQBm6s3el2U45MgitcuRJVrm5QWXjmtMJSTQ6XEBtgMFgwL0nCLRL2qNEKGU3Kt9ycJ9Xpc"/>
+</div>
+<h3 class="text-xl font-headline text-center text-on-background">Eleanor Sterling</h3>
+<p class="text-sm text-center font-body text-on-surface-variant mb-4">1932 - 2018 • Matriarch</p>
+<div class="flex gap-2">
+<button class="flex-1 text-xs py-2 px-3 bg-surface-container-high rounded-full font-bold text-on-surface-variant hover:bg-primary-container hover:text-on-primary-container transition-colors">View Profile</button>
+<button class="p-2 bg-surface-container-high rounded-full text-on-surface-variant hover:bg-primary-container hover:text-on-primary-container transition-colors">
+<span class="material-symbols-outlined text-sm">history_edu</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Connection Line -->
+<div class="absolute -bottom-12 left-1/2 -translate-x-1/2 w-px h-12 bg-outline-variant/30"></div>
+</section>
+<!-- Level 2: Second Generation -->
+<section class="relative pt-8">
+<div class="absolute -top-12 left-0 right-0 h-px bg-outline-variant/30 w-full"></div>
+<div class="flex gap-12">
+<!-- Gen 2 Member 1 -->
+<div class="relative tree-line group">
+<div class="bg-surface-container-high/50 p-6 rounded-xl w-60 shadow-sm border-2 border-transparent hover:border-primary/20 transition-all">
+<div class="w-16 h-16 mx-auto rounded-lg overflow-hidden mb-4 -rotate-3 group-hover:rotate-0 transition-transform">
+<img alt="David Sterling" data-alt="Portrait of a middle-aged man in a casual outdoor setting with sun-dappled lighting and forest background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBDfOjAl8XWayoegcL35Lh6rKAV5swrJGQUya6S_4clsXuS_DbW24AE3fVdE2WIjqoDmi7s3lUF8FkZSp9dNKZ-98DV7vnopvwQfKk030omjI1Oc_iB-qzRvDzSZLtIL38KNZWXmafGipOPNgyebxryy4oEBKvCg96iKafFgWXhsQZ4QTV4LSian3oYRLlB_UFoH4OpmeZR4KumHX_oTDulprqawvUkk_HPzbHqhU6nuDf0EgkRqNVcthZqpq9UNd7ENfHSV8QE9iI"/>
+</div>
+<h4 class="text-lg font-headline text-center">David Sterling</h4>
+<p class="text-xs text-center font-body text-on-surface-variant mb-4">Born 1958 • Son</p>
+<button class="w-full text-[10px] uppercase tracking-widest py-2 bg-on-background text-surface rounded-md font-bold hover:bg-primary transition-colors">Add Story</button>
+</div>
+<div class="absolute -bottom-12 left-1/2 -translate-x-1/2 w-px h-12 bg-outline-variant/30"></div>
+</div>
+<!-- Gen 2 Member 2 -->
+<div class="relative tree-line group">
+<div class="bg-surface-container-high/50 p-6 rounded-xl w-60 shadow-sm border-2 border-transparent hover:border-primary/20 transition-all">
+<div class="w-16 h-16 mx-auto rounded-lg overflow-hidden mb-4 rotate-2 group-hover:rotate-0 transition-transform">
+<img alt="Susan Sterling" data-alt="Candid shot of a woman laughing in a home kitchen setting, warm morning light and soft focus interior" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDA9hSMukVauYVWQFfMI1CrmviOXP_unGO0BB86nsElHgsrYpZBoFDK3jrkuVoGdBhaZrRXMR_CdetrNWwt9YdmDVBPkJ3Gw-fsyOUvyzoZmbGCDsw2aFYbDMt2Fz6APnJwMBTvuuZ25f9TZY6NvqwKkCgGUUz03CSJBK0AAMgK2b1Wz3FBbh9gVvZd0htd4djeO0essaNEjmtrbZvaIfMqVO1XSv2e5RheVYqIsRxEZfC9YiKDny525mcFwlElSxicgxOMvlpn3u0"/>
+</div>
+<h4 class="text-lg font-headline text-center">Susan Sterling</h4>
+<p class="text-xs text-center font-body text-on-surface-variant mb-4">Born 1961 • Daughter</p>
+<button class="w-full text-[10px] uppercase tracking-widest py-2 bg-on-background text-surface rounded-md font-bold hover:bg-primary transition-colors">Add Story</button>
+</div>
+<div class="absolute -bottom-12 left-1/2 -translate-x-1/2 w-px h-12 bg-outline-variant/30"></div>
+</div>
+<!-- Gen 2 Member 3 -->
+<div class="relative tree-line group">
+<div class="bg-surface-container-high/50 p-6 rounded-xl w-60 shadow-sm border-2 border-transparent hover:border-primary/20 transition-all">
+<div class="w-16 h-16 mx-auto rounded-lg overflow-hidden mb-4 -rotate-1 group-hover:rotate-0 transition-transform">
+<img alt="James Sterling" data-alt="Portrait of a man in professional attire but relaxed pose, soft studio lighting with a neutral gray background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC3D-zONai9fihNQcJV6Wa9llKvgwONPalBU2GMbBI67oDcBXPUc88mpW6LSt7B4RrDESV_SaWIb_I_hHUSq_PzE1_BcZkFGJnSyXvhUpuQcclo6Toq18aVb_9rsFoeLwGIh9U9nAxfIsoE47plkgOo0WUx8oS3W5SsWK9GF54ETVIZyaRIxLgOD7ajKdHzao9haepIiCGJltdRcI8ebtlRisd-CDj6G6B5-CUvsZeA-lRyXyoaxgCsj7ntb8Iffc6JTAAWDDY355A"/>
+</div>
+<h4 class="text-lg font-headline text-center">James Sterling</h4>
+<p class="text-xs text-center font-body text-on-surface-variant mb-4">Born 1965 • Son</p>
+<button class="w-full text-[10px] uppercase tracking-widest py-2 bg-on-background text-surface rounded-md font-bold hover:bg-primary transition-colors">Add Story</button>
+</div>
+<div class="absolute -bottom-12 left-1/2 -translate-x-1/2 w-px h-12 bg-outline-variant/30"></div>
+</div>
+</div>
+</section>
+<!-- Level 3: Third Generation (The Grandchildren) -->
+<section class="relative pt-8 w-full max-w-6xl">
+<div class="grid grid-cols-4 gap-8">
+<!-- Child 1 -->
+<div class="relative tree-line">
+<div class="bg-surface p-4 rounded-xl border border-outline-variant/10 shadow-sm hover:shadow-md transition-shadow">
+<div class="aspect-square w-full rounded-md overflow-hidden mb-3">
+<img alt="Leo Sterling" class="w-full h-full object-cover" data-alt="Young man in a denim jacket standing in a city park during autumn, warm afternoon sun and colorful leaves" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAVmJw_Qzy4yNHva9872VMPdcVpl6GFdr6X8Q_7Im3w9Ygc6WnuTIF3Um9Hw6NC3PB_V0cgTXIjbRFO9FIOitzctF7byVJ8opZ879P-LXf5pfGoc1R2J3IpJTmNXBsNI1sOSLYUcoBIoO5zKjFiimyWyvZ5eeW_JHSAkYcYljFMYAfkQaPDprK13KbHUua36dfZle4YTcKMuby7lbVXbE4QXLOvVab9tptlMa0JVFOdj8UeD0q1u4D58EebOYzoj1R_C1CfLUFjmbY"/>
+</div>
+<h5 class="font-headline text-md">Leo Sterling</h5>
+<p class="text-[10px] text-on-surface-variant font-medium">Born 1992 • Grandson</p>
+</div>
+</div>
+<!-- Child 2 -->
+<div class="relative tree-line">
+<div class="bg-surface p-4 rounded-xl border border-outline-variant/10 shadow-sm hover:shadow-md transition-shadow">
+<div class="aspect-square w-full rounded-md overflow-hidden mb-3">
+<img alt="Maya Sterling" class="w-full h-full object-cover" data-alt="Close up of a young woman with curly hair smiling brightly, natural daylight and soft pastel tones" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBVCAr7CoLa3w1fmHmZPRTVc57J8XzdT2BnXMyVZGK7k8CTbQG3SmEISi2tlGWrhYL4dowr8wRYgI13BMg2EjLm2zDQtn-qqTBveOa-710N63naWZybStFVLNI3LUpHJy-CerjYo_ANGJ9VrGNpTgXGVqgdgXOQkUQ2woSb7k0pC9NHOjsnME5EO8q3jC6c7lb0agoZaGGYHO3IN07kw3TFezqiFv1JWx8n4HIXDagUqb9hWO2v7SuKjc41cgxZxJCQOkT_VemKI1s"/>
+</div>
+<h5 class="font-headline text-md">Maya Sterling</h5>
+<p class="text-[10px] text-on-surface-variant font-medium">Born 1995 • Granddaughter</p>
+</div>
+</div>
+<!-- Child 3 -->
+<div class="relative tree-line">
+<div class="bg-surface p-4 rounded-xl border border-outline-variant/10 shadow-sm hover:shadow-md transition-shadow">
+<div class="aspect-square w-full rounded-md overflow-hidden mb-3">
+<img alt="Oliver Sterling" class="w-full h-full object-cover" data-alt="Young adult man sitting in a cozy cafe, thoughtful expression, warm indoor lighting and bokeh background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBPoOt5jYNMkEUxQxHZ7WmnMIeXc46V6g5T_uD2Wrl5Vf-tjoWrqlTkYSoz8XCEbLRLt0jGKj6dsQ4V0kv8tG5lna5lB89KuHiI0_9-bs3nCphJrGO6hhuljPxzg0KqaD9D9gFwtGXuF1f0yRwBetdbEeW_bx1aMn2_PfLARntmJCuAn8Fd3W-76LuA9qk99-0Mp-Ose7m0wnTi9jIDlZgDoS3zMyUCr8B3Oa8oUUfw594KqSqoOeX1-ZEl5HFcEJyukVMt_mCK7M4"/>
+</div>
+<h5 class="font-headline text-md">Oliver Sterling</h5>
+<p class="text-[10px] text-on-surface-variant font-medium">Born 1998 • Grandson</p>
+</div>
+</div>
+<!-- Child 4 -->
+<div class="relative tree-line">
+<div class="bg-surface p-4 rounded-xl border border-outline-variant/10 shadow-sm hover:shadow-md transition-shadow">
+<div class="aspect-square w-full rounded-md overflow-hidden mb-3">
+<img alt="Chloe Sterling" class="w-full h-full object-cover" data-alt="Young girl with a backpack in a meadow of wildflowers, golden hour lighting and whimsical feel" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBEnVd3oUdYYTPgL_wOC11jggZWUdkB4XOTbnc_cmXUNsFExqLcUo8RxfVWvkmKX_kd3qwOEB93LH16kAXltDTjDTBNTGpA5hbU1lwShRNgNsTxqcMIjR751jfb4PqJv8fkTXpAkmdGyej7OAuEV7IBgJehf_u5ADTLMoMy8nlieYt_QDTAvaS1S7gpqArYErCy6o88QeHWXzLINgbjCnijsET1ocVkw0Ga6nBf2FVW9bnX80CnaFd6tA9rXfhwYLU4W0BkiNznKlA"/>
+</div>
+<h5 class="font-headline text-md">Chloe Sterling</h5>
+<p class="text-[10px] text-on-surface-variant font-medium">Born 2005 • Granddaughter</p>
+</div>
+</div>
+</div>
+</section>
+</div>
+</div>
+<!-- Bento Highlights Section -->
+<section class="mt-24 grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="md:col-span-2 bg-surface-container-low p-10 rounded-xl relative overflow-hidden group">
+<div class="relative z-10 flex flex-col justify-between h-full">
+<div>
+<span class="inline-block px-3 py-1 bg-primary/10 text-primary rounded-full text-[10px] font-bold tracking-widest uppercase mb-4">Latest Memory</span>
+<h2 class="text-3xl font-headline mb-6 text-on-background">The Summer of '74</h2>
+<p class="text-on-surface-variant leading-relaxed mb-8 max-w-md">
+                            "I remember the way the lake smelled that morning. Arthur had just bought the new canoe, and David was terrified of the water..."
+                        </p>
+</div>
+<button class="w-fit px-8 py-3 bg-gradient-to-br from-primary to-primary-dim text-white rounded-full font-bold hover:scale-105 transition-transform flex items-center gap-2">
+                        Read Story <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+<div class="absolute top-0 right-0 w-1/2 h-full opacity-10 grayscale group-hover:grayscale-0 group-hover:opacity-30 transition-all duration-700 pointer-events-none">
+<img alt="Canoe on lake" class="w-full h-full object-cover" data-alt="Serene landscape of a vintage wooden canoe on a mirror-like lake at dawn with misty mountains in the background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDgNoZLOLKKmFzxvhUuH6jdyn6_aDJ00GOTPy50ADbMwPvLGpe202N2-1onk3f96aKfG6vZciHf_Glme_Aj_K-05FuUb6HyhMFXo3o7x9NKAbOl21gCcTOXgVWvu7nRF2O9WsPasD7gkXbSR-B0y2yEdiiI-sqHPlSs2NHkv5aq79KOAtcYxDOyDuuXwlTRB1mf5BMxRJ88A5ZCZXVrWiq1PWFMh8kewQd8BcIsAWwcX0YjZ3D3dzP1u1ovpbZ-Le6LjQb2xFEECqY"/>
+</div>
+</div>
+<div class="bg-secondary-container/30 p-10 rounded-xl flex flex-col justify-center items-center text-center">
+<span class="material-symbols-outlined text-4xl text-secondary mb-4" style="font-variation-settings: 'FILL' 1;">volunteer_activism</span>
+<h3 class="text-2xl font-headline mb-2">Preserve the Legacy</h3>
+<p class="text-sm text-on-secondary-container mb-6">Contribute your own photos and memories to the Sterling Family Tree.</p>
+<button class="px-6 py-2 border-2 border-secondary text-secondary rounded-full font-bold hover:bg-secondary hover:text-white transition-colors">
+                    Add Member
+                </button>
+</div>
+</section>
+</main>
+<!-- Footer Shell -->
+<footer class="w-full mt-20 bg-stone-200 dark:bg-stone-900 flex flex-col md:flex-row justify-between items-center px-12 py-10 gap-6">
+<div class="flex flex-col gap-2">
+<span class="font-serif text-lg text-emerald-800 dark:text-emerald-200">The Digital Hearth</span>
+<p class="font-sans text-sm tracking-wide text-stone-500 dark:text-stone-400">© 2024 The Digital Hearth. Preserving memories for generations.</p>
+</div>
+<div class="flex gap-8">
+<a class="font-sans text-sm tracking-wide text-stone-500 dark:text-stone-400 hover:text-stone-800 dark:hover:text-stone-200 transition-colors" href="#">Privacy Policy</a>
+<a class="font-sans text-sm tracking-wide text-stone-500 dark:text-stone-400 hover:text-stone-800 dark:hover:text-stone-200 transition-colors" href="#">Terms of Service</a>
+<a class="font-sans text-sm tracking-wide text-stone-500 dark:text-stone-400 hover:text-stone-800 dark:hover:text-stone-200 transition-colors" href="#">Archive</a>
+<a class="font-sans text-sm tracking-wide text-stone-500 dark:text-stone-400 hover:text-stone-800 dark:hover:text-stone-200 transition-colors" href="#">Support</a>
+</div>
+</footer>
+</body></html>

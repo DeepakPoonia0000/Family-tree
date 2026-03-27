@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Digital Hearth | Home</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&amp;family=Plus+Jakarta+Sans:wght@200..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-container": "#f6f3ed",
+              "on-background": "#383833",
+              "surface-bright": "#fffcf7",
+              "surface-container-high": "#f0eee6",
+              "on-tertiary": "#ffffff",
+              "outline-variant": "#bbb9b2",
+              "on-secondary-fixed": "#254258",
+              "on-secondary-container": "#38556c",
+              "on-error-container": "#6e1400",
+              "tertiary-container": "#fbecd8",
+              "surface-container-low": "#fcf9f3",
+              "tertiary-dim": "#615748",
+              "surface-dim": "#e4e3da",
+              "on-primary-container": "#43573b",
+              "on-secondary": "#ffffff",
+              "secondary-fixed-dim": "#bad8f4",
+              "secondary": "#4b677f",
+              "on-primary-fixed": "#31442a",
+              "surface-container-lowest": "#ffffff",
+              "primary-fixed-dim": "#c4dbb7",
+              "on-surface": "#383833",
+              "on-tertiary-fixed": "#4e4537",
+              "secondary-container": "#cbe6ff",
+              "tertiary": "#6e6354",
+              "primary": "#566a4d",
+              "background": "#fffcf7",
+              "on-tertiary-container": "#615748",
+              "on-primary": "#ffffff",
+              "on-surface-variant": "#65655e",
+              "primary-dim": "#4a5e41",
+              "surface-variant": "#eae8e0",
+              "inverse-primary": "#e6fed8",
+              "error-container": "#fd795a",
+              "outline": "#81817a",
+              "primary-fixed": "#d2eac5",
+              "tertiary-fixed": "#fbecd8",
+              "error-dim": "#791903",
+              "surface-container-highest": "#eae8e0",
+              "tertiary-fixed-dim": "#edddca",
+              "on-tertiary-fixed-variant": "#6c6152",
+              "secondary-fixed": "#cbe6ff",
+              "secondary-dim": "#3f5b73",
+              "surface": "#fffcf7",
+              "primary-container": "#d2eac5",
+              "on-secondary-fixed-variant": "#425e76",
+              "inverse-surface": "#0e0e0c",
+              "inverse-on-surface": "#9e9d98",
+              "on-primary-fixed-variant": "#4d6144",
+              "surface-tint": "#566a4d",
+              "on-error": "#ffffff",
+              "error": "#ae4025"
+            },
+            fontFamily: {
+              "headline": ["Newsreader"],
+              "body": ["Plus Jakarta Sans"],
+              "label": ["Plus Jakarta Sans"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #fffcf7; color: #383833; }
+        h1, h2, h3 { font-family: 'Newsreader', serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+    </style>
+</head>
+<body class="bg-surface selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopNavBar Component -->
+<nav class="fixed top-4 left-1/2 -translate-x-1/2 w-[95%] max-w-7xl rounded-full bg-[#fffcf7]/70 dark:bg-stone-900/70 backdrop-blur-xl shadow-[0_12px_40px_rgba(56,56,51,0.06)] flex justify-between items-center px-8 py-3 z-50">
+<div class="flex items-center gap-8">
+<span class="text-2xl font-serif italic text-emerald-900 dark:text-emerald-100">The Digital Hearth</span>
+<div class="hidden md:flex gap-6 items-center">
+<a class="text-emerald-900 dark:text-emerald-200 font-bold border-b-2 border-emerald-700/30 hover:scale-105 hover:text-emerald-700 dark:hover:text-emerald-300 transition-all" href="#">Dashboard</a>
+<a class="text-stone-600 dark:text-stone-400 font-medium hover:scale-105 hover:text-emerald-700 dark:hover:text-emerald-300 transition-all" href="#">Gallery</a>
+<a class="text-stone-600 dark:text-stone-400 font-medium hover:scale-105 hover:text-emerald-700 dark:hover:text-emerald-300 transition-all" href="#">News</a>
+<a class="text-stone-600 dark:text-stone-400 font-medium hover:scale-105 hover:text-emerald-700 dark:hover:text-emerald-300 transition-all" href="#">Calendar</a>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 text-emerald-800 dark:text-emerald-400 hover:scale-105 transition-all">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="p-2 text-emerald-800 dark:text-emerald-400 hover:scale-105 transition-all">
+<span class="material-symbols-outlined" data-icon="account_circle">account_circle</span>
+</button>
+</div>
+</nav>
+<main class="pt-32 px-6 md:px-12 max-w-7xl mx-auto space-y-20 pb-20">
+<!-- Welcome Home Banner -->
+<section class="relative overflow-hidden rounded-xl bg-gradient-to-br from-primary to-primary-container p-12 md:p-20 text-on-primary shadow-lg">
+<div class="relative z-10 max-w-2xl">
+<h1 class="text-5xl md:text-7xl font-headline mb-6 leading-tight italic">Welcome Home, <br/> The Miller Family</h1>
+<p class="text-xl md:text-2xl font-body opacity-90 max-w-lg">Gathered here are the stories, laughs, and quiet moments that define us. Pull up a chair.</p>
+<div class="mt-10 flex gap-4">
+<button class="px-8 py-3 bg-surface-container-lowest text-primary font-bold rounded-full hover:scale-105 transition-transform">Post a Memory</button>
+<button class="px-8 py-3 bg-primary-dim/30 backdrop-blur-md text-on-primary font-bold rounded-full hover:scale-105 transition-transform">View Archives</button>
+</div>
+</div>
+<div class="absolute -right-20 -top-20 w-96 h-96 bg-secondary-fixed-dim/20 rounded-full blur-3xl"></div>
+<div class="absolute right-10 bottom-0 w-64 h-64 opacity-20 pointer-events-none">
+<span class="material-symbols-outlined text-[12rem]" data-icon="cottage">cottage</span>
+</div>
+</section>
+<!-- Bento Layout: News & Birthdays -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+<!-- Top News Snippet (Lg: Column 1&2) -->
+<section class="lg:col-span-2 bg-surface-container-low rounded-xl p-8 space-y-6">
+<div class="flex justify-between items-end">
+<h2 class="text-3xl font-headline">The Hearth News</h2>
+<a class="text-primary font-bold text-sm uppercase tracking-widest hover:underline" href="#">Read All Posts</a>
+</div>
+<div class="group relative bg-surface-container-lowest rounded-lg overflow-hidden flex flex-col md:flex-row shadow-sm hover:shadow-md transition-shadow">
+<div class="w-full md:w-1/3 h-48 md:h-auto overflow-hidden">
+<img alt="Miller Family Reunion 2024" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="Candid overhead photo of a large family laughing together around a long outdoor rustic wooden table with sun-dappled lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDRf76x5XPM8WCekLUImigw0y0Rz8-sSdjEk3ZvOOCeA6aKFysrioTDYDt3Iq__as6NpafbLSD9zdQKPMyYCttce4ZLNtiL2mzYGTIf8y3CayFFE8BhpCcJhq1LieVWqpBfpv4mnb0NCfHBBqRSTWQ45VVNjgHwZl5E2aUg3ZBhvBXwR3MN1AW0czftdL8QxNl4msy3RgwAZobHDgd9Ml-zao-XqnIQIIGCDnhCqT7yi3PjCiABk7nOV8Bhnb2WqmOV9lTPZauJI8U"/>
+</div>
+<div class="p-8 md:w-2/3 flex flex-col justify-center">
+<span class="text-xs font-bold text-secondary uppercase tracking-widest mb-2">Announcement • 2 days ago</span>
+<h3 class="text-2xl font-headline mb-3">Summer Reunion 2024: Dates Confirmed</h3>
+<p class="text-on-surface-variant line-clamp-2">The Miller-Clark clan is heading to the Blue Ridge Mountains this July. Pack your hiking boots and your best chili recipes...</p>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div class="p-4 bg-surface-container-high rounded-lg flex gap-4 items-center">
+<div class="w-12 h-12 rounded-full bg-tertiary-container flex items-center justify-center text-on-tertiary-container">
+<span class="material-symbols-outlined" data-icon="history_edu">history_edu</span>
+</div>
+<div>
+<p class="font-bold text-sm">Grandpa's Journal Digitized</p>
+<p class="text-xs text-on-surface-variant">The 1952 series is now online</p>
+</div>
+</div>
+<div class="p-4 bg-surface-container-high rounded-lg flex gap-4 items-center">
+<div class="w-12 h-12 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container">
+<span class="material-symbols-outlined" data-icon="volunteer_activism">volunteer_activism</span>
+</div>
+<div>
+<p class="font-bold text-sm">Community Drive</p>
+<p class="text-xs text-on-surface-variant">4 days left to join the food bank run</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Upcoming Birthdays & Reunions (Lg: Column 3) -->
+<section class="bg-surface-container-high rounded-xl p-8 space-y-6">
+<h2 class="text-3xl font-headline">Celebrations</h2>
+<div class="space-y-4">
+<div class="bg-surface-container-lowest p-6 rounded-lg relative overflow-hidden border-l-4 border-primary shadow-sm">
+<div class="flex justify-between items-start mb-2">
+<div class="bg-primary-container text-on-primary-container p-2 rounded-md">
+<span class="material-symbols-outlined block" data-icon="cake">cake</span>
+</div>
+<span class="text-xs font-bold text-primary italic">Tomorrow</span>
+</div>
+<h4 class="font-bold text-lg">Aunt Sarah's 50th</h4>
+<p class="text-sm text-on-surface-variant">Video call surprise at 7:00 PM EST</p>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-lg border-l-4 border-secondary shadow-sm">
+<div class="flex justify-between items-start mb-2">
+<div class="bg-secondary-container text-on-secondary-container p-2 rounded-md">
+<span class="material-symbols-outlined block" data-icon="groups">groups</span>
+</div>
+<span class="text-xs font-bold text-secondary italic">May 12</span>
+</div>
+<h4 class="font-bold text-lg">Sunday Brunch</h4>
+<p class="text-sm text-on-surface-variant">Uncle Leo's place • 11:30 AM</p>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-lg border-l-4 border-tertiary shadow-sm opacity-80">
+<div class="flex justify-between items-start mb-2">
+<div class="bg-tertiary-container text-on-tertiary-container p-2 rounded-md">
+<span class="material-symbols-outlined block" data-icon="event">event</span>
+</div>
+<span class="text-xs font-bold text-tertiary italic">June 04</span>
+</div>
+<h4 class="font-bold text-lg">Leo &amp; Mia's Anniversary</h4>
+<p class="text-sm text-on-surface-variant">15 years of adventures</p>
+</div>
+</div>
+<button class="w-full py-3 rounded-full border-2 border-outline-variant/30 font-bold hover:bg-surface-container-lowest transition-colors">See Calendar</button>
+</section>
+</div>
+<!-- Recently Shared Milestones: Asymmetric Gallery -->
+<section class="space-y-8">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+<div class="max-w-xl">
+<h2 class="text-4xl font-headline italic">Recent Milestones</h2>
+<p class="text-on-surface-variant mt-2 font-body">The small moments that make life big. Captured and shared by our community.</p>
+</div>
+<button class="flex items-center gap-2 text-primary font-bold">
+                    View Gallery <span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-6 auto-rows-[250px]">
+<!-- Item 1: Tall -->
+<div class="md:col-span-2 md:row-span-2 relative group rounded-xl overflow-hidden shadow-sm">
+<img alt="Baby's first steps" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Emotional close-up of a toddler's small feet making first steps on a warm sun-drenched wooden floor with soft morning light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDOpd26b1xctSR8YcEknp2dTNS9wN8OrhkhiFy-BaiuiidNfJ9FMdaqVbeTmCKnximLRl18aY6XC1J-toyKGRZEssHeqyYwi_GJapRgOEeyNnFqLJJQjiiB_WM5VcldW3PotrNw-0WqxmgHVERC2DMdXlEwgGTHHd8iM9pgS86p2hdMVCSuZn2hh_4R1TUOubcwds2ow65lQW4i2_5pqy6q994EacLZPHoNJNE8uLlO1iXHl0Yn38vkJ4oGCaX08lv0GSMFMYO0DPQ"/>
+<div class="absolute inset-0 bg-gradient-to-t from-on-background/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-8 text-white">
+<h4 class="text-2xl font-headline">Leo's First Steps!</h4>
+<p class="text-sm opacity-90">"He finally did it! Right into Grandma's arms." — Mia</p>
+</div>
+<div class="absolute top-4 right-4 bg-surface-container-lowest/80 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-bold text-primary">
+                        Shared by Mia
+                    </div>
+</div>
+<!-- Item 2: Wide -->
+<div class="md:col-span-2 relative group rounded-lg overflow-hidden shadow-sm">
+<img alt="New home keys" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Two sets of keys lying on a rustic wooden tabletop with a 'Home Sweet Home' keychain and warm interior lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDGwvDdO6819VYW_st238OkJ9mcQBeEWDWo1jc3_OQvDA4jI8MFYYrMrocb3PdYZggDJQUJErJy5q_cuKM3GR_pwBC37KGsnQ2G23BYPPkfGkSR6aXcwyIaNez9umpTaGZ6IGnHTN-xXjHC5_hDVuieiQqTGhxQKtWbwqeIfEDKqGU0nEdAu6o4_EkQ3lbNAF4vqzTVqHBIR4dfWcxFB0yWLUWLykUDg8r3CuoMnIzFGnHswN0Tzp4zACtz411YPTk0SepSuQk4_94"/>
+<div class="absolute inset-0 bg-gradient-to-t from-on-background/60 to-transparent flex flex-col justify-end p-6 text-white">
+<h4 class="text-xl font-headline">We got the keys!</h4>
+<p class="text-xs opacity-80">Our first family home in Vermont.</p>
+</div>
+</div>
+<!-- Item 3: Square -->
+<div class="relative group rounded-xl overflow-hidden shadow-sm">
+<img alt="Graduation Cap" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A graduation cap with a gold tassel resting on an open vintage leather-bound book, soft focus library background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDvj_0ycL0SemAXzq7Ezy3qfg87-dXoFgY60eLI61Ids8etEOr-S1wVAB7yvQ9kypCckO5n4AmlS5qRPpvLbLqfBoaRVVLAtOyA6y5Qw_1yJ20ZT1SL9PC0voSJg1aR8-PKl5KqLREAXR--CuJruNRgjqOmkxg-gmDF4FH87UwoyQFNMPQQN-zeeMvCIiJghIijpwKpXuQQJ58fwtI0YJPOVSiAhV8mxD3oZUuDwHSFVO4mZ46d5oBdp9pVNOlVJKVb9v9BVoEm1v4"/>
+<div class="absolute inset-0 bg-on-primary-fixed/20 group-hover:bg-transparent transition-colors"></div>
+<div class="absolute bottom-4 left-4 text-white font-headline text-lg italic">Class of '24</div>
+</div>
+<!-- Item 4: Square -->
+<div class="relative group rounded-xl overflow-hidden shadow-sm">
+<img alt="Family Picnic" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A colorful picnic blanket spread in a meadow with a basket of fresh fruit and flowers under a spreading oak tree" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBie9PAre5-dFajddk9HLQA5vvYyKZhsm3pCdWkyvYh1lhnqLW-AvWYMZ01PCvqpyfZrVVou8HtQDJnIUt65FXCGG-Hl2sZ98oF66DVG6XkKPbD0xrWZfFNgXk-OtDykwfYZQ9_AefIrpAQwt8m5JhrNbg9TfwbogzIWfeBUMnD5OicK5mxA7M2KISijFcZHkTNN5UTLUr1ZuD7fcuf-qUHRPUNhTpORzEfG-4B0S1SURFiqqq993LK7sn-MFhJn_5vCgHEPF8LQq4"/>
+<div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-surface-container-lowest/40 backdrop-blur-sm">
+<span class="material-symbols-outlined text-4xl text-primary" data-icon="favorite" style="font-variation-settings: 'FILL' 1;">favorite</span>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer Component -->
+<footer class="w-full mt-20 bg-stone-200 dark:bg-stone-950">
+<div class="flex flex-col md:flex-row justify-between items-center px-12 py-10 w-full">
+<div class="mb-6 md:mb-0 text-center md:text-left">
+<span class="font-serif text-lg text-stone-800 dark:text-stone-200">The Living Scrapbook</span>
+<p class="text-sm font-sans tracking-wide text-stone-500 mt-1">© 2024 The Living Scrapbook. Built with heart.</p>
+</div>
+<div class="flex gap-8">
+<a class="text-stone-500 hover:text-stone-800 text-sm font-sans tracking-wide transition-colors" href="#">Privacy</a>
+<a class="text-stone-500 hover:text-stone-800 text-sm font-sans tracking-wide transition-colors" href="#">Family Rules</a>
+<a class="text-stone-500 hover:text-stone-800 text-sm font-sans tracking-wide transition-colors" href="#">Support</a>
+</div>
+</div>
+</footer>
+</body></html>

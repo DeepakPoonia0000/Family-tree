@@ -1,0 +1,17 @@
+<nav class="sticky top-0 z-50 px-4 pt-4">
+  <div class="mx-auto flex w-full max-w-7xl items-center justify-between rounded-full border border-outline/30 bg-surface/80 px-6 py-3 shadow-soft backdrop-blur-xl">
+    <a class="font-headline text-2xl italic text-primary" href="/">The Living Scrapbook</a>
+    <div class="hidden items-center gap-6 text-sm font-semibold text-on-surface-variant md:flex">
+      <a class="hover:text-primary" href="/dashboard">Dashboard</a>
+      <a class="hover:text-primary" href="/">Family Tree</a>
+      <a class="hover:text-primary" href="/news">News</a>
+      <a class="hover:text-primary" href="/calendar">Calendar</a>
+      <a class="hover:text-primary" href="/map">Map</a>
+      <a class="hover:text-primary" href="/gallery">Gallery</a>
+      <a class="hover:text-primary" href="/recipes">Recipes</a>
+      <a class="hover:text-primary" href="/archives">Archives</a>
+      <a class="hover:text-primary" href="/discussions">Discussions</a>
+    </div>
+    <a class="rounded-full bg-primary px-4 py-2 text-xs font-bold text-white" href="<%= isAdmin ? '/admin' : '/admin/login' %>"><%= isAdmin ? 'Admin' : 'Login' %></a>
+  </div>
+</nav>
