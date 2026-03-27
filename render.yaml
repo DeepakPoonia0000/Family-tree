@@ -20,3 +20,5 @@ services:
         sync: false
       - key: DEFAULT_OG_IMAGE
         sync: false
+      - key: PORT
+        value: '3000'
